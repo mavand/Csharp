@@ -38,7 +38,7 @@ namespace Gym
         private void Bind()
         {
             con.Open();
-            SqlDataAdapter da = new SqlDataAdapter("select * from Members", con);
+            SqlDataAdapter da = new SqlDataAdapter("select * from member", con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
@@ -48,7 +48,7 @@ namespace Gym
         private void btnSave_Click(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("insert into members(SocialSecurity,Name,City,Street,Zipcode,Email,Phone) values(@SocialSecurity,@Name,@City,@Street,@Zipcode,@Email,@Phone)", con);
+            SqlCommand cmd = new SqlCommand("insert into member(SocialSecurity,Name,City,Street,Zipcode,Email,Phone) values(@SocialSecurity,@Name,@City,@Street,@Zipcode,@Email,@Phone)", con);
             cmd.Parameters.AddWithValue("SocialSecurity", txtSS.Text);
             //cmd.Parameters.AddWithValue("Location", txtLocation.Text);
             try { cmd.ExecuteNonQuery(); }
@@ -63,7 +63,7 @@ namespace Gym
             SqlCommand delcmd = new SqlCommand();
             if (dataGridView1.Rows.Count > 1 && dataGridView1.SelectedRows[0].Index != dataGridView1.Rows.Count - 1)
             {
-                delcmd.CommandText = "DELETE FROM student WHERE ID=" + dataGridView1.SelectedRows[0].Cells[0].Value.ToString() + "";
+                delcmd.CommandText = "delete from student where id=" + dataGridView1.SelectedRows[0].Cells[0].Value.ToString() + "";
                 con.Open();
                 delcmd.Connection = con;
                 delcmd.ExecuteNonQuery();
