@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AFCB39E7-1C81-4BFB-990E-CE6F28702A13}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GymGUI</RootNamespace>
+    <AssemblyName>GymGUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DeleteEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteEmp.Designer.cs">
+      <DependentUpon>DeleteEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteMem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteMem.Designer.cs">
+      <DependentUpon>DeleteMem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteWork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteWork.Designer.cs">
+      <DependentUpon>DeleteWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditEmp.Designer.cs">
+      <DependentUpon>EditEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditMem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditMem.Designer.cs">
+      <DependentUpon>EditMem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditWork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditWork.Designer.cs">
+      <DependentUpon>EditWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GymIndex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GymIndex.Designer.cs">
+      <DependentUpon>GymIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewEmp.Designer.cs">
+      <DependentUpon>NewEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewMem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewMem.Designer.cs">
+      <DependentUpon>NewMem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewWork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewWork.Designer.cs">
+      <DependentUpon>NewWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpenEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenEmp.Designer.cs">
+      <DependentUpon>OpenEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpenMem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenMem.Designer.cs">
+      <DependentUpon>OpenMem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpenWork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenWork.Designer.cs">
+      <DependentUpon>OpenWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DeleteEmp.resx">
+      <DependentUpon>DeleteEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteMem.resx">
+      <DependentUpon>DeleteMem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteWork.resx">
+      <DependentUpon>DeleteWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditEmp.resx">
+      <DependentUpon>EditEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditMem.resx">
+      <DependentUpon>EditMem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditWork.resx">
+      <DependentUpon>EditWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GymIndex.resx">
+      <DependentUpon>GymIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEmp.resx">
+      <DependentUpon>NewEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewMem.resx">
+      <DependentUpon>NewMem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewWork.resx">
+      <DependentUpon>NewWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenEmp.resx">
+      <DependentUpon>OpenEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenMem.resx">
+      <DependentUpon>OpenMem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenWork.resx">
+      <DependentUpon>OpenWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
