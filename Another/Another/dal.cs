@@ -13,7 +13,13 @@ namespace Another
 
         SqlConnection conn = new SqlConnection("Data Source=VALONS;Initial Catalog=gym;Integrated Security=True");
 
+        SqlCommand cmd;
+        
+        try{
+      
 
+        conn.Open();
+                cmd = new SqlCommand("Insert into Member (SocialSecurity, Name, City, Street, Zipcode, Email, Phone) values 
    
 }
 }

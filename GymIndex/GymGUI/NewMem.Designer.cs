@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textSocialSecurity = new System.Windows.Forms.TextBox();
+            this.textName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textEmail = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textStreet = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textZipCode = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textCity = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textPhone = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -54,19 +54,19 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Social Security";
             // 
-            // textBox1
+            // textSocialSecurity
             // 
-            this.textBox1.Location = new System.Drawing.Point(16, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.textSocialSecurity.Location = new System.Drawing.Point(16, 30);
+            this.textSocialSecurity.Name = "textSocialSecurity";
+            this.textSocialSecurity.Size = new System.Drawing.Size(100, 20);
+            this.textSocialSecurity.TabIndex = 1;
             // 
-            // textBox2
+            // textName
             // 
-            this.textBox2.Location = new System.Drawing.Point(16, 70);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.textName.Location = new System.Drawing.Point(16, 70);
+            this.textName.Name = "textName";
+            this.textName.Size = new System.Drawing.Size(100, 20);
+            this.textName.TabIndex = 3;
             // 
             // label2
             // 
@@ -78,12 +78,12 @@
             this.label2.Text = "Name";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // textBox3
+            // textEmail
             // 
-            this.textBox3.Location = new System.Drawing.Point(16, 110);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 5;
+            this.textEmail.Location = new System.Drawing.Point(16, 110);
+            this.textEmail.Name = "textEmail";
+            this.textEmail.Size = new System.Drawing.Size(100, 20);
+            this.textEmail.TabIndex = 5;
             // 
             // label3
             // 
@@ -94,12 +94,12 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Email";
             // 
-            // textBox4
+            // textStreet
             // 
-            this.textBox4.Location = new System.Drawing.Point(126, 30);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 7;
+            this.textStreet.Location = new System.Drawing.Point(126, 30);
+            this.textStreet.Name = "textStreet";
+            this.textStreet.Size = new System.Drawing.Size(100, 20);
+            this.textStreet.TabIndex = 7;
             // 
             // label4
             // 
@@ -110,12 +110,14 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Street";
             // 
-            // textBox5
+            // textZipCode
             // 
-            this.textBox5.Location = new System.Drawing.Point(126, 70);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 9;
+            this.textZipCode.AcceptsReturn = true;
+            this.textZipCode.Location = new System.Drawing.Point(126, 70);
+            this.textZipCode.Name = "textZipCode";
+            this.textZipCode.Size = new System.Drawing.Size(100, 20);
+            this.textZipCode.TabIndex = 9;
+            this.textZipCode.TextChanged += new System.EventHandler(this.label2_Click);
             // 
             // label5
             // 
@@ -126,12 +128,12 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Zipcode";
             // 
-            // textBox6
+            // textCity
             // 
-            this.textBox6.Location = new System.Drawing.Point(126, 110);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 11;
+            this.textCity.Location = new System.Drawing.Point(126, 110);
+            this.textCity.Name = "textCity";
+            this.textCity.Size = new System.Drawing.Size(100, 20);
+            this.textCity.TabIndex = 11;
             // 
             // label6
             // 
@@ -142,12 +144,12 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "City";
             // 
-            // textBox7
+            // textPhone
             // 
-            this.textBox7.Location = new System.Drawing.Point(16, 149);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 13;
+            this.textPhone.Location = new System.Drawing.Point(16, 149);
+            this.textPhone.Name = "textPhone";
+            this.textPhone.Size = new System.Drawing.Size(100, 20);
+            this.textPhone.TabIndex = 13;
             // 
             // label7
             // 
@@ -158,37 +160,39 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Phone";
             // 
-            // button1
+            // btnSave
             // 
-            this.button1.Location = new System.Drawing.Point(16, 176);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSave.Location = new System.Drawing.Point(16, 176);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 14;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // NewMem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(244, 214);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.textPhone);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.textCity);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textZipCode);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textStreet);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textEmail);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textName);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textSocialSecurity);
             this.Controls.Add(this.label1);
             this.Name = "NewMem";
             this.Text = "NewMem";
+            this.Load += new System.EventHandler(this.NewMem_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,19 +201,19 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textSocialSecurity;
+        private System.Windows.Forms.TextBox textName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textEmail;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textStreet;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textZipCode;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textCity;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textPhone;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSave;
     }
 }

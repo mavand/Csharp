@@ -16,5 +16,10 @@ namespace Another
         {
             InitializeComponent();
         }
+
+        private void btnQuery_Click(object sender, EventArgs e)
+        {
+           
+            }
     }
 }
