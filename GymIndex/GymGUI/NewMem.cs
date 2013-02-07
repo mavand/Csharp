@@ -13,7 +13,7 @@ namespace GymGUI
 {
     public partial class NewMem : Form
     {
-        SqlConnection conn = new SqlConnection("Data Source=VALONS;Initial Catalog=gym;Integrated Security=True");
+        SqlConnection conn = new SqlConnection("Data Source=MOMMO-;Initial Catalog=gym;Integrated Security=True");
         SqlCommand cmd;
         public NewMem()
         {

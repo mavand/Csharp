@@ -11,7 +11,7 @@ namespace Another
     class dal
     {
 
-        SqlConnection conn = new SqlConnection("Data Source=VALONS;Initial Catalog=gym;Integrated Security=True");
+        SqlConnection conn = new SqlConnection("Data Source=MOMMO-;Initial Catalog=gym;Integrated Security=True");
 
         SqlCommand cmd;
         
@@ -19,7 +19,7 @@ namespace Another
       
 
         conn.Open();
-                cmd = new SqlCommand("Insert into Member (SocialSecurity, Name, City, Street, Zipcode, Email, Phone) values 
+                cmd = new SqlCommand("Insert into member(SocialSecurity, Name, City, Street, Zipcode, Email, Phone) values 
    
 }
 }
