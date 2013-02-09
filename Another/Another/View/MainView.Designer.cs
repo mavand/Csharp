@@ -37,6 +37,7 @@
             this.memberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.workoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.instructorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtGrid1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -48,6 +49,7 @@
             this.dtGrid1.Name = "dtGrid1";
             this.dtGrid1.Size = new System.Drawing.Size(424, 181);
             this.dtGrid1.TabIndex = 0;
+            this.dtGrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGrid1_CellContentClick);
             // 
             // btnQuery
             // 
@@ -57,6 +59,7 @@
             this.btnQuery.TabIndex = 1;
             this.btnQuery.Text = "Query";
             this.btnQuery.UseVisualStyleBackColor = true;
+            this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
             // 
             // menuStrip1
             // 
@@ -67,6 +70,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(610, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // newToolStripMenuItem
             // 
@@ -114,16 +118,27 @@
             this.instructorsToolStripMenuItem.Text = "Instructor";
             this.instructorsToolStripMenuItem.Click += new System.EventHandler(this.instructorsToolStripMenuItem_Click);
             // 
-            // Form1
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(484, 174);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 3;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(610, 389);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnQuery);
             this.Controls.Add(this.dtGrid1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "MainView";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dtGrid1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
@@ -144,6 +159,7 @@
         private System.Windows.Forms.ToolStripMenuItem memberToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem workoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem instructorsToolStripMenuItem;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
 
