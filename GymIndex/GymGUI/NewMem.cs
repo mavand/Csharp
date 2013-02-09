@@ -30,12 +30,13 @@ namespace GymGUI
 
         }
 
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
                 conn.Open();
-                cmd = new SqlCommand("Insert into member(SocialSecurity, Name, City, Street, Zipcode, Email, Phone) values ('" + textSocialSecurity.Text + "','" + textName.Text + "','" + textCity.Text + "','" + textStreet.Text + "','" + textZipCode.Text + "','" + textEmail.Text + "','" + textPhone.Text + "')" + conn);
+                cmd = new SqlCommand("insert into member values ('" + textSocialSecurity.Text + "','" + textName.Text + "','" + textCity.Text + "','" + textStreet.Text + "','" + textZipCode.Text + "','" + textEmail.Text + "','" + textPhone.Text + "')" + conn);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("You have successfully inserted values in Member");
                 conn.Close();
