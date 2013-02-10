@@ -13,18 +13,24 @@ namespace Another
         SqlConnection con = new SqlConnection("server=(local);" +
                                                "Integrated Security=true;" +
                                                "database=gym;");
-        public Dal()
-        {  
-        }
-
+        
         public DataTable SelectAll(string str)
         {
-            con.Open();
             SqlDataAdapter da = new SqlDataAdapter("select * from "+str, con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             con.Close(); 
             return dt;
-        }        
+        }
+
+        public DataTable NewMember(string ss, string name, string city, string street, string zip, string email, string phone)
+        {            
+            SqlDataAdapter da = new SqlDataAdapter("insert into member values ('" +ss+"','"+name+"','"+city+"','"+street+"','"+zip+"','"+email+"','"+phone+"')" , con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return (dt);           
+        }
+        
     }
 }

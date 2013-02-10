@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Another.Controller;
+using Another.View;
 
 namespace Another
 {
@@ -23,42 +24,27 @@ namespace Another
             btnDelete.Visible = false;
         }
 
-        private void memberToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void memberOpenMenu_Click(object sender, EventArgs e)
         {
-            try { dtGrid1.DataSource = cont.SelectAll(memberToolStripMenuItem.Text); }
+            try { dtGrid1.DataSource = cont.SelectAll(memberOpenMenu.Text); }
             catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
             dtGrid1.Visible = true;
             btnDelete.Visible = true;
         }
 
-        private void workoutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void workoutOpenMenu_Click(object sender, EventArgs e)
         {
-            try { dtGrid1.DataSource = cont.SelectAll(workoutToolStripMenuItem.Text); }
+            try { dtGrid1.DataSource = cont.SelectAll(workoutOpenMenu.Text); }
             catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
             dtGrid1.Visible = true;
         }
 
-        private void instructorsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void instructorOpenMenu_Click(object sender, EventArgs e)
         {
-            try { dtGrid1.DataSource = cont.SelectAll(instructorsToolStripMenuItem.Text); }
+            try { dtGrid1.DataSource = cont.SelectAll(instructorOpenMenu.Text); }
             catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
             dtGrid1.Visible = true;
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void dtGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void btnQuery_Click(object sender, EventArgs e)
-        {
-
-        }
+        }     
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -75,18 +61,18 @@ namespace Another
 
                 //SqlCommand cmd = new SqlCommand ("Delete from members WHERE ([SocialSecurity] = @SocialSecurity", 
 
-
-
             }
 
 
 
         }
-
-
-
-
         public DataGridView DataGridView { get; set; }
+
+        private void memberNewMenu_Click(object sender, EventArgs e)
+        {
+            NewMember newMember = new NewMember();
+            newMember.ShowDialog();
+        }
     }
 
 }

@@ -29,14 +29,16 @@
         private void InitializeComponent()
         {
             this.dtGrid1 = new System.Windows.Forms.DataGridView();
-            this.btnQuery = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.memberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.workoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.instructorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newFileMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.memberNewMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.workoutNewMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.instructorNewMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.memberOpenMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.workoutOpenMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.instructorOpenMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtGrid1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -49,17 +51,6 @@
             this.dtGrid1.Name = "dtGrid1";
             this.dtGrid1.Size = new System.Drawing.Size(424, 181);
             this.dtGrid1.TabIndex = 0;
-            this.dtGrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGrid1_CellContentClick);
-            // 
-            // btnQuery
-            // 
-            this.btnQuery.Location = new System.Drawing.Point(29, 60);
-            this.btnQuery.Name = "btnQuery";
-            this.btnQuery.Size = new System.Drawing.Size(75, 23);
-            this.btnQuery.TabIndex = 1;
-            this.btnQuery.Text = "Query";
-            this.btnQuery.UseVisualStyleBackColor = true;
-            this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
             // 
             // menuStrip1
             // 
@@ -70,53 +61,75 @@
             this.menuStrip1.Size = new System.Drawing.Size(610, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripMenuItem1,
-            this.openToolStripMenuItem});
+            this.newFileMenu,
+            this.openFileMenu});
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.newToolStripMenuItem.Text = "File";
             // 
-            // newToolStripMenuItem1
+            // newFileMenu
             // 
-            this.newToolStripMenuItem1.Name = "newToolStripMenuItem1";
-            this.newToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.newToolStripMenuItem1.Text = "New";
+            this.newFileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.memberNewMenu,
+            this.workoutNewMenu,
+            this.instructorNewMenu});
+            this.newFileMenu.Name = "newFileMenu";
+            this.newFileMenu.Size = new System.Drawing.Size(152, 22);
+            this.newFileMenu.Text = "New";
             // 
-            // openToolStripMenuItem
+            // memberNewMenu
             // 
-            this.openToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.memberToolStripMenuItem,
-            this.workoutToolStripMenuItem,
-            this.instructorsToolStripMenuItem});
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.openToolStripMenuItem.Text = "Open";
+            this.memberNewMenu.Name = "memberNewMenu";
+            this.memberNewMenu.Size = new System.Drawing.Size(152, 22);
+            this.memberNewMenu.Text = "Member";
+            this.memberNewMenu.Click += new System.EventHandler(this.memberNewMenu_Click);
             // 
-            // memberToolStripMenuItem
+            // workoutNewMenu
             // 
-            this.memberToolStripMenuItem.Name = "memberToolStripMenuItem";
-            this.memberToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.memberToolStripMenuItem.Text = "Member";
-            this.memberToolStripMenuItem.Click += new System.EventHandler(this.memberToolStripMenuItem_Click_1);
+            this.workoutNewMenu.Name = "workoutNewMenu";
+            this.workoutNewMenu.Size = new System.Drawing.Size(152, 22);
+            this.workoutNewMenu.Text = "Workout";
             // 
-            // workoutToolStripMenuItem
+            // instructorNewMenu
             // 
-            this.workoutToolStripMenuItem.Name = "workoutToolStripMenuItem";
-            this.workoutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.workoutToolStripMenuItem.Text = "Workout";
-            this.workoutToolStripMenuItem.Click += new System.EventHandler(this.workoutToolStripMenuItem_Click);
+            this.instructorNewMenu.Name = "instructorNewMenu";
+            this.instructorNewMenu.Size = new System.Drawing.Size(152, 22);
+            this.instructorNewMenu.Text = "Instructor";
             // 
-            // instructorsToolStripMenuItem
+            // openFileMenu
             // 
-            this.instructorsToolStripMenuItem.Name = "instructorsToolStripMenuItem";
-            this.instructorsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.instructorsToolStripMenuItem.Text = "Instructor";
-            this.instructorsToolStripMenuItem.Click += new System.EventHandler(this.instructorsToolStripMenuItem_Click);
+            this.openFileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.memberOpenMenu,
+            this.workoutOpenMenu,
+            this.instructorOpenMenu});
+            this.openFileMenu.Name = "openFileMenu";
+            this.openFileMenu.Size = new System.Drawing.Size(152, 22);
+            this.openFileMenu.Text = "Open";
+            // 
+            // memberOpenMenu
+            // 
+            this.memberOpenMenu.Name = "memberOpenMenu";
+            this.memberOpenMenu.Size = new System.Drawing.Size(152, 22);
+            this.memberOpenMenu.Text = "Member";
+            this.memberOpenMenu.Click += new System.EventHandler(this.memberOpenMenu_Click);
+            // 
+            // workoutOpenMenu
+            // 
+            this.workoutOpenMenu.Name = "workoutOpenMenu";
+            this.workoutOpenMenu.Size = new System.Drawing.Size(152, 22);
+            this.workoutOpenMenu.Text = "Workout";
+            this.workoutOpenMenu.Click += new System.EventHandler(this.workoutOpenMenu_Click);
+            // 
+            // instructorOpenMenu
+            // 
+            this.instructorOpenMenu.Name = "instructorOpenMenu";
+            this.instructorOpenMenu.Size = new System.Drawing.Size(152, 22);
+            this.instructorOpenMenu.Text = "Instructor";
+            this.instructorOpenMenu.Click += new System.EventHandler(this.instructorOpenMenu_Click);
             // 
             // btnDelete
             // 
@@ -134,7 +147,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(610, 389);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnQuery);
             this.Controls.Add(this.dtGrid1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -151,15 +163,17 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dtGrid1;
-        private System.Windows.Forms.Button btnQuery;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem memberToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem workoutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem instructorsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newFileMenu;
+        private System.Windows.Forms.ToolStripMenuItem openFileMenu;
+        private System.Windows.Forms.ToolStripMenuItem memberOpenMenu;
+        private System.Windows.Forms.ToolStripMenuItem workoutOpenMenu;
+        private System.Windows.Forms.ToolStripMenuItem instructorOpenMenu;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.ToolStripMenuItem memberNewMenu;
+        private System.Windows.Forms.ToolStripMenuItem workoutNewMenu;
+        private System.Windows.Forms.ToolStripMenuItem instructorNewMenu;
     }
 }
 
