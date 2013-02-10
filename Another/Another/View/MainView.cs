@@ -58,9 +58,6 @@ namespace Another
 
 
         }
-
-
-
         
         public DataGridView DataGridView { get; set; }
 
@@ -75,6 +72,18 @@ namespace Another
             NewInstructor newInstructor = new NewInstructor();
             newInstructor.ShowDialog();
         }
+
+        private void newFileMenu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void workoutNewMenu_Click(object sender, EventArgs e)
+        {
+            NewWorkout newWorkout = new NewWorkout();
+            newWorkout.ShowDialog();
+        }
+
     }
 
 }

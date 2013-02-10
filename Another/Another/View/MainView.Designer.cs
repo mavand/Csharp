@@ -80,6 +80,7 @@
             this.newFileMenu.Name = "newFileMenu";
             this.newFileMenu.Size = new System.Drawing.Size(152, 22);
             this.newFileMenu.Text = "New";
+            this.newFileMenu.Click += new System.EventHandler(this.newFileMenu_Click);
             // 
             // memberNewMenu
             // 
@@ -93,6 +94,7 @@
             this.workoutNewMenu.Name = "workoutNewMenu";
             this.workoutNewMenu.Size = new System.Drawing.Size(152, 22);
             this.workoutNewMenu.Text = "Workout";
+            this.workoutNewMenu.Click += new System.EventHandler(this.workoutNewMenu_Click);
             // 
             // instructorNewMenu
             // 
@@ -114,21 +116,21 @@
             // memberOpenMenu
             // 
             this.memberOpenMenu.Name = "memberOpenMenu";
-            this.memberOpenMenu.Size = new System.Drawing.Size(152, 22);
+            this.memberOpenMenu.Size = new System.Drawing.Size(125, 22);
             this.memberOpenMenu.Text = "Member";
             this.memberOpenMenu.Click += new System.EventHandler(this.memberOpenMenu_Click);
             // 
             // workoutOpenMenu
             // 
             this.workoutOpenMenu.Name = "workoutOpenMenu";
-            this.workoutOpenMenu.Size = new System.Drawing.Size(152, 22);
+            this.workoutOpenMenu.Size = new System.Drawing.Size(125, 22);
             this.workoutOpenMenu.Text = "Workout";
             this.workoutOpenMenu.Click += new System.EventHandler(this.workoutOpenMenu_Click);
             // 
             // instructorOpenMenu
             // 
             this.instructorOpenMenu.Name = "instructorOpenMenu";
-            this.instructorOpenMenu.Size = new System.Drawing.Size(152, 22);
+            this.instructorOpenMenu.Size = new System.Drawing.Size(125, 22);
             this.instructorOpenMenu.Text = "Instructor";
             this.instructorOpenMenu.Click += new System.EventHandler(this.instructorOpenMenu_Click);
             // 

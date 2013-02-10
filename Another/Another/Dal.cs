@@ -38,6 +38,15 @@ namespace Another
             da.Fill(dt);
             con.Close();
             return (dt);
+        }
+        public DataTable NewWorkout(string ss, string name, string date, string time, string length, string level)
+        {
+            SqlDataAdapter da = new SqlDataAdapter("insert into workout values ('" + ss + "','" + name + "','" + date + "','" + time + "','" + length + "','" + level + "')", con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return (dt);
+            
         }  
         public DataTable DeleteMembers(string index)
         {
