@@ -99,6 +99,7 @@
             this.instructorNewMenu.Name = "instructorNewMenu";
             this.instructorNewMenu.Size = new System.Drawing.Size(152, 22);
             this.instructorNewMenu.Text = "Instructor";
+            this.instructorNewMenu.Click += new System.EventHandler(this.instructorNewMenu_Click);
             // 
             // openFileMenu
             // 

@@ -44,21 +44,20 @@ namespace Another
             try { dtGrid1.DataSource = cont.SelectAll(instructorOpenMenu.Text); }
             catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
             dtGrid1.Visible = true;
-        }     
+        }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow item in this.dtGrid1.SelectedRows)
-                {
+            {
                 dtGrid1.Rows.RemoveAt(item.Index);
                 string itemIndex = item.Index.ToString();
                 cont.DeleteMembers(itemIndex);
-     
-            {
-              
-             
 
             }
+
+
+        }
 
 
 
@@ -69,6 +68,12 @@ namespace Another
         {
             NewMember newMember = new NewMember();
             newMember.ShowDialog();
+        }
+
+        private void instructorNewMenu_Click(object sender, EventArgs e)
+        {
+            NewInstructor newInstructor = new NewInstructor();
+            newInstructor.ShowDialog();
         }
     }
 

@@ -31,7 +31,14 @@ namespace Another
             con.Close();
             return (dt);           
         }
-       
+        public DataTable NewInstructor(string ss, string name, string city, string street, string zip, string email, string phone)
+        {
+            SqlDataAdapter da = new SqlDataAdapter("insert into member values ('" + ss + "','" + name + "','" + city + "','" + street + "','" + zip + "','" + email + "','" + phone + "')", con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return (dt);
+        }  
         public DataTable DeleteMembers(string index)
         {
             SqlDataAdapter da = new SqlDataAdapter("delete from Member where SocialSecurity=' " + index + "'", con);
