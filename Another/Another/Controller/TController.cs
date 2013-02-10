@@ -24,6 +24,12 @@ namespace Another.Controller
             DataTable dt = dal.NewMember(ss,name,city,street,zip,email,phone);
             return dt;
         }
+      
+        public DataTable DeleteMembers(string index)
+        {
+            DataTable dt = dal.DeleteMembers(index);
+            return dt;
+        }
 
     }
 }

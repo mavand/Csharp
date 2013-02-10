@@ -49,23 +49,20 @@ namespace Another
         private void btnDelete_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow item in this.dtGrid1.SelectedRows)
+                {
                 dtGrid1.Rows.RemoveAt(item.Index);
-            string sql = "Delete from Membere where RowID = @RowID";
+                string itemIndex = item.Index.ToString();
+                cont.DeleteMembers(itemIndex);
+     
             {
               
-             //   int rowID = int.Parse(this.DataGridView[0, selectedindex].Value.ToString());
-               // string sql = "Delete from member where RowID = @RowId";
-
-
-
-
-                //SqlCommand cmd = new SqlCommand ("Delete from members WHERE ([SocialSecurity] = @SocialSecurity", 
+             
 
             }
 
 
 
-        }
+        
         public DataGridView DataGridView { get; set; }
 
         private void memberNewMenu_Click(object sender, EventArgs e)
