@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewWorkout));
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtwID = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -41,6 +42,8 @@
             this.length = new System.Windows.Forms.Label();
             this.level = new System.Windows.Forms.Label();
             this.txtDate = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -150,11 +153,22 @@
             this.txtDate.Size = new System.Drawing.Size(100, 20);
             this.txtDate.TabIndex = 13;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(157, 151);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(115, 99);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
             // NewWorkout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtDate);
             this.Controls.Add(this.level);
             this.Controls.Add(this.length);
@@ -170,6 +184,7 @@
             this.Controls.Add(this.btnAdd);
             this.Name = "NewWorkout";
             this.Text = "NewWorkout";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,6 +205,7 @@
         private System.Windows.Forms.TextBox txtLevel;
         private System.Windows.Forms.Label level;
         private System.Windows.Forms.TextBox txtDate;
+        private System.Windows.Forms.PictureBox pictureBox1;
       
     }
 }
