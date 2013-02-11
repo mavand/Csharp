@@ -53,7 +53,7 @@ namespace Another.View
                  }
                  catch (SqlException)
                  {
-                     MessageBox.Show("The social security number \"" + txtwID.Text + "\"is already registered");
+                     MessageBox.Show("The WorkID \"" + txtwID.Text + "\"is already registered");
                  }
              }
          }
