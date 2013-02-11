@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.btnAdd = new System.Windows.Forms.Button();
-            this.txtSS = new System.Windows.Forms.TextBox();
+            this.txtwID = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.txtDate = new System.Windows.Forms.TextBox();
             this.txtTime = new System.Windows.Forms.TextBox();
             this.txtLength = new System.Windows.Forms.TextBox();
             this.txtLevel = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.wID = new System.Windows.Forms.Label();
+            this.name = new System.Windows.Forms.Label();
+            this.date = new System.Windows.Forms.Label();
+            this.time = new System.Windows.Forms.Label();
+            this.length = new System.Windows.Forms.Label();
+            this.level = new System.Windows.Forms.Label();
+            this.txtDate = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -53,12 +53,12 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // txtSS
+            // txtwID
             // 
-            this.txtSS.Location = new System.Drawing.Point(13, 26);
-            this.txtSS.Name = "txtSS";
-            this.txtSS.Size = new System.Drawing.Size(100, 20);
-            this.txtSS.TabIndex = 1;
+            this.txtwID.Location = new System.Drawing.Point(13, 26);
+            this.txtwID.Name = "txtwID";
+            this.txtwID.Size = new System.Drawing.Size(100, 20);
+            this.txtwID.TabIndex = 1;
             // 
             // txtName
             // 
@@ -66,13 +66,6 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(100, 20);
             this.txtName.TabIndex = 2;
-            // 
-            // txtDate
-            // 
-            this.txtDate.Location = new System.Drawing.Point(13, 104);
-            this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(100, 20);
-            this.txtDate.TabIndex = 3;
             // 
             // txtTime
             // 
@@ -95,77 +88,85 @@
             this.txtLevel.Size = new System.Drawing.Size(100, 20);
             this.txtLevel.TabIndex = 6;
             // 
-            // label1
+            // wID
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "label1";
+            this.wID.AutoSize = true;
+            this.wID.Location = new System.Drawing.Point(12, 10);
+            this.wID.Name = "wID";
+            this.wID.Size = new System.Drawing.Size(44, 13);
+            this.wID.TabIndex = 7;
+            this.wID.Text = "WorkID";
+            this.wID.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // name
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 69);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "label2";
+            this.name.AutoSize = true;
+            this.name.Location = new System.Drawing.Point(12, 50);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(35, 13);
+            this.name.TabIndex = 8;
+            this.name.Text = "Name";
             // 
-            // label3
+            // date
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(41, 107);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "label3";
+            this.date.AutoSize = true;
+            this.date.Location = new System.Drawing.Point(12, 89);
+            this.date.Name = "date";
+            this.date.Size = new System.Drawing.Size(30, 13);
+            this.date.TabIndex = 9;
+            this.date.Text = "Date";
             // 
-            // label4
+            // time
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(188, 29);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "label4";
+            this.time.AutoSize = true;
+            this.time.Location = new System.Drawing.Point(154, 10);
+            this.time.Name = "time";
+            this.time.Size = new System.Drawing.Size(30, 13);
+            this.time.TabIndex = 10;
+            this.time.Text = "Time";
             // 
-            // label5
+            // length
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(188, 69);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "label5";
+            this.length.AutoSize = true;
+            this.length.Location = new System.Drawing.Point(154, 50);
+            this.length.Name = "length";
+            this.length.Size = new System.Drawing.Size(40, 13);
+            this.length.TabIndex = 11;
+            this.length.Text = "Length";
             // 
-            // label6
+            // level
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(188, 107);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "label6";
+            this.level.AutoSize = true;
+            this.level.Location = new System.Drawing.Point(154, 88);
+            this.level.Name = "level";
+            this.level.Size = new System.Drawing.Size(33, 13);
+            this.level.TabIndex = 12;
+            this.level.Text = "Level";
+            // 
+            // txtDate
+            // 
+            this.txtDate.Location = new System.Drawing.Point(12, 105);
+            this.txtDate.Name = "txtDate";
+            this.txtDate.Size = new System.Drawing.Size(100, 20);
+            this.txtDate.TabIndex = 13;
             // 
             // NewWorkout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtDate);
+            this.Controls.Add(this.level);
+            this.Controls.Add(this.length);
+            this.Controls.Add(this.time);
+            this.Controls.Add(this.date);
+            this.Controls.Add(this.name);
+            this.Controls.Add(this.wID);
             this.Controls.Add(this.txtLevel);
             this.Controls.Add(this.txtLength);
             this.Controls.Add(this.txtTime);
-            this.Controls.Add(this.txtDate);
             this.Controls.Add(this.txtName);
-            this.Controls.Add(this.txtSS);
+            this.Controls.Add(this.txtwID);
             this.Controls.Add(this.btnAdd);
             this.Name = "NewWorkout";
             this.Text = "NewWorkout";
@@ -177,18 +178,18 @@
         #endregion
 
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.TextBox txtSS;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtwID;
+        private System.Windows.Forms.Label wID;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtDate;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label name;
+        private System.Windows.Forms.Label date;
         private System.Windows.Forms.TextBox txtTime;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label time;
         private System.Windows.Forms.TextBox txtLength;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label length;
         private System.Windows.Forms.TextBox txtLevel;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label level;
+        private System.Windows.Forms.TextBox txtDate;
       
     }
 }

@@ -39,9 +39,9 @@ namespace Another
             con.Close();
             return (dt);
         }
-        public DataTable NewWorkout(string ss, string name, string date, string time, string length, string level)
+        public DataTable NewWorkout(string wID, string name, string date, string time, string length, string level)
         {
-            SqlDataAdapter da = new SqlDataAdapter("insert into workout values ('" + ss + "','" + name + "','" + date + "','" + time + "','" + length + "','" + level + "')", con);
+            SqlDataAdapter da = new SqlDataAdapter("insert into workout values ('" + wID + "','" + name + "','" + date + "','" + time + "','" + length + "','" + level + "')", con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             con.Close();
