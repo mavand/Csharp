@@ -48,14 +48,13 @@ namespace Another
             return (dt);
             
         }  
-        public DataTable DeleteMembers(string index)
+        public DataTable DeleteMembers(string str)
         {
-            SqlDataAdapter da = new SqlDataAdapter("delete from Member where SocialSecurity=' " + index + "'", con);
+            SqlDataAdapter da = new SqlDataAdapter("delete from Member where SocialSecurity='"+str+"'", con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             con.Close();
             return dt;
-
         }
         
     }

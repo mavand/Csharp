@@ -46,21 +46,28 @@ namespace Another
             dtGrid1.Visible = true;
         }
 
+        /*private void dtGrid1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dtGrid1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                MessageBox.Show(" Value at 0,0" + dtGrid1.Rows[0].Cells[0].Value);
+            }
+        }*/
+        
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            
+
             foreach (DataGridViewRow item in this.dtGrid1.SelectedRows)
             {
+                cont.DeleteMembers(dtGrid1.CurrentCell.Value.ToString());
                 dtGrid1.Rows.RemoveAt(item.Index);
-                string itemIndex = item.Index.ToString();
-                cont.DeleteMembers(itemIndex);
-
             }
 
 
         }
         
-        public DataGridView DataGridView { get; set; }
-
         private void memberNewMenu_Click(object sender, EventArgs e)
         {
             NewMember newMember = new NewMember();
@@ -73,16 +80,19 @@ namespace Another
             newInstructor.ShowDialog();
         }
 
-        private void newFileMenu_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void workoutNewMenu_Click(object sender, EventArgs e)
         {
             NewWorkout newWorkout = new NewWorkout();
             newWorkout.ShowDialog();
         }
+
+
+        /*private void dtGrid1_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            MessageBox.Show((dtGrid1.CurrentCell.Value.ToString()));
+        }*/
 
     }
 

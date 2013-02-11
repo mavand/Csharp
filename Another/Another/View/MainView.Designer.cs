@@ -78,28 +78,27 @@
             this.workoutNewMenu,
             this.instructorNewMenu});
             this.newFileMenu.Name = "newFileMenu";
-            this.newFileMenu.Size = new System.Drawing.Size(152, 22);
+            this.newFileMenu.Size = new System.Drawing.Size(103, 22);
             this.newFileMenu.Text = "New";
-            this.newFileMenu.Click += new System.EventHandler(this.newFileMenu_Click);
             // 
             // memberNewMenu
             // 
             this.memberNewMenu.Name = "memberNewMenu";
-            this.memberNewMenu.Size = new System.Drawing.Size(152, 22);
+            this.memberNewMenu.Size = new System.Drawing.Size(125, 22);
             this.memberNewMenu.Text = "Member";
             this.memberNewMenu.Click += new System.EventHandler(this.memberNewMenu_Click);
             // 
             // workoutNewMenu
             // 
             this.workoutNewMenu.Name = "workoutNewMenu";
-            this.workoutNewMenu.Size = new System.Drawing.Size(152, 22);
+            this.workoutNewMenu.Size = new System.Drawing.Size(125, 22);
             this.workoutNewMenu.Text = "Workout";
             this.workoutNewMenu.Click += new System.EventHandler(this.workoutNewMenu_Click);
             // 
             // instructorNewMenu
             // 
             this.instructorNewMenu.Name = "instructorNewMenu";
-            this.instructorNewMenu.Size = new System.Drawing.Size(152, 22);
+            this.instructorNewMenu.Size = new System.Drawing.Size(125, 22);
             this.instructorNewMenu.Text = "Instructor";
             this.instructorNewMenu.Click += new System.EventHandler(this.instructorNewMenu_Click);
             // 
@@ -110,7 +109,7 @@
             this.workoutOpenMenu,
             this.instructorOpenMenu});
             this.openFileMenu.Name = "openFileMenu";
-            this.openFileMenu.Size = new System.Drawing.Size(152, 22);
+            this.openFileMenu.Size = new System.Drawing.Size(103, 22);
             this.openFileMenu.Text = "Open";
             // 
             // memberOpenMenu
@@ -136,7 +135,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(484, 174);
+            this.btnDelete.Location = new System.Drawing.Point(472, 332);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 3;

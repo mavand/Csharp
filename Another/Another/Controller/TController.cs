@@ -29,14 +29,18 @@ namespace Another.Controller
             DataTable dt = dal.NewInstructor(ss, name, city, street, zip, email, phone);
             return dt;
         }
+
         public DataTable NewWorkout(string wID, string name, string date, string time, string length, string level)
         {
             DataTable dt = dal.NewWorkout(wID, name, date, time, length, level);
             return dt;
         }
-        public DataTable DeleteMembers(string index)
+        
+
+        public DataTable DeleteMembers(string str)
+
         {
-            DataTable dt = dal.DeleteMembers(index);
+            DataTable dt = dal.DeleteMembers(str);
             return dt;
         }
 
