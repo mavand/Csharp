@@ -47,10 +47,10 @@
     <Compile Include="Controller\TController.cs" />
     <Compile Include="Dal.cs" />
     <Compile Include="Model\Instructor.cs" />
-    <Compile Include="NewWorkout.cs">
+    <Compile Include="View\NewWorkout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewWorkout.Designer.cs">
+    <Compile Include="View\NewWorkout.Designer.cs">
       <DependentUpon>NewWorkout.cs</DependentUpon>
     </Compile>
     <Compile Include="View\MainView.cs">
@@ -75,7 +75,7 @@
     <Compile Include="View\NewMember.Designer.cs">
       <DependentUpon>NewMember.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="NewWorkout.resx">
+    <EmbeddedResource Include="View\NewWorkout.resx">
       <DependentUpon>NewWorkout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainView.resx">

@@ -31,14 +31,16 @@ namespace Another
             con.Close();
             return (dt);           
         }
-        public DataTable NewInstructor(string ss, string name, string city, string street, string zip, string email, string phone)
+
+        public DataTable NewInstructor(string instID, string ss, string name, string city, string street, string zip, string email, string phone)
         {
-            SqlDataAdapter da = new SqlDataAdapter("insert into member values ('" + ss + "','" + name + "','" + city + "','" + street + "','" + zip + "','" + email + "','" + phone + "')", con);
+            SqlDataAdapter da = new SqlDataAdapter("insert into instructor values('" + instID + "','" + ss + "','" + name + "','" + city + "','" + street + "','" + zip + "','" + email + "','" + phone + "')", con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             con.Close();
             return (dt);
         }
+
         public DataTable NewWorkout(string wID, string name, string date, string time, string length, string level)
         {
             SqlDataAdapter da = new SqlDataAdapter("insert into workout values ('" + wID + "','" + name + "','" + date + "','" + time + "','" + length + "','" + level + "')", con);

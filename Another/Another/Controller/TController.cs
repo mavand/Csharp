@@ -24,11 +24,18 @@ namespace Another.Controller
             DataTable dt = dal.NewMember(ss,name,city,street,zip,email,phone);
             return dt;
         }
-        public DataTable NewInstructor(string ss, string name, string city, string street, string zip, string email, string phone)
+
+        public DataTable newInstructor(string instID, string ss, string name, string city, string street, string zip, string email, string phone)
         {
-            DataTable dt = dal.NewInstructor(ss, name, city, street, zip, email, phone);
+            DataTable dt = dal.NewInstructor(instID, ss, name, city, street, zip, email, phone);
             return dt;
         }
+         //public DataTable NewInstructor(string instID, string ss, string name, string city, string street, string zip, string email, string phone)
+        //{
+            //DataTable dt = dal.NewInstructor(instID,ss, name, city, street, zip, email, phone);
+          //  return dt; 
+
+        //} 
 
         public DataTable NewWorkout(string wID, string name, string date, string time, string length, string level)
         {

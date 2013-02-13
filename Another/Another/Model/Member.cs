@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Another.Model
 {
-    class Member
+   /* class Member
     {
         public Member(){}
 
@@ -68,5 +68,5 @@ namespace Another.Model
             get { return phone; }
             set { phone = value; }
         }
-    }
+    }*/
 }
