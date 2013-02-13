@@ -14,7 +14,7 @@ namespace Another.View
 {
     public partial class NewMember : Form
     {
-        TController cont = new TController();
+        MemberController mcont = new MemberController();
         Dal dal = new Dal();
 
         public NewMember()
@@ -43,7 +43,7 @@ namespace Another.View
             {
                 try 
                 { 
-                    cont.NewMember(txtSS.Text, txtName.Text, txtCity.Text, txtStreet.Text, txtZipcode.Text, txtEmail.Text, txtPhone.Text);
+                    mcont.NewMember(txtSS.Text, txtName.Text, txtCity.Text, txtStreet.Text, txtZipcode.Text, txtEmail.Text, txtPhone.Text);
                     MessageBox.Show("Added");
                     ClearFields();
                 }

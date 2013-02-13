@@ -14,7 +14,7 @@ namespace Another.View
 {
     public partial class NewInstructor : Form
     {
-        TController cont = new TController();
+        InstructorController icont = new InstructorController();
         Dal dal = new Dal();
 
         public NewInstructor()
@@ -44,7 +44,7 @@ namespace Another.View
             {
                 try
                 {
-                    cont.newInstructor(txtInstID.Text, txtSS.Text, txtName.Text, txtCity.Text, txtStreet.Text, txtZipcode.Text, txtEmail.Text, txtPhone.Text);
+                    icont.NewInstructor(txtInstID.Text, txtSS.Text, txtName.Text, txtCity.Text, txtStreet.Text, txtZipcode.Text, txtEmail.Text, txtPhone.Text);
                     MessageBox.Show("Added");
                     ClearFields();
                 }

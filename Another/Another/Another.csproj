@@ -44,7 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\TController.cs" />
+    <Compile Include="Controller\InstructorController.cs" />
+    <Compile Include="Controller\MemberController.cs" />
+    <Compile Include="Controller\MainController.cs" />
+    <Compile Include="Controller\WorkoutController.cs" />
     <Compile Include="Dal.cs" />
     <Compile Include="Model\Instructor.cs" />
     <Compile Include="View\NewWorkout.cs">

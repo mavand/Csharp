@@ -15,7 +15,8 @@ namespace Another
 {
     public partial class MainView : Form
     {
-        TController cont = new TController();
+        MainController cont = new MainController();
+        MemberController mcont = new MemberController();
 
         public MainView()
         {
@@ -62,11 +63,9 @@ namespace Another
 
             foreach (DataGridViewRow item in this.dtGrid1.SelectedRows)
             {
-                cont.DeleteMembers(dtGrid1.CurrentCell.Value.ToString());
+                mcont.DeleteMembers(dtGrid1.CurrentCell.Value.ToString());
                 dtGrid1.Rows.RemoveAt(item.Index);
             }
-
-
         }
         
         private void memberNewMenu_Click(object sender, EventArgs e)
@@ -81,15 +80,13 @@ namespace Another
             newInstructor.ShowDialog();
         }
 
-
-
         private void workoutNewMenu_Click(object sender, EventArgs e)
         {
             NewWorkout newWorkout = new NewWorkout();
             newWorkout.ShowDialog();
         }
 
-
+        //######### TA EJ BORT NEDASTÅEDE RAD!! /MEISAM ###########
         /*private void dtGrid1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             MessageBox.Show((dtGrid1.CurrentCell.Value.ToString()));

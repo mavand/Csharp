@@ -14,7 +14,7 @@ namespace Another.View
 {
     public partial class NewWorkout : Form
     {
-        TController cont = new TController();
+        WorkoutController wcont = new WorkoutController();
         Dal dal = new Dal();
 
         public NewWorkout()
@@ -46,7 +46,7 @@ namespace Another.View
              {
                  try
                  {
-                     cont.NewWorkout(wID.Text, txtName.Text, txtDate.Text, txtTime.Text, txtLength.Text, txtLevel.Text);
+                     wcont.NewWorkout(wID.Text, txtName.Text, txtDate.Text, txtTime.Text, txtLength.Text, txtLevel.Text);
                      MessageBox.Show("Added");
                      ClearFields();
 
