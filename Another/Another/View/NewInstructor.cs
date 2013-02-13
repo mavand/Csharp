@@ -50,7 +50,7 @@ namespace Another.View
                 }
                 catch (SqlException)
                 {
-                    MessageBox.Show("The Instructor ID \"" + txtInstID + "\"is already registered");
+                    MessageBox.Show("The Instructor ID \"" + txtInstID.Text + "\"is already registered");
                 }
             }
         }
