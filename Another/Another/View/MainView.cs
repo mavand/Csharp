@@ -44,6 +44,7 @@ namespace Another
             try { dtGrid1.DataSource = cont.SelectAll(instructorOpenMenu.Text); }
             catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
             dtGrid1.Visible = true;
+            btnDelete.Visible = true;
         }
 
         /*private void dtGrid1_CellClick(object sender, DataGridViewCellEventArgs e)

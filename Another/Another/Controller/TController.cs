@@ -21,7 +21,7 @@ namespace Another.Controller
 
         public DataTable NewMember(string ss, string name, string city, string street, string zip, string email, string phone)
         {
-            DataTable dt = dal.NewMember(ss,name,city,street,zip,email,phone);
+            DataTable dt = dal.NewMember(ss, name, city, street, zip, email, phone);
             return dt;
         }
 
@@ -30,10 +30,10 @@ namespace Another.Controller
             DataTable dt = dal.NewInstructor(instID, ss, name, city, street, zip, email, phone);
             return dt;
         }
-         //public DataTable NewInstructor(string instID, string ss, string name, string city, string street, string zip, string email, string phone)
+        //public DataTable NewInstructor(string instID, string ss, string name, string city, string street, string zip, string email, string phone)
         //{
-            //DataTable dt = dal.NewInstructor(instID,ss, name, city, street, zip, email, phone);
-          //  return dt; 
+        //DataTable dt = dal.NewInstructor(instID,ss, name, city, street, zip, email, phone);
+        //  return dt; 
 
         //} 
 
@@ -42,14 +42,18 @@ namespace Another.Controller
             DataTable dt = dal.NewWorkout(wID, name, date, time, length, level);
             return dt;
         }
-        
+
 
         public DataTable DeleteMembers(string str)
-
         {
             DataTable dt = dal.DeleteMembers(str);
             return dt;
         }
 
+        public DataTable DeleteInstructors(string str)
+        {
+            DataTable dt = dal.DeleteInstructors(str);
+            return dt;
+        }
     }
 }

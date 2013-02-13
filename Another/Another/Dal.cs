@@ -58,6 +58,15 @@ namespace Another
             con.Close();
             return dt;
         }
+
+        public DataTable DeleteInstructors(string str)
+        {
+            SqlDataAdapter da = new SqlDataAdapter("delete from Instructor where InstID='" + str + "'", con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return dt;
+        }
         
     }
 }
