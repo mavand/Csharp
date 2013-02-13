@@ -46,7 +46,7 @@ namespace Another.View
              {
                  try
                  {
-                     wcont.NewWorkout(wID.Text, txtName.Text, txtDate.Text, txtTime.Text, txtLength.Text, txtLevel.Text);
+                     wcont.NewWorkout(txtwID.Text, txtName.Text, txtDate.Text, txtTime.Text, txtLength.Text, txtLevel.Text);
                      MessageBox.Show("Added");
                      ClearFields();
 
