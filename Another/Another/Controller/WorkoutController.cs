@@ -16,7 +16,11 @@ namespace Another.Controller
             DataTable dt = dal.NewWorkout(wID, name, date, time, length, level);
             return dt;
         }
-
+        public DataTable DeleteWorkout(string str)
+        {
+            DataTable dt = dal.DeleteWorkout(str);
+            return dt;
+        }
 
     }
 }

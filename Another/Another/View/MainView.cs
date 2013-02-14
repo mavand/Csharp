@@ -17,7 +17,7 @@ namespace Another
     {
         MainController cont = new MainController();
         MemberController mcont = new MemberController();
-
+        InstructorController icont = new InstructorController();
         public MainView()
         {
             InitializeComponent();
@@ -38,6 +38,7 @@ namespace Another
             try { dtGrid1.DataSource = cont.SelectAll(workoutOpenMenu.Text); }
             catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
             dtGrid1.Visible = true;
+            btnDelete.Visible = true;
         }
 
         private void instructorOpenMenu_Click(object sender, EventArgs e)
@@ -55,19 +56,25 @@ namespace Another
                 MessageBox.Show(" Value at 0,0" + dtGrid1.Rows[0].Cells[0].Value);
             }
         }*/
-        
+
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            
-
-            foreach (DataGridViewRow item in this.dtGrid1.SelectedRows)
+            DialogResult dialogResult = MessageBox.Show("You sure you want to delete this member(s)?", "Delete Member", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
             {
-                mcont.DeleteMembers(dtGrid1.CurrentCell.Value.ToString());
-                dtGrid1.Rows.RemoveAt(item.Index);
+                foreach (DataGridViewRow item in this.dtGrid1.SelectedRows)
+                {
+                    mcont.DeleteMembers(dtGrid1.CurrentCell.Value.ToString());
+                    dtGrid1.Rows.RemoveAt(item.Index);
+                    icont.DeleteInstructors(dtGrid1.CurrentCell.Value.ToString());       //alltså detta fungerar, MEN. Jag tror vi måste skapa nya fucking knappar som syns
+                    dtGrid1.Rows.RemoveAt(item.Index);                                   //i dem olika vyerna beroende på vilken man är på. 
+                }                                                                        //tex om man lägger in 3 olika knappar och låter dem endast synas när man är inne i
+                                                                                         //någon av Member/Instructor/Workout
+              
+                
             }
         }
-        
         private void memberNewMenu_Click(object sender, EventArgs e)
         {
             NewMember newMember = new NewMember();

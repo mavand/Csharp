@@ -31,6 +31,15 @@ namespace Another
             con.Close();
             return (dt);           
         }
+        public DataTable DeleteMembers(string str)
+        {
+            SqlDataAdapter da = new SqlDataAdapter("delete from Member where SocialSecurity='" + str + "'", con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return dt;
+        }
+
 
         public DataTable NewInstructor(string instID, string ss, string name, string city, string street, string zip, string email, string phone)
         {
@@ -39,6 +48,15 @@ namespace Another
             da.Fill(dt);
             con.Close();
             return (dt);
+        }
+
+        public DataTable DeleteInstructors(string str)
+        {
+            SqlDataAdapter da = new SqlDataAdapter("delete from Instructor where InstID='" + str + "'", con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return dt;
         }
 
         public DataTable NewWorkout(string wID, string name, string date, string time, string length, string level)
@@ -50,18 +68,10 @@ namespace Another
             return (dt);
             
         }  
-        public DataTable DeleteMembers(string str)
+       
+        public DataTable DeleteWorkout(string str)
         {
-            SqlDataAdapter da = new SqlDataAdapter("delete from Member where SocialSecurity='"+str+"'", con);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            con.Close();
-            return dt;
-        }
-
-        public DataTable DeleteInstructors(string str)
-        {
-            SqlDataAdapter da = new SqlDataAdapter("delete from Instructor where InstID='" + str + "'", con);
+            SqlDataAdapter da = new SqlDataAdapter("delete from Workout where wID='" + str + "'", con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             con.Close();
