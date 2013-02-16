@@ -31,15 +31,14 @@ namespace Another
             con.Close();
             return (dt);           
         }
-        public DataTable DeleteMembers(string str)
+        public DataTable DeleteMember(string tableName, string pk)
         {
-            SqlDataAdapter da = new SqlDataAdapter("delete from Member where SocialSecurity='" + str + "'", con);
+            SqlDataAdapter da = new SqlDataAdapter("delete from "+tableName+" where SocialSecurity='" +pk+ "'", con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             con.Close();
             return dt;
         }
-
 
         public DataTable NewInstructor(string instID, string ss, string name, string city, string street, string zip, string email, string phone)
         {
@@ -50,9 +49,9 @@ namespace Another
             return (dt);
         }
 
-        public DataTable DeleteInstructors(string str)
+        public DataTable DeleteInstructor(string tableName, string pk)
         {
-            SqlDataAdapter da = new SqlDataAdapter("delete from Instructor where InstID='" + str + "'", con);
+            SqlDataAdapter da = new SqlDataAdapter("delete from " + tableName + " where instid='" + pk + "'", con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             con.Close();
@@ -67,11 +66,11 @@ namespace Another
             con.Close();
             return (dt);
             
-        }  
-       
-        public DataTable DeleteWorkout(string str)
+        }
+
+        public DataTable DeleteWorkout(string tableName, string pk)
         {
-            SqlDataAdapter da = new SqlDataAdapter("delete from Workout where wID='" + str + "'", con);
+            SqlDataAdapter da = new SqlDataAdapter("delete from " + tableName + " where workid='" + pk + "'", con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             con.Close();

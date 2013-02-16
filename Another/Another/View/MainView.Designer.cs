@@ -30,16 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             this.dtGrid1 = new System.Windows.Forms.DataGridView();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newFileMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.mainMenu = new System.Windows.Forms.MenuStrip();
+            this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileNewM = new System.Windows.Forms.ToolStripMenuItem();
             this.memberNewMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.workoutNewMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.instructorNewMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.openFileMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.memberOpenMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.workoutOpenMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.instructorOpenMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileOpenM = new System.Windows.Forms.ToolStripMenuItem();
+            this.openMemberM = new System.Windows.Forms.ToolStripMenuItem();
+            this.openWorkoutM = new System.Windows.Forms.ToolStripMenuItem();
+            this.openInstructorM = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDelete = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,103 +48,106 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSSS = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.labelGrid = new System.Windows.Forms.Label();
+            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dtGrid1)).BeginInit();
-            this.menuStrip1.SuspendLayout();
+            this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dtGrid1
             // 
             this.dtGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtGrid1.Location = new System.Drawing.Point(29, 174);
+            this.dtGrid1.Location = new System.Drawing.Point(29, 198);
             this.dtGrid1.Name = "dtGrid1";
             this.dtGrid1.Size = new System.Drawing.Size(424, 181);
             this.dtGrid1.TabIndex = 0;
             // 
-            // menuStrip1
+            // mainMenu
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(610, 24);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
+            this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileMenu,
+            this.testToolStripMenuItem});
+            this.mainMenu.Location = new System.Drawing.Point(0, 0);
+            this.mainMenu.Name = "mainMenu";
+            this.mainMenu.Size = new System.Drawing.Size(610, 24);
+            this.mainMenu.TabIndex = 2;
+            this.mainMenu.Text = "menuStrip1";
             // 
-            // newToolStripMenuItem
+            // fileMenu
             // 
-            this.newToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newFileMenu,
-            this.openFileMenu});
-            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.newToolStripMenuItem.Text = "File";
+            this.fileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileNewM,
+            this.fileOpenM});
+            this.fileMenu.Name = "fileMenu";
+            this.fileMenu.Size = new System.Drawing.Size(37, 20);
+            this.fileMenu.Text = "File";
             // 
-            // newFileMenu
+            // fileNewM
             // 
-            this.newFileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileNewM.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.memberNewMenu,
             this.workoutNewMenu,
             this.instructorNewMenu});
-            this.newFileMenu.Name = "newFileMenu";
-            this.newFileMenu.Size = new System.Drawing.Size(103, 22);
-            this.newFileMenu.Text = "New";
+            this.fileNewM.Name = "fileNewM";
+            this.fileNewM.Size = new System.Drawing.Size(152, 22);
+            this.fileNewM.Text = "New";
             // 
             // memberNewMenu
             // 
             this.memberNewMenu.Name = "memberNewMenu";
-            this.memberNewMenu.Size = new System.Drawing.Size(125, 22);
+            this.memberNewMenu.Size = new System.Drawing.Size(152, 22);
             this.memberNewMenu.Text = "Member";
             this.memberNewMenu.Click += new System.EventHandler(this.memberNewMenu_Click);
             // 
             // workoutNewMenu
             // 
             this.workoutNewMenu.Name = "workoutNewMenu";
-            this.workoutNewMenu.Size = new System.Drawing.Size(125, 22);
+            this.workoutNewMenu.Size = new System.Drawing.Size(152, 22);
             this.workoutNewMenu.Text = "Workout";
             this.workoutNewMenu.Click += new System.EventHandler(this.workoutNewMenu_Click);
             // 
             // instructorNewMenu
             // 
             this.instructorNewMenu.Name = "instructorNewMenu";
-            this.instructorNewMenu.Size = new System.Drawing.Size(125, 22);
+            this.instructorNewMenu.Size = new System.Drawing.Size(152, 22);
             this.instructorNewMenu.Text = "Instructor";
             this.instructorNewMenu.Click += new System.EventHandler(this.instructorNewMenu_Click);
             // 
-            // openFileMenu
+            // fileOpenM
             // 
-            this.openFileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.memberOpenMenu,
-            this.workoutOpenMenu,
-            this.instructorOpenMenu});
-            this.openFileMenu.Name = "openFileMenu";
-            this.openFileMenu.Size = new System.Drawing.Size(103, 22);
-            this.openFileMenu.Text = "Open";
+            this.fileOpenM.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openMemberM,
+            this.openWorkoutM,
+            this.openInstructorM});
+            this.fileOpenM.Name = "fileOpenM";
+            this.fileOpenM.Size = new System.Drawing.Size(152, 22);
+            this.fileOpenM.Text = "Open";
             // 
-            // memberOpenMenu
+            // openMemberM
             // 
-            this.memberOpenMenu.Name = "memberOpenMenu";
-            this.memberOpenMenu.Size = new System.Drawing.Size(125, 22);
-            this.memberOpenMenu.Text = "Member";
-            this.memberOpenMenu.Click += new System.EventHandler(this.memberOpenMenu_Click);
+            this.openMemberM.Name = "openMemberM";
+            this.openMemberM.Size = new System.Drawing.Size(152, 22);
+            this.openMemberM.Text = "Member";
+            this.openMemberM.Click += new System.EventHandler(this.memberOpenMenu_Click);
             // 
-            // workoutOpenMenu
+            // openWorkoutM
             // 
-            this.workoutOpenMenu.Name = "workoutOpenMenu";
-            this.workoutOpenMenu.Size = new System.Drawing.Size(125, 22);
-            this.workoutOpenMenu.Text = "Workout";
-            this.workoutOpenMenu.Click += new System.EventHandler(this.workoutOpenMenu_Click);
+            this.openWorkoutM.Name = "openWorkoutM";
+            this.openWorkoutM.Size = new System.Drawing.Size(152, 22);
+            this.openWorkoutM.Text = "Workout";
+            this.openWorkoutM.Click += new System.EventHandler(this.workoutOpenMenu_Click);
             // 
-            // instructorOpenMenu
+            // openInstructorM
             // 
-            this.instructorOpenMenu.Name = "instructorOpenMenu";
-            this.instructorOpenMenu.Size = new System.Drawing.Size(125, 22);
-            this.instructorOpenMenu.Text = "Instructor";
-            this.instructorOpenMenu.Click += new System.EventHandler(this.instructorOpenMenu_Click);
+            this.openInstructorM.Name = "openInstructorM";
+            this.openInstructorM.Size = new System.Drawing.Size(152, 22);
+            this.openInstructorM.Text = "Instructor";
+            this.openInstructorM.Click += new System.EventHandler(this.instructorOpenMenu_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(472, 332);
+            this.btnDelete.Location = new System.Drawing.Point(472, 356);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 3;
@@ -220,11 +223,27 @@
             this.label9.TabIndex = 51;
             this.label9.Text = "Name";
             // 
+            // labelGrid
+            // 
+            this.labelGrid.AutoSize = true;
+            this.labelGrid.Location = new System.Drawing.Point(29, 179);
+            this.labelGrid.Name = "labelGrid";
+            this.labelGrid.Size = new System.Drawing.Size(35, 13);
+            this.labelGrid.TabIndex = 56;
+            this.labelGrid.Text = "label3";
+            // 
+            // testToolStripMenuItem
+            // 
+            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.testToolStripMenuItem.Text = "Test";
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(610, 389);
+            this.Controls.Add(this.labelGrid);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cBoxSearch);
             this.Controls.Add(this.btnSearch);
@@ -234,13 +253,13 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.dtGrid1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.mainMenu);
+            this.MainMenuStrip = this.mainMenu;
             this.Name = "MainView";
             this.Text = "Gym Management System";
             ((System.ComponentModel.ISupportInitialize)(this.dtGrid1)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.mainMenu.ResumeLayout(false);
+            this.mainMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -250,13 +269,13 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dtGrid1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newFileMenu;
-        private System.Windows.Forms.ToolStripMenuItem openFileMenu;
-        private System.Windows.Forms.ToolStripMenuItem memberOpenMenu;
-        private System.Windows.Forms.ToolStripMenuItem workoutOpenMenu;
-        private System.Windows.Forms.ToolStripMenuItem instructorOpenMenu;
+        private System.Windows.Forms.MenuStrip mainMenu;
+        private System.Windows.Forms.ToolStripMenuItem fileMenu;
+        private System.Windows.Forms.ToolStripMenuItem fileNewM;
+        private System.Windows.Forms.ToolStripMenuItem fileOpenM;
+        private System.Windows.Forms.ToolStripMenuItem openMemberM;
+        private System.Windows.Forms.ToolStripMenuItem openWorkoutM;
+        private System.Windows.Forms.ToolStripMenuItem openInstructorM;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.ToolStripMenuItem memberNewMenu;
         private System.Windows.Forms.ToolStripMenuItem workoutNewMenu;
@@ -268,6 +287,8 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSSS;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label labelGrid;
+        private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
     }
 }
 

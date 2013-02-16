@@ -23,18 +23,7 @@ namespace Another.Controller
         {
             DataTable dt = dal.NewInstructor(instID, ss, name, city, street, zip, email, phone);
             return dt;
-        }
-
-        /*public DataTable DeleteMembers(string str)
-        {
-            DataTable dt = dal.DeleteMembers(str);
-            return dt;
-        }*/
-        public DataTable DeleteInstructors(string str)
-        {
-            DataTable dt = dal.DeleteInstructors(str);
-            return dt;
-        }
+        }          
 
         public DataTable SearchAll(string str, string str2)
         {

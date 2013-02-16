@@ -16,9 +16,9 @@ namespace Another.Controller
             DataTable dt = dal.NewWorkout(wID, name, date, time, length, level);
             return dt;
         }
-        public DataTable DeleteWorkout(string str)
+        public DataTable DeleteWorkout(string tableName, string pk)
         {
-            DataTable dt = dal.DeleteWorkout(str);
+            DataTable dt = dal.DeleteWorkout(tableName, pk);
             return dt;
         }
 

@@ -17,9 +17,9 @@ namespace Another.Controller
             return dt;
         }
 
-        public DataTable DeleteInstructors(string str)
+        public DataTable DeleteInstructor(string tableName, string pk)
         {
-            DataTable dt = dal.DeleteInstructors(str);
+            DataTable dt = dal.DeleteInstructor(tableName, pk);
             return dt;
         }
     }

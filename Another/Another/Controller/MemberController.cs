@@ -17,9 +17,9 @@ namespace Another.Controller
             return dt;
         }        
      
-        public DataTable DeleteMembers(string str)
+        public DataTable DeleteMember(string str, string str2)
         {
-            DataTable dt = dal.DeleteMembers(str);
+            DataTable dt = dal.DeleteMember(str, str2);
             return dt;
         }       
     }
