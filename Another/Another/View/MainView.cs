@@ -93,6 +93,11 @@ namespace Another
             newWorkout.ShowDialog();
         }
 
+        private void GymSystem_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //######### TA EJ BORT NEDASTÅEDE RAD!! /MEISAM ###########
         /*private void dtGrid1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
