@@ -94,6 +94,7 @@ namespace Another
             {
                 dtGrid1.DataSource = cont.SearchAll(cBoxSearch.SelectedItem.ToString(), txtSSS.Text);
                 dtGrid1.Visible = true;
+                btnDelete.Visible = true;
             }
             catch (Exception) { MessageBox.Show("Please choose a table"); }
         }
