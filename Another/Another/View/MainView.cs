@@ -11,13 +11,14 @@ using System.Data.SqlClient;
 using Another.Controller;
 using Another.View;
 
+
 namespace Another
 {
     public partial class MainView : Form
     {
         MainController cont = new MainController();
         MemberController mcont = new MemberController();
-        InstructorController icont = new InstructorController();
+       // InstructorController icont = new InstructorController();
         public MainView()
         {
             InitializeComponent();
@@ -49,31 +50,28 @@ namespace Another
             btnDelete.Visible = true;
         }
 
-        /*private void dtGrid1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dtGrid1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
-            {
-                MessageBox.Show(" Value at 0,0" + dtGrid1.Rows[0].Cells[0].Value);
-            }
-        }*/
-
-
+        
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("You sure you want to delete this member(s)?", "Delete Member", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            try
             {
-                foreach (DataGridViewRow item in this.dtGrid1.SelectedRows)
-                {
-                    mcont.DeleteMembers(dtGrid1.CurrentCell.Value.ToString());
-                    dtGrid1.Rows.RemoveAt(item.Index);
-                    icont.DeleteInstructors(dtGrid1.CurrentCell.Value.ToString());       //alltså detta fungerar, MEN. Jag tror vi måste skapa nya fucking knappar som syns
-                    dtGrid1.Rows.RemoveAt(item.Index);                                   //i dem olika vyerna beroende på vilken man är på. 
-                }                                                                        //tex om man lägger in 3 olika knappar och låter dem endast synas när man är inne i
-                                                                                         //någon av Member/Instructor/Workout
-              
-                
+                DialogResult dialogResult = MessageBox.Show("You sure you want to delete this member(s)?", "Delete Member", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+
+                    foreach (DataGridViewRow item in this.dtGrid1.SelectedRows)
+                    {
+                        mcont.DeleteMembers(dtGrid1.CurrentCell.Value.ToString());
+                        dtGrid1.Rows.RemoveAt(item.Index);
+                        // icont.DeleteInstructors(dtGrid1.CurrentCell.Value.ToString());
+                        //     dtGrid1.Rows.RemoveAt(item.Index);                                  
+                    }
             }
+            catch (SqlException e2) {MessageBox.Show("du måste välja en rad med ifyllda värden" +e2.ToString());
+            }
+
+            
+                
+            
         }
         private void memberNewMenu_Click(object sender, EventArgs e)
         {
