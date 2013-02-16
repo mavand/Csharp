@@ -35,5 +35,11 @@ namespace Another.Controller
             DataTable dt = dal.DeleteInstructors(str);
             return dt;
         }
+
+        public DataTable SearchAll(string str, string str2)
+        {
+            DataTable dt = dal.SearchAll(str, str2);
+            return dt;
+        }
     }
 }

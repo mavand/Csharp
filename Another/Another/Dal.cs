@@ -77,6 +77,15 @@ namespace Another
             con.Close();
             return dt;
         }
+
+        public DataTable SearchAll(string str, string str2)
+        {
+            SqlDataAdapter da = new SqlDataAdapter("select * from " + str + " where name like '%" + str2 + "%'", con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return dt;
+        }
         
     }
 }

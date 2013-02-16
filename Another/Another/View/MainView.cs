@@ -67,10 +67,7 @@ namespace Another
                     }
             }
             catch (SqlException e2) {MessageBox.Show("du måste välja en rad med ifyllda värden" +e2.ToString());
-            }
-
-            
-                
+            }               
             
         }
         private void memberNewMenu_Click(object sender, EventArgs e)
@@ -89,11 +86,16 @@ namespace Another
         {
             NewWorkout newWorkout = new NewWorkout();
             newWorkout.ShowDialog();
-        }
+        }        
 
-        private void GymSystem_Click(object sender, EventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                dtGrid1.DataSource = cont.SearchAll(cBoxSearch.SelectedItem.ToString(), txtSSS.Text);
+                dtGrid1.Visible = true;
+            }
+            catch (Exception) { MessageBox.Show("Please choose a table"); }
         }
 
         //######### TA EJ BORT NEDASTÅEDE RAD!! /MEISAM ###########

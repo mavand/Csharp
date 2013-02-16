@@ -43,6 +43,11 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cBoxSearch = new System.Windows.Forms.ComboBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSSS = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtGrid1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -168,11 +173,63 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Gym Fitness AB\r\n\r\n";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(26, 94);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.TabIndex = 55;
+            this.label2.Text = "Select table";
+            // 
+            // cBoxSearch
+            // 
+            this.cBoxSearch.FormattingEnabled = true;
+            this.cBoxSearch.Items.AddRange(new object[] {
+            "Member",
+            "Workout",
+            "Instructor"});
+            this.cBoxSearch.Location = new System.Drawing.Point(29, 112);
+            this.cBoxSearch.Name = "cBoxSearch";
+            this.cBoxSearch.Size = new System.Drawing.Size(63, 21);
+            this.cBoxSearch.TabIndex = 54;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(98, 138);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 53;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtSSS
+            // 
+            this.txtSSS.Location = new System.Drawing.Point(98, 112);
+            this.txtSSS.Name = "txtSSS";
+            this.txtSSS.Size = new System.Drawing.Size(75, 20);
+            this.txtSSS.TabIndex = 52;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(98, 94);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.TabIndex = 51;
+            this.label9.Text = "Name";
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(610, 389);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cBoxSearch);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.txtSSS);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnDelete);
@@ -206,6 +263,11 @@
         private System.Windows.Forms.ToolStripMenuItem instructorNewMenu;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cBoxSearch;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtSSS;
+        private System.Windows.Forms.Label label9;
     }
 }
 
