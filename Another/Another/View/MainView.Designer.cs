@@ -52,6 +52,23 @@
             this.labelGrid = new System.Windows.Forms.Label();
             this.btnBook = new System.Windows.Forms.Button();
             this.cbTable = new System.Windows.Forms.ComboBox();
+            this.btnSaveEdt = new System.Windows.Forms.Button();
+            this.labelcityedt = new System.Windows.Forms.Label();
+            this.labelzipedt = new System.Windows.Forms.Label();
+            this.labelstreetedt = new System.Windows.Forms.Label();
+            this.labelphoneedt = new System.Windows.Forms.Label();
+            this.labelemailedt = new System.Windows.Forms.Label();
+            this.labelnameedt = new System.Windows.Forms.Label();
+            this.labelssedt = new System.Windows.Forms.Label();
+            this.cityoxedt = new System.Windows.Forms.TextBox();
+            this.zipboxedt = new System.Windows.Forms.TextBox();
+            this.streetboxedt = new System.Windows.Forms.TextBox();
+            this.phoneboxedt = new System.Windows.Forms.TextBox();
+            this.emailboxedt = new System.Windows.Forms.TextBox();
+            this.nameboxedt = new System.Windows.Forms.TextBox();
+            this.ssboxedt = new System.Windows.Forms.TextBox();
+            this.btnUpdateMem = new System.Windows.Forms.Button();
+            this.btnEdtMem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtGrid1)).BeginInit();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -72,7 +89,7 @@
             this.testToolStripMenuItem});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(610, 24);
+            this.mainMenu.Size = new System.Drawing.Size(570, 24);
             this.mainMenu.TabIndex = 2;
             this.mainMenu.Text = "menuStrip1";
             // 
@@ -155,7 +172,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(472, 356);
+            this.btnDelete.Location = new System.Drawing.Point(459, 356);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 3;
@@ -166,7 +183,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(472, 39);
+            this.pictureBox1.Location = new System.Drawing.Point(29, 34);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(121, 120);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -178,7 +195,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkRed;
-            this.label1.Location = new System.Drawing.Point(164, 39);
+            this.label1.Location = new System.Drawing.Point(165, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(182, 68);
             this.label1.TabIndex = 5;
@@ -187,7 +204,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 94);
+            this.label2.Location = new System.Drawing.Point(159, 125);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 55;
@@ -200,14 +217,14 @@
             "Member",
             "Workout",
             "Instructor"});
-            this.cBoxSearch.Location = new System.Drawing.Point(29, 112);
+            this.cBoxSearch.Location = new System.Drawing.Point(162, 145);
             this.cBoxSearch.Name = "cBoxSearch";
             this.cBoxSearch.Size = new System.Drawing.Size(63, 21);
             this.cBoxSearch.TabIndex = 54;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(98, 138);
+            this.btnSearch.Location = new System.Drawing.Point(231, 170);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 53;
@@ -217,7 +234,7 @@
             // 
             // txtSSS
             // 
-            this.txtSSS.Location = new System.Drawing.Point(98, 112);
+            this.txtSSS.Location = new System.Drawing.Point(231, 145);
             this.txtSSS.Name = "txtSSS";
             this.txtSSS.Size = new System.Drawing.Size(75, 20);
             this.txtSSS.TabIndex = 52;
@@ -225,7 +242,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(98, 94);
+            this.label9.Location = new System.Drawing.Point(228, 125);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(35, 13);
             this.label9.TabIndex = 51;
@@ -242,7 +259,7 @@
             // 
             // btnBook
             // 
-            this.btnBook.Location = new System.Drawing.Point(472, 198);
+            this.btnBook.Location = new System.Drawing.Point(459, 269);
             this.btnBook.Name = "btnBook";
             this.btnBook.Size = new System.Drawing.Size(75, 23);
             this.btnBook.TabIndex = 57;
@@ -256,16 +273,175 @@
             this.cbTable.Items.AddRange(new object[] {
             "Workout",
             "Instructor"});
-            this.cbTable.Location = new System.Drawing.Point(472, 228);
+            this.cbTable.Location = new System.Drawing.Point(459, 242);
             this.cbTable.Name = "cbTable";
-            this.cbTable.Size = new System.Drawing.Size(121, 21);
+            this.cbTable.Size = new System.Drawing.Size(100, 21);
             this.cbTable.TabIndex = 58;
+            // 
+            // btnSaveEdt
+            // 
+            this.btnSaveEdt.Location = new System.Drawing.Point(459, 167);
+            this.btnSaveEdt.Name = "btnSaveEdt";
+            this.btnSaveEdt.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveEdt.TabIndex = 73;
+            this.btnSaveEdt.Text = "Save";
+            this.btnSaveEdt.UseVisualStyleBackColor = true;
+            this.btnSaveEdt.Click += new System.EventHandler(this.btnSaveEdt_Click);
+            // 
+            // labelcityedt
+            // 
+            this.labelcityedt.AutoSize = true;
+            this.labelcityedt.Location = new System.Drawing.Point(456, 115);
+            this.labelcityedt.Name = "labelcityedt";
+            this.labelcityedt.Size = new System.Drawing.Size(24, 13);
+            this.labelcityedt.TabIndex = 72;
+            this.labelcityedt.Text = "City";
+            // 
+            // labelzipedt
+            // 
+            this.labelzipedt.AutoSize = true;
+            this.labelzipedt.Location = new System.Drawing.Point(456, 76);
+            this.labelzipedt.Name = "labelzipedt";
+            this.labelzipedt.Size = new System.Drawing.Size(46, 13);
+            this.labelzipedt.TabIndex = 71;
+            this.labelzipedt.Text = "Zipcode";
+            // 
+            // labelstreetedt
+            // 
+            this.labelstreetedt.AutoSize = true;
+            this.labelstreetedt.Location = new System.Drawing.Point(456, 34);
+            this.labelstreetedt.Name = "labelstreetedt";
+            this.labelstreetedt.Size = new System.Drawing.Size(35, 13);
+            this.labelstreetedt.TabIndex = 70;
+            this.labelstreetedt.Text = "Street";
+            // 
+            // labelphoneedt
+            // 
+            this.labelphoneedt.AutoSize = true;
+            this.labelphoneedt.Location = new System.Drawing.Point(350, 154);
+            this.labelphoneedt.Name = "labelphoneedt";
+            this.labelphoneedt.Size = new System.Drawing.Size(38, 13);
+            this.labelphoneedt.TabIndex = 69;
+            this.labelphoneedt.Text = "Phone";
+            // 
+            // labelemailedt
+            // 
+            this.labelemailedt.AutoSize = true;
+            this.labelemailedt.Location = new System.Drawing.Point(353, 115);
+            this.labelemailedt.Name = "labelemailedt";
+            this.labelemailedt.Size = new System.Drawing.Size(32, 13);
+            this.labelemailedt.TabIndex = 68;
+            this.labelemailedt.Text = "Email";
+            // 
+            // labelnameedt
+            // 
+            this.labelnameedt.AutoSize = true;
+            this.labelnameedt.Location = new System.Drawing.Point(350, 76);
+            this.labelnameedt.Name = "labelnameedt";
+            this.labelnameedt.Size = new System.Drawing.Size(35, 13);
+            this.labelnameedt.TabIndex = 67;
+            this.labelnameedt.Text = "Name";
+            // 
+            // labelssedt
+            // 
+            this.labelssedt.AutoSize = true;
+            this.labelssedt.Location = new System.Drawing.Point(350, 34);
+            this.labelssedt.Name = "labelssedt";
+            this.labelssedt.Size = new System.Drawing.Size(77, 13);
+            this.labelssedt.TabIndex = 66;
+            this.labelssedt.Text = "Social Security";
+            // 
+            // cityoxedt
+            // 
+            this.cityoxedt.Location = new System.Drawing.Point(459, 131);
+            this.cityoxedt.Name = "cityoxedt";
+            this.cityoxedt.Size = new System.Drawing.Size(100, 20);
+            this.cityoxedt.TabIndex = 65;
+            // 
+            // zipboxedt
+            // 
+            this.zipboxedt.Location = new System.Drawing.Point(459, 92);
+            this.zipboxedt.Name = "zipboxedt";
+            this.zipboxedt.Size = new System.Drawing.Size(100, 20);
+            this.zipboxedt.TabIndex = 64;
+            // 
+            // streetboxedt
+            // 
+            this.streetboxedt.Location = new System.Drawing.Point(459, 53);
+            this.streetboxedt.Name = "streetboxedt";
+            this.streetboxedt.Size = new System.Drawing.Size(100, 20);
+            this.streetboxedt.TabIndex = 63;
+            // 
+            // phoneboxedt
+            // 
+            this.phoneboxedt.Location = new System.Drawing.Point(353, 170);
+            this.phoneboxedt.Name = "phoneboxedt";
+            this.phoneboxedt.Size = new System.Drawing.Size(100, 20);
+            this.phoneboxedt.TabIndex = 62;
+            // 
+            // emailboxedt
+            // 
+            this.emailboxedt.Location = new System.Drawing.Point(353, 131);
+            this.emailboxedt.Name = "emailboxedt";
+            this.emailboxedt.Size = new System.Drawing.Size(100, 20);
+            this.emailboxedt.TabIndex = 61;
+            // 
+            // nameboxedt
+            // 
+            this.nameboxedt.Location = new System.Drawing.Point(353, 92);
+            this.nameboxedt.Name = "nameboxedt";
+            this.nameboxedt.Size = new System.Drawing.Size(100, 20);
+            this.nameboxedt.TabIndex = 60;
+            // 
+            // ssboxedt
+            // 
+            this.ssboxedt.Location = new System.Drawing.Point(353, 53);
+            this.ssboxedt.Name = "ssboxedt";
+            this.ssboxedt.Size = new System.Drawing.Size(100, 20);
+            this.ssboxedt.TabIndex = 59;
+            // 
+            // btnUpdateMem
+            // 
+            this.btnUpdateMem.Location = new System.Drawing.Point(459, 298);
+            this.btnUpdateMem.Name = "btnUpdateMem";
+            this.btnUpdateMem.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdateMem.TabIndex = 75;
+            this.btnUpdateMem.Text = "Update";
+            this.btnUpdateMem.UseVisualStyleBackColor = true;
+            this.btnUpdateMem.Click += new System.EventHandler(this.btnUpdateMem_Click);
+            // 
+            // btnEdtMem
+            // 
+            this.btnEdtMem.Location = new System.Drawing.Point(459, 327);
+            this.btnEdtMem.Name = "btnEdtMem";
+            this.btnEdtMem.Size = new System.Drawing.Size(75, 23);
+            this.btnEdtMem.TabIndex = 74;
+            this.btnEdtMem.Text = "Edit";
+            this.btnEdtMem.UseVisualStyleBackColor = true;
+            this.btnEdtMem.Click += new System.EventHandler(this.btnEdtMem_Click);
             // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(610, 389);
+            this.ClientSize = new System.Drawing.Size(570, 389);
+            this.Controls.Add(this.btnUpdateMem);
+            this.Controls.Add(this.btnEdtMem);
+            this.Controls.Add(this.btnSaveEdt);
+            this.Controls.Add(this.labelcityedt);
+            this.Controls.Add(this.labelzipedt);
+            this.Controls.Add(this.labelstreetedt);
+            this.Controls.Add(this.labelphoneedt);
+            this.Controls.Add(this.labelemailedt);
+            this.Controls.Add(this.labelnameedt);
+            this.Controls.Add(this.labelssedt);
+            this.Controls.Add(this.cityoxedt);
+            this.Controls.Add(this.zipboxedt);
+            this.Controls.Add(this.streetboxedt);
+            this.Controls.Add(this.phoneboxedt);
+            this.Controls.Add(this.emailboxedt);
+            this.Controls.Add(this.nameboxedt);
+            this.Controls.Add(this.ssboxedt);
             this.Controls.Add(this.cbTable);
             this.Controls.Add(this.btnBook);
             this.Controls.Add(this.labelGrid);
@@ -316,6 +492,23 @@
         private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
         private System.Windows.Forms.Button btnBook;
         private System.Windows.Forms.ComboBox cbTable;
+        private System.Windows.Forms.Button btnSaveEdt;
+        private System.Windows.Forms.Label labelcityedt;
+        private System.Windows.Forms.Label labelzipedt;
+        private System.Windows.Forms.Label labelstreetedt;
+        private System.Windows.Forms.Label labelphoneedt;
+        private System.Windows.Forms.Label labelemailedt;
+        private System.Windows.Forms.Label labelnameedt;
+        private System.Windows.Forms.Label labelssedt;
+        private System.Windows.Forms.TextBox cityoxedt;
+        private System.Windows.Forms.TextBox zipboxedt;
+        private System.Windows.Forms.TextBox streetboxedt;
+        private System.Windows.Forms.TextBox phoneboxedt;
+        private System.Windows.Forms.TextBox emailboxedt;
+        private System.Windows.Forms.TextBox nameboxedt;
+        private System.Windows.Forms.TextBox ssboxedt;
+        private System.Windows.Forms.Button btnUpdateMem;
+        private System.Windows.Forms.Button btnEdtMem;
     }
 }
 

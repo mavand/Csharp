@@ -94,6 +94,15 @@ namespace Another
             con.Close();
             return dt;
         }
+        public DataTable EditMember(string ss, string name, string city, string street, string zip, string email, string phone, string ess)
+        {
+            SqlDataAdapter da = new SqlDataAdapter("Update Member set SocialSecurity='" + ss + "'," + "Name='" + name + "'," + "City='" + city + "', " + "Street='" + street + "', " + "ZipCode='" + zip + "', " + "Email='" + email + "', " + "Phone='" + phone + "' where SocialSecurity='" + ess + "'", con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return dt;
+
+        }
         
     }
 }

@@ -26,6 +26,23 @@ namespace Another
             dtGrid1.Visible = false;
             btnDelete.Visible = false;
             labelGrid.Visible = false;
+            btnEdtMem.Visible = false;
+            labelcityedt.Visible = false;
+            labelemailedt.Visible = false;
+            labelnameedt.Visible = false;
+            labelphoneedt.Visible = false;
+            labelssedt.Visible = false;
+            labelzipedt.Visible = false;
+            labelstreetedt.Visible = false;
+            nameboxedt.Visible = false;
+            cityoxedt.Visible = false;
+            streetboxedt.Visible = false;
+            zipboxedt.Visible = false;
+            emailboxedt.Visible = false;
+            ssboxedt.Visible = false;
+            phoneboxedt.Visible = false;
+            btnSaveEdt.Visible = false;
+            btnUpdateMem.Visible = false;
         }
 
         private void memberOpenMenu_Click(object sender, EventArgs e)
@@ -153,6 +170,103 @@ namespace Another
                     bmw.ShowDialog();
                 }
             } 
+        }
+
+        private void btnEdtMem_Click(object sender, EventArgs e)
+        {
+            if (labelGrid.Text == openMemberM.Text)
+            {
+
+
+                labelcityedt.Visible = true;
+                labelemailedt.Visible = true;
+                labelnameedt.Visible = true;
+                labelphoneedt.Visible = true;
+                labelssedt.Visible = true;
+                labelzipedt.Visible = true;
+                labelstreetedt.Visible = true;
+                nameboxedt.Visible = true;
+                cityoxedt.Visible = true;
+                streetboxedt.Visible = true;
+                zipboxedt.Visible = true;
+                emailboxedt.Visible = true;
+                ssboxedt.Visible = true;
+                phoneboxedt.Visible = true;
+                btnSaveEdt.Visible = true;
+                foreach (DataGridViewRow item in this.dtGrid1.SelectedRows)
+                {
+                    ssboxedt.Text = item.Cells[0].Value.ToString();
+                    nameboxedt.Text = item.Cells[1].Value.ToString();
+                    cityoxedt.Text = item.Cells[2].Value.ToString();
+                    streetboxedt.Text = item.Cells[3].Value.ToString();
+                    zipboxedt.Text = item.Cells[4].Value.ToString();
+                    emailboxedt.Text = item.Cells[5].Value.ToString();
+                    phoneboxedt.Text = item.Cells[6].Value.ToString();
+
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Fel, go fuck yourself");
+
+            }
+
+        }
+
+        private void btnSaveEdt_Click(object sender, EventArgs e)
+        {
+            if (labelGrid.Text == openMemberM.Text)
+            {
+
+                if (String.IsNullOrEmpty(ssboxedt.Text) || String.IsNullOrEmpty(nameboxedt.Text) || String.IsNullOrEmpty(cityoxedt.Text) || String.IsNullOrEmpty(streetboxedt.Text) || String.IsNullOrEmpty(zipboxedt.Text) || String.IsNullOrEmpty(emailboxedt.Text) || String.IsNullOrEmpty(phoneboxedt.Text))
+                {
+                    MessageBox.Show("Please fill out all the fields");
+                }
+                else
+                {
+                    try
+                    {
+                        mcont.EditMember(ssboxedt.Text, nameboxedt.Text, cityoxedt.Text, streetboxedt.Text, zipboxedt.Text, emailboxedt.Text, phoneboxedt.Text, dtGrid1.CurrentCell.Value.ToString());
+                        MessageBox.Show("Changes saved succesfully");
+
+                        labelcityedt.Visible = false;
+                        labelemailedt.Visible = false;
+                        labelnameedt.Visible = false;
+                        labelphoneedt.Visible = false;
+                        labelssedt.Visible = false;
+                        labelzipedt.Visible = false;
+                        labelstreetedt.Visible = false;
+                        nameboxedt.Visible = false;
+                        cityoxedt.Visible = false;
+                        streetboxedt.Visible = false;
+                        zipboxedt.Visible = false;
+                        emailboxedt.Visible = false;
+                        ssboxedt.Visible = false;
+                        phoneboxedt.Visible = false;
+                        btnSaveEdt.Visible = false;
+                    }
+                    catch (SqlException)
+                    {
+                        ssboxedt.SelectAll();
+                        MessageBox.Show("The social security number \"" + ssboxedt.Text + "\"is already registered");
+
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Fel här också");
+
+            }
+
+        }
+
+        private void btnUpdateMem_Click(object sender, EventArgs e)
+        {
+            try { dtGrid1.DataSource = cont.SelectAll(openMemberM.Text); }
+            catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
+
         }
 
         //######### TA EJ BORT NEDASTÅEDE RAD!! /MEISAM ###########
