@@ -139,6 +139,22 @@ namespace Another
             catch (Exception) { MessageBox.Show("Please choose a table"); }
         }
 
+        private void btnBook_Click(object sender, EventArgs e)
+        {
+            if (cbTable.SelectedItem.ToString().Equals("Workout"))
+            {
+                string name;
+                foreach (DataGridViewRow item in this.dtGrid1.SelectedRows)
+                {
+                    this.dtGrid1.CurrentCell = this.dtGrid1[1, 0];
+                    name = dtGrid1.CurrentCell.Value.ToString();
+                    BookMemberWorkout bmw = new BookMemberWorkout(name);
+                    bmw.Label1.Text = name;
+                    bmw.ShowDialog();
+                }
+            } 
+        }
+
         //######### TA EJ BORT NEDASTÅEDE RAD!! /MEISAM ###########
         /*private void dtGrid1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {

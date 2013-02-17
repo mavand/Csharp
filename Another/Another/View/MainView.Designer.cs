@@ -40,6 +40,7 @@
             this.openMemberM = new System.Windows.Forms.ToolStripMenuItem();
             this.openWorkoutM = new System.Windows.Forms.ToolStripMenuItem();
             this.openInstructorM = new System.Windows.Forms.ToolStripMenuItem();
+            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDelete = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,7 +50,8 @@
             this.txtSSS = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.labelGrid = new System.Windows.Forms.Label();
-            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnBook = new System.Windows.Forms.Button();
+            this.cbTable = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtGrid1)).BeginInit();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -90,27 +92,27 @@
             this.workoutNewMenu,
             this.instructorNewMenu});
             this.fileNewM.Name = "fileNewM";
-            this.fileNewM.Size = new System.Drawing.Size(152, 22);
+            this.fileNewM.Size = new System.Drawing.Size(103, 22);
             this.fileNewM.Text = "New";
             // 
             // memberNewMenu
             // 
             this.memberNewMenu.Name = "memberNewMenu";
-            this.memberNewMenu.Size = new System.Drawing.Size(152, 22);
+            this.memberNewMenu.Size = new System.Drawing.Size(125, 22);
             this.memberNewMenu.Text = "Member";
             this.memberNewMenu.Click += new System.EventHandler(this.memberNewMenu_Click);
             // 
             // workoutNewMenu
             // 
             this.workoutNewMenu.Name = "workoutNewMenu";
-            this.workoutNewMenu.Size = new System.Drawing.Size(152, 22);
+            this.workoutNewMenu.Size = new System.Drawing.Size(125, 22);
             this.workoutNewMenu.Text = "Workout";
             this.workoutNewMenu.Click += new System.EventHandler(this.workoutNewMenu_Click);
             // 
             // instructorNewMenu
             // 
             this.instructorNewMenu.Name = "instructorNewMenu";
-            this.instructorNewMenu.Size = new System.Drawing.Size(152, 22);
+            this.instructorNewMenu.Size = new System.Drawing.Size(125, 22);
             this.instructorNewMenu.Text = "Instructor";
             this.instructorNewMenu.Click += new System.EventHandler(this.instructorNewMenu_Click);
             // 
@@ -121,29 +123,35 @@
             this.openWorkoutM,
             this.openInstructorM});
             this.fileOpenM.Name = "fileOpenM";
-            this.fileOpenM.Size = new System.Drawing.Size(152, 22);
+            this.fileOpenM.Size = new System.Drawing.Size(103, 22);
             this.fileOpenM.Text = "Open";
             // 
             // openMemberM
             // 
             this.openMemberM.Name = "openMemberM";
-            this.openMemberM.Size = new System.Drawing.Size(152, 22);
+            this.openMemberM.Size = new System.Drawing.Size(125, 22);
             this.openMemberM.Text = "Member";
             this.openMemberM.Click += new System.EventHandler(this.memberOpenMenu_Click);
             // 
             // openWorkoutM
             // 
             this.openWorkoutM.Name = "openWorkoutM";
-            this.openWorkoutM.Size = new System.Drawing.Size(152, 22);
+            this.openWorkoutM.Size = new System.Drawing.Size(125, 22);
             this.openWorkoutM.Text = "Workout";
             this.openWorkoutM.Click += new System.EventHandler(this.workoutOpenMenu_Click);
             // 
             // openInstructorM
             // 
             this.openInstructorM.Name = "openInstructorM";
-            this.openInstructorM.Size = new System.Drawing.Size(152, 22);
+            this.openInstructorM.Size = new System.Drawing.Size(125, 22);
             this.openInstructorM.Text = "Instructor";
             this.openInstructorM.Click += new System.EventHandler(this.instructorOpenMenu_Click);
+            // 
+            // testToolStripMenuItem
+            // 
+            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.testToolStripMenuItem.Text = "Test";
             // 
             // btnDelete
             // 
@@ -232,17 +240,34 @@
             this.labelGrid.TabIndex = 56;
             this.labelGrid.Text = "label3";
             // 
-            // testToolStripMenuItem
+            // btnBook
             // 
-            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-            this.testToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
-            this.testToolStripMenuItem.Text = "Test";
+            this.btnBook.Location = new System.Drawing.Point(472, 198);
+            this.btnBook.Name = "btnBook";
+            this.btnBook.Size = new System.Drawing.Size(75, 23);
+            this.btnBook.TabIndex = 57;
+            this.btnBook.Text = "Book";
+            this.btnBook.UseVisualStyleBackColor = true;
+            this.btnBook.Click += new System.EventHandler(this.btnBook_Click);
+            // 
+            // cbTable
+            // 
+            this.cbTable.FormattingEnabled = true;
+            this.cbTable.Items.AddRange(new object[] {
+            "Workout",
+            "Instructor"});
+            this.cbTable.Location = new System.Drawing.Point(472, 228);
+            this.cbTable.Name = "cbTable";
+            this.cbTable.Size = new System.Drawing.Size(121, 21);
+            this.cbTable.TabIndex = 58;
             // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(610, 389);
+            this.Controls.Add(this.cbTable);
+            this.Controls.Add(this.btnBook);
             this.Controls.Add(this.labelGrid);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cBoxSearch);
@@ -289,6 +314,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label labelGrid;
         private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
+        private System.Windows.Forms.Button btnBook;
+        private System.Windows.Forms.ComboBox cbTable;
     }
 }
 

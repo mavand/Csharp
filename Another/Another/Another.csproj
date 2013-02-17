@@ -50,6 +50,12 @@
     <Compile Include="Controller\WorkoutController.cs" />
     <Compile Include="Dal.cs" />
     <Compile Include="Model\Instructor.cs" />
+    <Compile Include="View\BookMemberWorkout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BookMemberWorkout.Designer.cs">
+      <DependentUpon>BookMemberWorkout.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\NewWorkout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     <Compile Include="View\NewMember.Designer.cs">
       <DependentUpon>NewMember.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\BookMemberWorkout.resx">
+      <DependentUpon>BookMemberWorkout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\NewWorkout.resx">
       <DependentUpon>NewWorkout.cs</DependentUpon>
     </EmbeddedResource>

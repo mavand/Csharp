@@ -85,6 +85,15 @@ namespace Another
             con.Close();
             return dt;
         }
+
+        public DataTable GetWorkout()
+        {
+            SqlDataAdapter da = new SqlDataAdapter("select name from workout", con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return dt;
+        }
         
     }
 }

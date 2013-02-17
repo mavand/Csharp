@@ -30,5 +30,11 @@ namespace Another.Controller
             DataTable dt = dal.SearchAll(str, str2);
             return dt;
         }
+
+        public DataTable GetWorkout()
+        {
+            DataTable dt = dal.GetWorkout();
+            return dt;
+        }
     }
 }
