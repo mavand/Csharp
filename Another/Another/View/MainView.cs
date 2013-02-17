@@ -57,6 +57,8 @@ namespace Another
             dtGrid1.Visible = true;
             btnDelete.Visible = true;
             labelGrid.Visible = true;
+            btnEdtMem.Visible = true;
+            btnUpdateMem.Visible = true;
         }
 
         private void workoutOpenMenu_Click(object sender, EventArgs e)
@@ -193,6 +195,7 @@ namespace Another
                 ssboxedt.Visible = true;
                 phoneboxedt.Visible = true;
                 btnSaveEdt.Visible = true;
+             
                 foreach (DataGridViewRow item in this.dtGrid1.SelectedRows)
                 {
                     ssboxedt.Text = item.Cells[0].Value.ToString();
@@ -208,7 +211,7 @@ namespace Another
             }
             else
             {
-                MessageBox.Show("Fel, go fuck yourself");
+                MessageBox.Show("Fel, fixar det sen.");
 
             }
 
