@@ -27,26 +27,17 @@ namespace Another
             btnDelete.Visible = false;
             labelGrid.Visible = false;
             btnEdtMem.Visible = false;
-            labelcityedt.Visible = false;
-            labelemailedt.Visible = false;
-            labelnameedt.Visible = false;
-            labelphoneedt.Visible = false;
-            labelssedt.Visible = false;
-            labelzipedt.Visible = false;
-            labelstreetedt.Visible = false;
-            nameboxedt.Visible = false;
-            cityoxedt.Visible = false;
-            streetboxedt.Visible = false;
-            zipboxedt.Visible = false;
-            emailboxedt.Visible = false;
-            ssboxedt.Visible = false;
-            phoneboxedt.Visible = false;
-            btnSaveEdt.Visible = false;
             btnUpdateMem.Visible = false;
+            panelMem.Visible = false;
+            panelWork.Visible = false;
+            panelInst.Visible = false;
+            btnSaveEdit.Visible = false;
         }
 
         private void memberOpenMenu_Click(object sender, EventArgs e)
         {
+            panelWork.Visible = false;
+            panelInst.Visible = false;
             try 
             { 
                 dtGrid1.DataSource = cont.SelectAll(openMemberM.Text);
@@ -63,19 +54,28 @@ namespace Another
 
         private void workoutOpenMenu_Click(object sender, EventArgs e)
         {
+            panelMem.Visible = false;
+            panelInst.Visible = false;
             try 
             { 
                 dtGrid1.DataSource = cont.SelectAll(openWorkoutM.Text);
-                labelGrid.Text = openWorkoutM.Text;
+                labelGrid.Text = openWorkoutM.Text; 
+               
             }
             catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
             dtGrid1.Visible = true;
             btnDelete.Visible = true;
             labelGrid.Visible = true;
+            btnEdtMem.Visible = true;
+            btnUpdateMem.Visible = true;
+            
+
         }
 
         private void instructorOpenMenu_Click(object sender, EventArgs e)
         {
+            panelMem.Visible = false;
+            panelWork.Visible = false;
             try 
             { 
                 dtGrid1.DataSource = cont.SelectAll(openInstructorM.Text);
@@ -85,6 +85,8 @@ namespace Another
             dtGrid1.Visible = true;
             btnDelete.Visible = true;
             labelGrid.Visible = true;
+            btnEdtMem.Visible = true;
+            btnUpdateMem.Visible = true;
         }
         
         private void btnDelete_Click(object sender, EventArgs e)
@@ -163,13 +165,11 @@ namespace Another
             if (cbTable.SelectedItem.ToString().Equals("Workout"))
             {
                 string name;
-                string ss;
                 foreach (DataGridViewRow item in this.dtGrid1.SelectedRows)
-                {                    
-                    ss = dtGrid1.CurrentCell.Value.ToString();                    
-                    name = dtGrid1.SelectedCells[1].Value.ToString();
-                    BookMemberWorkout bmw = new BookMemberWorkout(ss, name);
-                    bmw.Label2.Text = ss;
+                {
+                    this.dtGrid1.CurrentCell = this.dtGrid1[1, 0];
+                    name = dtGrid1.CurrentCell.Value.ToString();
+                    BookMemberWorkout bmw = new BookMemberWorkout(name);
                     bmw.Label1.Text = name;
                     bmw.ShowDialog();
                 }
@@ -178,26 +178,11 @@ namespace Another
 
         private void btnEdtMem_Click(object sender, EventArgs e)
         {
+            btnSaveEdit.Visible = true;
             if (labelGrid.Text == openMemberM.Text)
             {
+                panelMem.Visible = true;
 
-
-                labelcityedt.Visible = true;
-                labelemailedt.Visible = true;
-                labelnameedt.Visible = true;
-                labelphoneedt.Visible = true;
-                labelssedt.Visible = true;
-                labelzipedt.Visible = true;
-                labelstreetedt.Visible = true;
-                nameboxedt.Visible = true;
-                cityoxedt.Visible = true;
-                streetboxedt.Visible = true;
-                zipboxedt.Visible = true;
-                emailboxedt.Visible = true;
-                ssboxedt.Visible = true;
-                phoneboxedt.Visible = true;
-                btnSaveEdt.Visible = true;
-             
                 foreach (DataGridViewRow item in this.dtGrid1.SelectedRows)
                 {
                     ssboxedt.Text = item.Cells[0].Value.ToString();
@@ -211,19 +196,68 @@ namespace Another
                 }
 
             }
-            else
+            else if (labelGrid.Text == openWorkoutM.Text)
             {
-                MessageBox.Show("Fel, fixar det sen.");
+                
+              
+                panelWork.Visible = true;
+                foreach (DataGridViewRow item in this.dtGrid1.SelectedRows)
+                {
+                    txtEditWorkID.Text = item.Cells[0].Value.ToString();
+                    txtEditWorkNm.Text = item.Cells[1].Value.ToString();
+                    txtEditWorkDt.Text = item.Cells[2].Value.ToString();
+                    txtEditWorkTm.Text = item.Cells[3].Value.ToString();
+                    txtEditWorkLt.Text = item.Cells[4].Value.ToString();
+                    txtEditWorkLv.Text = item.Cells[5].Value.ToString();
+                
 
+                }
             }
+            else if (labelGrid.Text == openInstructorM.Text)
+            {
+                
+                panelInst.Visible = true;
+                foreach (DataGridViewRow item in this.dtGrid1.SelectedRows)
+                {
+                    txtEditInstID.Text = item.Cells[0].Value.ToString();
+                    txtEditInstSS.Text = item.Cells[1].Value.ToString();
+                    txtEditInstNm.Text = item.Cells[2].Value.ToString();
+                    txtEditInstCt.Text = item.Cells[3].Value.ToString();
+                    txtEditInstSt.Text = item.Cells[4].Value.ToString();
+                    txtEditInstZip.Text = item.Cells[5].Value.ToString();
+                    txtEditInstEm.Text = item.Cells[6].Value.ToString();
+                    txtEditInstPh.Text = item.Cells[7].Value.ToString();
 
+                }
+            }
         }
 
-        private void btnSaveEdt_Click(object sender, EventArgs e)
+        private void btnUpdateMem_Click(object sender, EventArgs e)
         {
             if (labelGrid.Text == openMemberM.Text)
             {
+                try { dtGrid1.DataSource = cont.SelectAll(openMemberM.Text); }
+                catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
+            }
+            else if (labelGrid.Text == openWorkoutM.Text)
+            {
+                try { dtGrid1.DataSource = cont.SelectAll(openWorkoutM.Text); }
+                catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
+            }
+            else if (labelGrid.Text == openInstructorM.Text)
+            {
+                try { dtGrid1.DataSource = cont.SelectAll(openInstructorM.Text); }
+                catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
 
+
+
+            }
+        }
+
+        private void btnSaveEdit_Click(object sender, EventArgs e)
+        {
+            if (labelGrid.Text == openMemberM.Text)
+            {
                 if (String.IsNullOrEmpty(ssboxedt.Text) || String.IsNullOrEmpty(nameboxedt.Text) || String.IsNullOrEmpty(cityoxedt.Text) || String.IsNullOrEmpty(streetboxedt.Text) || String.IsNullOrEmpty(zipboxedt.Text) || String.IsNullOrEmpty(emailboxedt.Text) || String.IsNullOrEmpty(phoneboxedt.Text))
                 {
                     MessageBox.Show("Please fill out all the fields");
@@ -235,21 +269,8 @@ namespace Another
                         mcont.EditMember(ssboxedt.Text, nameboxedt.Text, cityoxedt.Text, streetboxedt.Text, zipboxedt.Text, emailboxedt.Text, phoneboxedt.Text, dtGrid1.CurrentCell.Value.ToString());
                         MessageBox.Show("Changes saved succesfully");
 
-                        labelcityedt.Visible = false;
-                        labelemailedt.Visible = false;
-                        labelnameedt.Visible = false;
-                        labelphoneedt.Visible = false;
-                        labelssedt.Visible = false;
-                        labelzipedt.Visible = false;
-                        labelstreetedt.Visible = false;
-                        nameboxedt.Visible = false;
-                        cityoxedt.Visible = false;
-                        streetboxedt.Visible = false;
-                        zipboxedt.Visible = false;
-                        emailboxedt.Visible = false;
-                        ssboxedt.Visible = false;
-                        phoneboxedt.Visible = false;
-                        btnSaveEdt.Visible = false;
+                        panelMem.Visible = false;
+                        btnSaveEdit.Visible = false;
                     }
                     catch (SqlException)
                     {
@@ -259,20 +280,74 @@ namespace Another
                     }
                 }
             }
-            else
+            else if (labelGrid.Text == openWorkoutM.Text)
             {
-                MessageBox.Show("Fel här också");
 
+                {
+                    if (String.IsNullOrEmpty(txtEditWorkID.Text) || String.IsNullOrEmpty(txtEditWorkNm.Text) || String.IsNullOrEmpty(txtEditWorkDt.Text)
+                       || String.IsNullOrEmpty(txtEditWorkTm.Text) || String.IsNullOrEmpty(txtEditWorkLt.Text) || String.IsNullOrEmpty(txtEditWorkLv.Text))
+                    {
+
+                        MessageBox.Show("Please fill out all the fields");
+                    }
+                    else
+                    {
+                        try
+                        {
+                            wcont.EditWorkout(txtEditWorkID.Text, txtEditWorkNm.Text, txtEditWorkDt.Text, txtEditWorkTm.Text, txtEditWorkLt.Text, txtEditWorkLv.Text, dtGrid1.CurrentCell.Value.ToString());
+                            MessageBox.Show("Changes saved successfully");
+                            
+                            panelWork.Visible = false;
+                            btnSaveEdit.Visible = false;
+
+
+                        }
+                        catch (SqlException)
+                        {
+                            MessageBox.Show("The WorkID \"" + txtEditWorkID.Text + "\"is already registered");
+                        }
+                    }
+
+
+                }
+
+            }else if (labelGrid.Text == openInstructorM.Text)
+            {
+                if (String.IsNullOrEmpty(txtEditInstID.Text) || String.IsNullOrEmpty(txtEditInstSS.Text) || String.IsNullOrEmpty(txtEditInstNm.Text) || String.IsNullOrEmpty(txtEditInstCt.Text) || String.IsNullOrEmpty(txtEditInstSt.Text) || String.IsNullOrEmpty(txtEditInstZip.Text) || String.IsNullOrEmpty(txtEditInstEm.Text) || String.IsNullOrEmpty(txtEditInstPh.Text))
+                {
+                    MessageBox.Show("Please fill out all the fields");
+
+                    
+                }
+                else
+                {
+                    try
+                    {
+                        icont.EditInstructor(txtEditInstID.Text, txtEditInstSS.Text, txtEditInstNm.Text, txtEditInstCt.Text, txtEditInstSt.Text, txtEditInstZip.Text, txtEditInstEm.Text, txtEditInstPh.Text, dtGrid1.CurrentCell.Value.ToString());
+                        MessageBox.Show("Changes saved successfully");
+                        
+                        panelInst.Visible = false;
+                        btnSaveEdit.Visible = false;
+ 
+                    }
+                    catch (SqlException e2)
+                    {
+                        MessageBox.Show(e2.ToString());
+                    }
+                }
             }
 
         }
 
-        private void btnUpdateMem_Click(object sender, EventArgs e)
+        private void mainMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            try { dtGrid1.DataSource = cont.SelectAll(openMemberM.Text); }
-            catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
 
         }
+
+
+
+        }
+
 
         //######### TA EJ BORT NEDASTÅEDE RAD!! /MEISAM ###########
         /*private void dtGrid1_CellClick_1(object sender, DataGridViewCellEventArgs e)
@@ -282,4 +357,3 @@ namespace Another
 
     }
 
-}
