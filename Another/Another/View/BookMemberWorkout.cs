@@ -15,7 +15,7 @@ namespace Another.View
     {
         MainController cont = new MainController();
         MemberController mcont = new MemberController();
-
+        BookMemberController bmcont = new BookMemberController();
         Label label1;
         //Label label2;
 
@@ -34,26 +34,34 @@ namespace Another.View
         public BookMemberWorkout(string ss, string name)
         {
             InitializeComponent();
-            // Fill cbWorkout with name from Wrokout(table)
-            foreach (DataRow dr in cont.GetWorkout().Rows)
-            {
-                cbWorkout.Items.Add(dr["name"].ToString());
-            }
+            cbWorkout.Items.Add("Yoga");
+            cbWorkout.Items.Add("Aerobics");
+            cbWorkout.Items.Add("Boxning");
             label1.Text = ss;
             label.Text = name;
         }
 
-        /*private void btnBook_Click(object sender, EventArgs e)
+        private void cbWorkout_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbWorkout.Items.Count == 0)
-            //PROBLEM! Uppdaterar inte efter att man lägger in en ny workout
-            //eftersom items.count då inte är 0
-            {
-                foreach (DataRow dr in cont.GetWorkout().Rows)
-                {
-                    cbWorkout.Items.Add(dr["name"].ToString());
-                }
-            } 
-        }*/
+            dtGrid2.DataSource = bmcont.selectWorkout(cbWorkout.SelectedItem.ToString());
+        }
+
     }
 }
+
+
+
+
+
+/*private void btnBook_Click(object sender, EventArgs e)
+{
+    if (cbWorkout.Items.Count == 0)
+    //PROBLEM! Uppdaterar inte efter att man lägger in en ny workout
+    //eftersom items.count då inte är 0
+    {
+        foreach (DataRow dr in cont.GetWorkout().Rows)
+        {
+            cbWorkout.Items.Add(dr["name"].ToString());
+        }
+    } 
+}*/
