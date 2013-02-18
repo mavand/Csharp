@@ -161,8 +161,8 @@ namespace Another
         }
 
         private void btnBook_Click(object sender, EventArgs e)
-        {
-            if (cbTable.SelectedItem.ToString().Equals("Workout"))
+        {// saknas try/catch!!!
+            if (labelGrid.Text == "Member" && cbTable.SelectedItem.ToString().Equals("Workout"))
             {
                 string name;
                 string ss;
@@ -175,7 +175,7 @@ namespace Another
                     bmw.Label1.Text = name;
                     bmw.ShowDialog();
                 }
-            } 
+            }//else if för de andra tabellerna
         }
 
         private void btnEdtMem_Click(object sender, EventArgs e)
@@ -340,12 +340,7 @@ namespace Another
             }
 
         }
-
-        private void mainMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
+        
 
 
         }
