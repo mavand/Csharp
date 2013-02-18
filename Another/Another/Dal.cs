@@ -94,31 +94,15 @@ namespace Another
             con.Close();
             return dt;
         }
-        public DataTable EditMember(string ss, string name, string city, string street, string zip, string email, string phone, string pk)
+        public DataTable EditMember(string ss, string name, string city, string street, string zip, string email, string phone, string ess)
         {
-            SqlDataAdapter da = new SqlDataAdapter("Update Member set SocialSecurity='" + ss + "'," + "Name='" + name + "'," + "City='" + city + "', " + "Street='" + street + "', " + "ZipCode='" + zip + "', " + "Email='" + email + "', " + "Phone='" + phone + "' where SocialSecurity='" + pk + "'", con);
+            SqlDataAdapter da = new SqlDataAdapter("Update Member set SocialSecurity='" + ss + "'," + "Name='" + name + "'," + "City='" + city + "', " + "Street='" + street + "', " + "ZipCode='" + zip + "', " + "Email='" + email + "', " + "Phone='" + phone + "' where SocialSecurity='" + ess + "'", con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             con.Close();
             return dt;
 
         }
-        public DataTable EditWorkout(string wID, string name, string date, string time, string length, string level, string pk)
-        {
-            SqlDataAdapter da = new SqlDataAdapter("Update Workout set WorkID='" + wID + "'," + "Name='" + name + "'," + "Date='" + date + "', " + "Time='" + time + "', " + "Length='" + length + "', " + "Level='" + level + "' where WorkID='" + pk + "'", con);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            con.Close();
-            return dt;
-
-        }
-        public DataTable EditInstructor(string instID, string ss, string name, string city, string street, string zip, string email, string phone, string pk)
-        {
-            SqlDataAdapter da = new SqlDataAdapter("Update Instructor set InstID='" + instID + "'," + "SocialSecurity='" + ss + "'," + "Name='" + name + "'," + "City='" + city + "', " + "Street='" + street + "', " + "ZipCode='" + zip + "', " + "Email='" + email + "', " + "Phone='" + phone + "' where InstID='" + pk + "'", con);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            con.Close();
-            return dt;
-        }
+        
     }
 }

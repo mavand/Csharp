@@ -52,9 +52,7 @@
             this.labelGrid = new System.Windows.Forms.Label();
             this.btnBook = new System.Windows.Forms.Button();
             this.cbTable = new System.Windows.Forms.ComboBox();
-            this.btnUpdateMem = new System.Windows.Forms.Button();
-            this.btnEdtMem = new System.Windows.Forms.Button();
-            this.panelMem = new System.Windows.Forms.Panel();
+            this.btnSaveEdt = new System.Windows.Forms.Button();
             this.labelcityedt = new System.Windows.Forms.Label();
             this.labelzipedt = new System.Windows.Forms.Label();
             this.labelstreetedt = new System.Windows.Forms.Label();
@@ -69,44 +67,11 @@
             this.emailboxedt = new System.Windows.Forms.TextBox();
             this.nameboxedt = new System.Windows.Forms.TextBox();
             this.ssboxedt = new System.Windows.Forms.TextBox();
-            this.panelWork = new System.Windows.Forms.Panel();
-            this.txtEditWorkDt = new System.Windows.Forms.TextBox();
-            this.level = new System.Windows.Forms.Label();
-            this.length = new System.Windows.Forms.Label();
-            this.time = new System.Windows.Forms.Label();
-            this.date = new System.Windows.Forms.Label();
-            this.name = new System.Windows.Forms.Label();
-            this.wID = new System.Windows.Forms.Label();
-            this.txtEditWorkLv = new System.Windows.Forms.TextBox();
-            this.txtEditWorkLt = new System.Windows.Forms.TextBox();
-            this.txtEditWorkTm = new System.Windows.Forms.TextBox();
-            this.txtEditWorkNm = new System.Windows.Forms.TextBox();
-            this.txtEditWorkID = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.panelInst = new System.Windows.Forms.Panel();
-            this.txtEditInstID = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtEditInstPh = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtEditInstZip = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtEditInstSt = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtEditInstEm = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtEditInstNm = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtEditInstSS = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.btnSaveEdit = new System.Windows.Forms.Button();
-            this.txtEditInstCt = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.btnUpdateMem = new System.Windows.Forms.Button();
+            this.btnEdtMem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtGrid1)).BeginInit();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panelMem.SuspendLayout();
-            this.panelWork.SuspendLayout();
-            this.panelInst.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtGrid1
@@ -127,7 +92,6 @@
             this.mainMenu.Size = new System.Drawing.Size(570, 24);
             this.mainMenu.TabIndex = 2;
             this.mainMenu.Text = "menuStrip1";
-            this.mainMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.mainMenu_ItemClicked);
             // 
             // fileMenu
             // 
@@ -219,7 +183,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(29, 27);
+            this.pictureBox1.Location = new System.Drawing.Point(29, 34);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(121, 120);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -231,7 +195,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkRed;
-            this.label1.Location = new System.Drawing.Point(161, 33);
+            this.label1.Location = new System.Drawing.Point(165, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(182, 68);
             this.label1.TabIndex = 5;
@@ -314,6 +278,128 @@
             this.cbTable.Size = new System.Drawing.Size(100, 21);
             this.cbTable.TabIndex = 58;
             // 
+            // btnSaveEdt
+            // 
+            this.btnSaveEdt.Location = new System.Drawing.Point(459, 167);
+            this.btnSaveEdt.Name = "btnSaveEdt";
+            this.btnSaveEdt.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveEdt.TabIndex = 73;
+            this.btnSaveEdt.Text = "Save";
+            this.btnSaveEdt.UseVisualStyleBackColor = true;
+            this.btnSaveEdt.Click += new System.EventHandler(this.btnSaveEdt_Click);
+            // 
+            // labelcityedt
+            // 
+            this.labelcityedt.AutoSize = true;
+            this.labelcityedt.Location = new System.Drawing.Point(456, 115);
+            this.labelcityedt.Name = "labelcityedt";
+            this.labelcityedt.Size = new System.Drawing.Size(24, 13);
+            this.labelcityedt.TabIndex = 72;
+            this.labelcityedt.Text = "City";
+            // 
+            // labelzipedt
+            // 
+            this.labelzipedt.AutoSize = true;
+            this.labelzipedt.Location = new System.Drawing.Point(456, 76);
+            this.labelzipedt.Name = "labelzipedt";
+            this.labelzipedt.Size = new System.Drawing.Size(46, 13);
+            this.labelzipedt.TabIndex = 71;
+            this.labelzipedt.Text = "Zipcode";
+            // 
+            // labelstreetedt
+            // 
+            this.labelstreetedt.AutoSize = true;
+            this.labelstreetedt.Location = new System.Drawing.Point(456, 34);
+            this.labelstreetedt.Name = "labelstreetedt";
+            this.labelstreetedt.Size = new System.Drawing.Size(35, 13);
+            this.labelstreetedt.TabIndex = 70;
+            this.labelstreetedt.Text = "Street";
+            // 
+            // labelphoneedt
+            // 
+            this.labelphoneedt.AutoSize = true;
+            this.labelphoneedt.Location = new System.Drawing.Point(350, 154);
+            this.labelphoneedt.Name = "labelphoneedt";
+            this.labelphoneedt.Size = new System.Drawing.Size(38, 13);
+            this.labelphoneedt.TabIndex = 69;
+            this.labelphoneedt.Text = "Phone";
+            // 
+            // labelemailedt
+            // 
+            this.labelemailedt.AutoSize = true;
+            this.labelemailedt.Location = new System.Drawing.Point(353, 115);
+            this.labelemailedt.Name = "labelemailedt";
+            this.labelemailedt.Size = new System.Drawing.Size(32, 13);
+            this.labelemailedt.TabIndex = 68;
+            this.labelemailedt.Text = "Email";
+            // 
+            // labelnameedt
+            // 
+            this.labelnameedt.AutoSize = true;
+            this.labelnameedt.Location = new System.Drawing.Point(350, 76);
+            this.labelnameedt.Name = "labelnameedt";
+            this.labelnameedt.Size = new System.Drawing.Size(35, 13);
+            this.labelnameedt.TabIndex = 67;
+            this.labelnameedt.Text = "Name";
+            // 
+            // labelssedt
+            // 
+            this.labelssedt.AutoSize = true;
+            this.labelssedt.Location = new System.Drawing.Point(350, 34);
+            this.labelssedt.Name = "labelssedt";
+            this.labelssedt.Size = new System.Drawing.Size(77, 13);
+            this.labelssedt.TabIndex = 66;
+            this.labelssedt.Text = "Social Security";
+            // 
+            // cityoxedt
+            // 
+            this.cityoxedt.Location = new System.Drawing.Point(459, 131);
+            this.cityoxedt.Name = "cityoxedt";
+            this.cityoxedt.Size = new System.Drawing.Size(100, 20);
+            this.cityoxedt.TabIndex = 65;
+            // 
+            // zipboxedt
+            // 
+            this.zipboxedt.Location = new System.Drawing.Point(459, 92);
+            this.zipboxedt.Name = "zipboxedt";
+            this.zipboxedt.Size = new System.Drawing.Size(100, 20);
+            this.zipboxedt.TabIndex = 64;
+            // 
+            // streetboxedt
+            // 
+            this.streetboxedt.Location = new System.Drawing.Point(459, 53);
+            this.streetboxedt.Name = "streetboxedt";
+            this.streetboxedt.Size = new System.Drawing.Size(100, 20);
+            this.streetboxedt.TabIndex = 63;
+            // 
+            // phoneboxedt
+            // 
+            this.phoneboxedt.Location = new System.Drawing.Point(353, 170);
+            this.phoneboxedt.Name = "phoneboxedt";
+            this.phoneboxedt.Size = new System.Drawing.Size(100, 20);
+            this.phoneboxedt.TabIndex = 62;
+            // 
+            // emailboxedt
+            // 
+            this.emailboxedt.Location = new System.Drawing.Point(353, 131);
+            this.emailboxedt.Name = "emailboxedt";
+            this.emailboxedt.Size = new System.Drawing.Size(100, 20);
+            this.emailboxedt.TabIndex = 61;
+            // 
+            // nameboxedt
+            // 
+            this.nameboxedt.Location = new System.Drawing.Point(353, 92);
+            this.nameboxedt.Name = "nameboxedt";
+            this.nameboxedt.Size = new System.Drawing.Size(100, 20);
+            this.nameboxedt.TabIndex = 60;
+            // 
+            // ssboxedt
+            // 
+            this.ssboxedt.Location = new System.Drawing.Point(353, 53);
+            this.ssboxedt.Name = "ssboxedt";
+            this.ssboxedt.Size = new System.Drawing.Size(100, 20);
+            this.ssboxedt.TabIndex = 59;
+            // 
             // btnUpdateMem
             // 
             this.btnUpdateMem.Location = new System.Drawing.Point(459, 298);
@@ -334,436 +420,28 @@
             this.btnEdtMem.UseVisualStyleBackColor = true;
             this.btnEdtMem.Click += new System.EventHandler(this.btnEdtMem_Click);
             // 
-            // panelMem
-            // 
-            this.panelMem.Controls.Add(this.labelcityedt);
-            this.panelMem.Controls.Add(this.labelzipedt);
-            this.panelMem.Controls.Add(this.labelstreetedt);
-            this.panelMem.Controls.Add(this.labelphoneedt);
-            this.panelMem.Controls.Add(this.labelemailedt);
-            this.panelMem.Controls.Add(this.labelnameedt);
-            this.panelMem.Controls.Add(this.labelssedt);
-            this.panelMem.Controls.Add(this.cityoxedt);
-            this.panelMem.Controls.Add(this.zipboxedt);
-            this.panelMem.Controls.Add(this.streetboxedt);
-            this.panelMem.Controls.Add(this.phoneboxedt);
-            this.panelMem.Controls.Add(this.emailboxedt);
-            this.panelMem.Controls.Add(this.nameboxedt);
-            this.panelMem.Controls.Add(this.ssboxedt);
-            this.panelMem.Location = new System.Drawing.Point(344, 27);
-            this.panelMem.Name = "panelMem";
-            this.panelMem.Size = new System.Drawing.Size(226, 165);
-            this.panelMem.TabIndex = 76;
-            // 
-            // labelcityedt
-            // 
-            this.labelcityedt.AutoSize = true;
-            this.labelcityedt.Location = new System.Drawing.Point(111, 87);
-            this.labelcityedt.Name = "labelcityedt";
-            this.labelcityedt.Size = new System.Drawing.Size(24, 13);
-            this.labelcityedt.TabIndex = 87;
-            this.labelcityedt.Text = "City";
-            // 
-            // labelzipedt
-            // 
-            this.labelzipedt.AutoSize = true;
-            this.labelzipedt.Location = new System.Drawing.Point(111, 48);
-            this.labelzipedt.Name = "labelzipedt";
-            this.labelzipedt.Size = new System.Drawing.Size(46, 13);
-            this.labelzipedt.TabIndex = 86;
-            this.labelzipedt.Text = "Zipcode";
-            // 
-            // labelstreetedt
-            // 
-            this.labelstreetedt.AutoSize = true;
-            this.labelstreetedt.Location = new System.Drawing.Point(111, 6);
-            this.labelstreetedt.Name = "labelstreetedt";
-            this.labelstreetedt.Size = new System.Drawing.Size(35, 13);
-            this.labelstreetedt.TabIndex = 85;
-            this.labelstreetedt.Text = "Street";
-            // 
-            // labelphoneedt
-            // 
-            this.labelphoneedt.AutoSize = true;
-            this.labelphoneedt.Location = new System.Drawing.Point(5, 126);
-            this.labelphoneedt.Name = "labelphoneedt";
-            this.labelphoneedt.Size = new System.Drawing.Size(38, 13);
-            this.labelphoneedt.TabIndex = 84;
-            this.labelphoneedt.Text = "Phone";
-            // 
-            // labelemailedt
-            // 
-            this.labelemailedt.AutoSize = true;
-            this.labelemailedt.Location = new System.Drawing.Point(8, 87);
-            this.labelemailedt.Name = "labelemailedt";
-            this.labelemailedt.Size = new System.Drawing.Size(32, 13);
-            this.labelemailedt.TabIndex = 83;
-            this.labelemailedt.Text = "Email";
-            // 
-            // labelnameedt
-            // 
-            this.labelnameedt.AutoSize = true;
-            this.labelnameedt.Location = new System.Drawing.Point(5, 48);
-            this.labelnameedt.Name = "labelnameedt";
-            this.labelnameedt.Size = new System.Drawing.Size(35, 13);
-            this.labelnameedt.TabIndex = 82;
-            this.labelnameedt.Text = "Name";
-            // 
-            // labelssedt
-            // 
-            this.labelssedt.AutoSize = true;
-            this.labelssedt.Location = new System.Drawing.Point(5, 6);
-            this.labelssedt.Name = "labelssedt";
-            this.labelssedt.Size = new System.Drawing.Size(77, 13);
-            this.labelssedt.TabIndex = 81;
-            this.labelssedt.Text = "Social Security";
-            // 
-            // cityoxedt
-            // 
-            this.cityoxedt.Location = new System.Drawing.Point(114, 103);
-            this.cityoxedt.Name = "cityoxedt";
-            this.cityoxedt.Size = new System.Drawing.Size(100, 20);
-            this.cityoxedt.TabIndex = 80;
-            // 
-            // zipboxedt
-            // 
-            this.zipboxedt.Location = new System.Drawing.Point(114, 64);
-            this.zipboxedt.Name = "zipboxedt";
-            this.zipboxedt.Size = new System.Drawing.Size(100, 20);
-            this.zipboxedt.TabIndex = 79;
-            // 
-            // streetboxedt
-            // 
-            this.streetboxedt.Location = new System.Drawing.Point(114, 25);
-            this.streetboxedt.Name = "streetboxedt";
-            this.streetboxedt.Size = new System.Drawing.Size(100, 20);
-            this.streetboxedt.TabIndex = 78;
-            // 
-            // phoneboxedt
-            // 
-            this.phoneboxedt.Location = new System.Drawing.Point(8, 142);
-            this.phoneboxedt.Name = "phoneboxedt";
-            this.phoneboxedt.Size = new System.Drawing.Size(100, 20);
-            this.phoneboxedt.TabIndex = 77;
-            // 
-            // emailboxedt
-            // 
-            this.emailboxedt.Location = new System.Drawing.Point(8, 103);
-            this.emailboxedt.Name = "emailboxedt";
-            this.emailboxedt.Size = new System.Drawing.Size(100, 20);
-            this.emailboxedt.TabIndex = 76;
-            // 
-            // nameboxedt
-            // 
-            this.nameboxedt.Location = new System.Drawing.Point(8, 64);
-            this.nameboxedt.Name = "nameboxedt";
-            this.nameboxedt.Size = new System.Drawing.Size(100, 20);
-            this.nameboxedt.TabIndex = 75;
-            // 
-            // ssboxedt
-            // 
-            this.ssboxedt.Location = new System.Drawing.Point(8, 25);
-            this.ssboxedt.Name = "ssboxedt";
-            this.ssboxedt.Size = new System.Drawing.Size(100, 20);
-            this.ssboxedt.TabIndex = 74;
-            // 
-            // panelWork
-            // 
-            this.panelWork.Controls.Add(this.txtEditWorkDt);
-            this.panelWork.Controls.Add(this.level);
-            this.panelWork.Controls.Add(this.length);
-            this.panelWork.Controls.Add(this.time);
-            this.panelWork.Controls.Add(this.date);
-            this.panelWork.Controls.Add(this.name);
-            this.panelWork.Controls.Add(this.wID);
-            this.panelWork.Controls.Add(this.txtEditWorkLv);
-            this.panelWork.Controls.Add(this.txtEditWorkLt);
-            this.panelWork.Controls.Add(this.txtEditWorkTm);
-            this.panelWork.Controls.Add(this.txtEditWorkNm);
-            this.panelWork.Controls.Add(this.txtEditWorkID);
-            this.panelWork.Controls.Add(this.label10);
-            this.panelWork.Location = new System.Drawing.Point(344, 27);
-            this.panelWork.Name = "panelWork";
-            this.panelWork.Size = new System.Drawing.Size(226, 162);
-            this.panelWork.TabIndex = 77;
-            // 
-            // txtEditWorkDt
-            // 
-            this.txtEditWorkDt.Location = new System.Drawing.Point(7, 104);
-            this.txtEditWorkDt.Name = "txtEditWorkDt";
-            this.txtEditWorkDt.Size = new System.Drawing.Size(100, 20);
-            this.txtEditWorkDt.TabIndex = 100;
-            // 
-            // level
-            // 
-            this.level.AutoSize = true;
-            this.level.Location = new System.Drawing.Point(111, 88);
-            this.level.Name = "level";
-            this.level.Size = new System.Drawing.Size(33, 13);
-            this.level.TabIndex = 99;
-            this.level.Text = "Level";
-            // 
-            // length
-            // 
-            this.length.AutoSize = true;
-            this.length.Location = new System.Drawing.Point(112, 48);
-            this.length.Name = "length";
-            this.length.Size = new System.Drawing.Size(40, 13);
-            this.length.TabIndex = 98;
-            this.length.Text = "Length";
-            // 
-            // time
-            // 
-            this.time.AutoSize = true;
-            this.time.Location = new System.Drawing.Point(111, 8);
-            this.time.Name = "time";
-            this.time.Size = new System.Drawing.Size(30, 13);
-            this.time.TabIndex = 97;
-            this.time.Text = "Time";
-            // 
-            // date
-            // 
-            this.date.AutoSize = true;
-            this.date.Location = new System.Drawing.Point(5, 88);
-            this.date.Name = "date";
-            this.date.Size = new System.Drawing.Size(30, 13);
-            this.date.TabIndex = 96;
-            this.date.Text = "Date";
-            // 
-            // name
-            // 
-            this.name.AutoSize = true;
-            this.name.Location = new System.Drawing.Point(7, 49);
-            this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(35, 13);
-            this.name.TabIndex = 95;
-            this.name.Text = "Name";
-            // 
-            // wID
-            // 
-            this.wID.AutoSize = true;
-            this.wID.Location = new System.Drawing.Point(5, 8);
-            this.wID.Name = "wID";
-            this.wID.Size = new System.Drawing.Size(44, 13);
-            this.wID.TabIndex = 94;
-            this.wID.Text = "WorkID";
-            // 
-            // txtEditWorkLv
-            // 
-            this.txtEditWorkLv.Location = new System.Drawing.Point(113, 103);
-            this.txtEditWorkLv.Name = "txtEditWorkLv";
-            this.txtEditWorkLv.Size = new System.Drawing.Size(100, 20);
-            this.txtEditWorkLv.TabIndex = 93;
-            // 
-            // txtEditWorkLt
-            // 
-            this.txtEditWorkLt.Location = new System.Drawing.Point(113, 65);
-            this.txtEditWorkLt.Name = "txtEditWorkLt";
-            this.txtEditWorkLt.Size = new System.Drawing.Size(100, 20);
-            this.txtEditWorkLt.TabIndex = 92;
-            // 
-            // txtEditWorkTm
-            // 
-            this.txtEditWorkTm.Location = new System.Drawing.Point(114, 25);
-            this.txtEditWorkTm.Name = "txtEditWorkTm";
-            this.txtEditWorkTm.Size = new System.Drawing.Size(100, 20);
-            this.txtEditWorkTm.TabIndex = 91;
-            // 
-            // txtEditWorkNm
-            // 
-            this.txtEditWorkNm.Location = new System.Drawing.Point(8, 65);
-            this.txtEditWorkNm.Name = "txtEditWorkNm";
-            this.txtEditWorkNm.Size = new System.Drawing.Size(100, 20);
-            this.txtEditWorkNm.TabIndex = 90;
-            // 
-            // txtEditWorkID
-            // 
-            this.txtEditWorkID.Location = new System.Drawing.Point(8, 25);
-            this.txtEditWorkID.Name = "txtEditWorkID";
-            this.txtEditWorkID.Size = new System.Drawing.Size(100, 20);
-            this.txtEditWorkID.TabIndex = 89;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(5, 6);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(0, 13);
-            this.label10.TabIndex = 81;
-            // 
-            // panelInst
-            // 
-            this.panelInst.Controls.Add(this.label6);
-            this.panelInst.Controls.Add(this.txtEditInstCt);
-            this.panelInst.Controls.Add(this.txtEditInstID);
-            this.panelInst.Controls.Add(this.label8);
-            this.panelInst.Controls.Add(this.txtEditInstPh);
-            this.panelInst.Controls.Add(this.label7);
-            this.panelInst.Controls.Add(this.txtEditInstZip);
-            this.panelInst.Controls.Add(this.label5);
-            this.panelInst.Controls.Add(this.txtEditInstSt);
-            this.panelInst.Controls.Add(this.label4);
-            this.panelInst.Controls.Add(this.txtEditInstEm);
-            this.panelInst.Controls.Add(this.label3);
-            this.panelInst.Controls.Add(this.txtEditInstNm);
-            this.panelInst.Controls.Add(this.label11);
-            this.panelInst.Controls.Add(this.txtEditInstSS);
-            this.panelInst.Controls.Add(this.label12);
-            this.panelInst.Location = new System.Drawing.Point(344, 27);
-            this.panelInst.Name = "panelInst";
-            this.panelInst.Size = new System.Drawing.Size(226, 166);
-            this.panelInst.TabIndex = 78;
-            // 
-            // txtEditInstID
-            // 
-            this.txtEditInstID.Location = new System.Drawing.Point(10, 23);
-            this.txtEditInstID.Name = "txtEditInstID";
-            this.txtEditInstID.Size = new System.Drawing.Size(100, 20);
-            this.txtEditInstID.TabIndex = 62;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 6);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 13);
-            this.label8.TabIndex = 61;
-            this.label8.Text = "Instructor ID";
-            // 
-            // txtEditInstPh
-            // 
-            this.txtEditInstPh.Location = new System.Drawing.Point(9, 143);
-            this.txtEditInstPh.Name = "txtEditInstPh";
-            this.txtEditInstPh.Size = new System.Drawing.Size(100, 20);
-            this.txtEditInstPh.TabIndex = 60;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 127);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 13);
-            this.label7.TabIndex = 59;
-            this.label7.Text = "Phone";
-            // 
-            // txtEditInstZip
-            // 
-            this.txtEditInstZip.AcceptsReturn = true;
-            this.txtEditInstZip.Location = new System.Drawing.Point(115, 104);
-            this.txtEditInstZip.Name = "txtEditInstZip";
-            this.txtEditInstZip.Size = new System.Drawing.Size(100, 20);
-            this.txtEditInstZip.TabIndex = 56;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(113, 86);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 13);
-            this.label5.TabIndex = 55;
-            this.label5.Text = "Zipcode";
-            // 
-            // txtEditInstSt
-            // 
-            this.txtEditInstSt.Location = new System.Drawing.Point(115, 64);
-            this.txtEditInstSt.Name = "txtEditInstSt";
-            this.txtEditInstSt.Size = new System.Drawing.Size(100, 20);
-            this.txtEditInstSt.TabIndex = 54;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(112, 47);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 53;
-            this.label4.Text = "Street";
-            // 
-            // txtEditInstEm
-            // 
-            this.txtEditInstEm.Location = new System.Drawing.Point(9, 104);
-            this.txtEditInstEm.Name = "txtEditInstEm";
-            this.txtEditInstEm.Size = new System.Drawing.Size(100, 20);
-            this.txtEditInstEm.TabIndex = 52;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 88);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 13);
-            this.label3.TabIndex = 51;
-            this.label3.Text = "Email";
-            // 
-            // txtEditInstNm
-            // 
-            this.txtEditInstNm.Location = new System.Drawing.Point(9, 64);
-            this.txtEditInstNm.Name = "txtEditInstNm";
-            this.txtEditInstNm.Size = new System.Drawing.Size(100, 20);
-            this.txtEditInstNm.TabIndex = 50;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 45);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(35, 13);
-            this.label11.TabIndex = 49;
-            this.label11.Text = "Name";
-            // 
-            // txtEditInstSS
-            // 
-            this.txtEditInstSS.Location = new System.Drawing.Point(113, 23);
-            this.txtEditInstSS.Name = "txtEditInstSS";
-            this.txtEditInstSS.Size = new System.Drawing.Size(100, 20);
-            this.txtEditInstSS.TabIndex = 48;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(111, 7);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(77, 13);
-            this.label12.TabIndex = 47;
-            this.label12.Text = "Social Security";
-            // 
-            // btnSaveEdit
-            // 
-            this.btnSaveEdit.Location = new System.Drawing.Point(458, 213);
-            this.btnSaveEdit.Name = "btnSaveEdit";
-            this.btnSaveEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveEdit.TabIndex = 77;
-            this.btnSaveEdit.Text = "Save";
-            this.btnSaveEdit.UseVisualStyleBackColor = true;
-            this.btnSaveEdit.Click += new System.EventHandler(this.btnSaveEdit_Click);
-            // 
-            // txtEditInstCt
-            // 
-            this.txtEditInstCt.Location = new System.Drawing.Point(113, 143);
-            this.txtEditInstCt.Name = "txtEditInstCt";
-            this.txtEditInstCt.Size = new System.Drawing.Size(100, 20);
-            this.txtEditInstCt.TabIndex = 63;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(113, 127);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(24, 13);
-            this.label6.TabIndex = 64;
-            this.label6.Text = "City";
-            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(570, 389);
-            this.Controls.Add(this.panelInst);
-            this.Controls.Add(this.panelWork);
-            this.Controls.Add(this.btnSaveEdit);
-            this.Controls.Add(this.panelMem);
             this.Controls.Add(this.btnUpdateMem);
             this.Controls.Add(this.btnEdtMem);
+            this.Controls.Add(this.btnSaveEdt);
+            this.Controls.Add(this.labelcityedt);
+            this.Controls.Add(this.labelzipedt);
+            this.Controls.Add(this.labelstreetedt);
+            this.Controls.Add(this.labelphoneedt);
+            this.Controls.Add(this.labelemailedt);
+            this.Controls.Add(this.labelnameedt);
+            this.Controls.Add(this.labelssedt);
+            this.Controls.Add(this.cityoxedt);
+            this.Controls.Add(this.zipboxedt);
+            this.Controls.Add(this.streetboxedt);
+            this.Controls.Add(this.phoneboxedt);
+            this.Controls.Add(this.emailboxedt);
+            this.Controls.Add(this.nameboxedt);
+            this.Controls.Add(this.ssboxedt);
             this.Controls.Add(this.cbTable);
             this.Controls.Add(this.btnBook);
             this.Controls.Add(this.labelGrid);
@@ -784,12 +462,6 @@
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panelMem.ResumeLayout(false);
-            this.panelMem.PerformLayout();
-            this.panelWork.ResumeLayout(false);
-            this.panelWork.PerformLayout();
-            this.panelInst.ResumeLayout(false);
-            this.panelInst.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -820,11 +492,7 @@
         private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
         private System.Windows.Forms.Button btnBook;
         private System.Windows.Forms.ComboBox cbTable;
-        private System.Windows.Forms.Button btnUpdateMem;
-        private System.Windows.Forms.Button btnEdtMem;
-        private System.Windows.Forms.Panel panelMem;
-        private System.Windows.Forms.Panel panelWork;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnSaveEdt;
         private System.Windows.Forms.Label labelcityedt;
         private System.Windows.Forms.Label labelzipedt;
         private System.Windows.Forms.Label labelstreetedt;
@@ -839,36 +507,8 @@
         private System.Windows.Forms.TextBox emailboxedt;
         private System.Windows.Forms.TextBox nameboxedt;
         private System.Windows.Forms.TextBox ssboxedt;
-        private System.Windows.Forms.TextBox txtEditWorkDt;
-        private System.Windows.Forms.Label level;
-        private System.Windows.Forms.Label length;
-        private System.Windows.Forms.Label time;
-        private System.Windows.Forms.Label date;
-        private System.Windows.Forms.Label name;
-        private System.Windows.Forms.Label wID;
-        private System.Windows.Forms.TextBox txtEditWorkLv;
-        private System.Windows.Forms.TextBox txtEditWorkLt;
-        private System.Windows.Forms.TextBox txtEditWorkTm;
-        private System.Windows.Forms.TextBox txtEditWorkNm;
-        private System.Windows.Forms.TextBox txtEditWorkID;
-        private System.Windows.Forms.Button btnSaveEdit;
-        private System.Windows.Forms.Panel panelInst;
-        private System.Windows.Forms.TextBox txtEditInstID;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtEditInstPh;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtEditInstZip;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtEditInstSt;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtEditInstEm;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtEditInstNm;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtEditInstSS;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtEditInstCt;
+        private System.Windows.Forms.Button btnUpdateMem;
+        private System.Windows.Forms.Button btnEdtMem;
     }
 }
 

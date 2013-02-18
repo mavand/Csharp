@@ -22,9 +22,9 @@ namespace Another.Controller
             DataTable dt = dal.DeleteMember(tableName, pk);
             return dt;
         }
-        public DataTable EditMember(string ss, string name, string city, string street, string zip, string email, string phone, string pk)
+        public DataTable EditMember(string ss, string name, string city, string street, string zip, string email, string phone, string ess)
         {
-            DataTable dt = dal.EditMember(ss, name, city, street, zip, email, phone, pk);
+            DataTable dt = dal.EditMember(ss, name, city, street, zip, email, phone, ess);
             return dt;
         }
 

@@ -22,10 +22,5 @@ namespace Another.Controller
             DataTable dt = dal.DeleteInstructor(tableName, pk);
             return dt;
         }
-        public DataTable EditInstructor(string instId, string ss, string name, string city, string street, string zip, string email, string phone, string pk)
-        {
-            DataTable dt = dal.EditInstructor(instId, ss, name, city, street, zip, email, phone, pk);
-                return dt;
-        }
     }
 }
