@@ -161,8 +161,12 @@ namespace Another
         }
 
         private void btnBook_Click(object sender, EventArgs e)
-        {// saknas try/catch!!!
-            if (labelGrid.Text == "Member" && cbTable.SelectedItem.ToString().Equals("Workout"))
+        {
+            if (cbTable.SelectedItem == null)
+            {
+                MessageBox.Show("Please choose what too book");
+            }
+            else if (labelGrid.Text == "Member" && cbTable.SelectedItem.ToString().Equals("Workout"))
             {
                 string name;
                 string ss;
