@@ -154,6 +154,8 @@ namespace Another
                 dtGrid1.Visible = true;
                 btnDelete.Visible = true;
                 labelGrid.Visible = true;
+                btnEdtMem.Visible = true;
+                btnUpdateMem.Visible = true;
             }
             catch (Exception) { MessageBox.Show("Please choose a table"); }
         }
