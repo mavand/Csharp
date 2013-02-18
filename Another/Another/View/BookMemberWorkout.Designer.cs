@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.cbWorkout = new System.Windows.Forms.ComboBox();
+            this.label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -49,11 +50,21 @@
             this.cbWorkout.Size = new System.Drawing.Size(121, 21);
             this.cbWorkout.TabIndex = 1;
             // 
+            // label2
+            // 
+            this.label.AutoSize = true;
+            this.label.Location = new System.Drawing.Point(101, 39);
+            this.label.Name = "label2";
+            this.label.Size = new System.Drawing.Size(35, 13);
+            this.label.TabIndex = 2;
+            this.label.Text = "label2";
+            // 
             // BookMemberWorkout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.label);
             this.Controls.Add(this.cbWorkout);
             this.Controls.Add(this.label1);
             this.Name = "BookMemberWorkout";
@@ -66,6 +77,6 @@
         #endregion
 
         private System.Windows.Forms.Label label;
-        private System.Windows.Forms.ComboBox cbWorkout;
+        private System.Windows.Forms.ComboBox cbWorkout;        
     }
 }

@@ -165,11 +165,13 @@ namespace Another
             if (cbTable.SelectedItem.ToString().Equals("Workout"))
             {
                 string name;
+                string ss;
                 foreach (DataGridViewRow item in this.dtGrid1.SelectedRows)
                 {
-                    this.dtGrid1.CurrentCell = this.dtGrid1[1, 0];
-                    name = dtGrid1.CurrentCell.Value.ToString();
-                    BookMemberWorkout bmw = new BookMemberWorkout(name);
+                    ss = dtGrid1.CurrentCell.Value.ToString();
+                    name = dtGrid1.SelectedCells[1].Value.ToString();
+                    BookMemberWorkout bmw = new BookMemberWorkout(ss, name);
+                    bmw.Label2.Text = ss;
                     bmw.Label1.Text = name;
                     bmw.ShowDialog();
                 }

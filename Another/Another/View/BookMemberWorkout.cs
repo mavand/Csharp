@@ -17,6 +17,13 @@ namespace Another.View
         MemberController mcont = new MemberController();
 
         Label label1;
+        //Label label2;
+
+        public Label Label2
+        {
+            get { return label; }
+            set { label = value; }
+        }
 
         public Label Label1
         {
@@ -24,8 +31,7 @@ namespace Another.View
             set { label1 = value; }
         }
 
-
-        public BookMemberWorkout(string labeltxt)
+        public BookMemberWorkout(string ss, string name)
         {
             InitializeComponent();
             // Fill cbWorkout with name from Wrokout(table)
@@ -33,7 +39,8 @@ namespace Another.View
             {
                 cbWorkout.Items.Add(dr["name"].ToString());
             }
-            label1.Text = labeltxt;
+            label1.Text = ss;
+            label.Text = name;
         }
 
         /*private void btnBook_Click(object sender, EventArgs e)
