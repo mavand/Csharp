@@ -79,6 +79,7 @@
             this.btnBook.TabIndex = 4;
             this.btnBook.Text = "Book";
             this.btnBook.UseVisualStyleBackColor = true;
+            this.btnBook.Click += new System.EventHandler(this.btnBook_Click);
             // 
             // BookMemberWorkout
             // 

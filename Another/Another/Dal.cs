@@ -22,7 +22,7 @@ namespace Another
             con.Close();
             return dt;
         }
-            public DataTable selectWorkout(string workout)
+            public DataTable SelectWorkout(string workout)
         {
             SqlDataAdapter da = new SqlDataAdapter("select workID, name, date from workout where name like '%" + workout + "%'", con);
             DataTable dt = new DataTable();
@@ -73,8 +73,7 @@ namespace Another
             DataTable dt = new DataTable();
             da.Fill(dt);
             con.Close();
-            return (dt);
-            
+            return (dt);            
         }
 
         public DataTable DeleteWorkout(string tableName, string pk)
@@ -123,7 +122,25 @@ namespace Another
         }
         public DataTable EditInstructor(string instID, string ss, string name, string city, string street, string zip, string email, string phone, string pk)
         {
-            SqlDataAdapter da = new SqlDataAdapter("Update Instructor set InstID='" + instID + "'," + "SocialSecurity='" + ss + "'," + "Name='" + name + "'," + "City='" + city + "', " + "Street='" + street + "', " + "ZipCode='" + zip + "', " + "Email='" + email + "', " + "Phone='" + phone + "' where InstID='" + pk + "'", con);
+            SqlDataAdapter da = new SqlDataAdapter("update instructor set InstID='" + instID + "'," + "SocialSecurity='" + ss + "'," + "Name='" + name + "'," + "City='" + city + "', " + "Street='" + street + "', " + "ZipCode='" + zip + "', " + "Email='" + email + "', " + "Phone='" + phone + "' where InstID='" + pk + "'", con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return dt;
+        }
+
+        public DataTable BookMemberWorkout(string ss, string workid, string date)
+        {
+            SqlDataAdapter da = new SqlDataAdapter("insert into memberworkout values('"+ss+"','"+workid+"','"+date+"')", con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return dt;
+        }
+
+        public DataTable MemberWorkout(string ss)
+        {            
+            SqlDataAdapter da = new SqlDataAdapter("select Member.name as Member, Workout.name, MemberWorkout.date from Member join memberworkout on member.SocialSecurity=MemberWorkout.SocialSecurity join workout on memberworkout.WorkID=workout.WorkID where member.SocialSecurity='"+ss+"'", con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             con.Close();

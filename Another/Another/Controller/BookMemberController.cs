@@ -12,9 +12,15 @@ namespace Another.Controller
     {
         Dal dal = new Dal();
 
-        public DataTable selectWorkout(string workout)
+        public DataTable SelectWorkout(string workout)
         {
-            DataTable dt = dal.selectWorkout(workout);
+            DataTable dt = dal.SelectWorkout(workout);
+            return dt;
+        }
+
+        public DataTable BookMemberWorkout(string ss, string workid, string date)
+        {
+            DataTable dt = dal.BookMemberWorkout(ss, workid, date);
             return dt;
         }
     }

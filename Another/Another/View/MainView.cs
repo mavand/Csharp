@@ -19,6 +19,7 @@ namespace Another
         MemberController mcont = new MemberController();
         InstructorController icont = new InstructorController();
         WorkoutController wcont = new WorkoutController();
+        MemberWorkoutController mwcont = new MemberWorkoutController();
 
         public MainView()
         {
@@ -349,10 +350,19 @@ namespace Another
             }
 
         }
-        
 
+        private void btnBookings_Click(object sender, EventArgs e)
+        {
 
+            string ss;
+            //ss = dtGrid1.CurrentCell.Value.ToString();
+            ss = dtGrid1.SelectedCells[0].Value.ToString();            
+            try { MemberWorkout memberWorkout = new MemberWorkout(ss); 
+                memberWorkout.ShowDialog(); }
+            catch (SqlException ex) { MessageBox.Show(ex.ToString()); }
+            
         }
+    }
 
 
         //######### TA EJ BORT NEDASTÅEDE RAD!! /MEISAM ###########

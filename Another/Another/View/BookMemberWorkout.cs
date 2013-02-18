@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -43,25 +44,13 @@ namespace Another.View
 
         private void cbWorkout_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dtGrid2.DataSource = bmcont.selectWorkout(cbWorkout.SelectedItem.ToString());
+            dtGrid2.DataSource = bmcont.SelectWorkout(cbWorkout.SelectedItem.ToString());
         }
 
+        private void btnBook_Click(object sender, EventArgs e)
+        {            
+            try { bmcont.BookMemberWorkout(label.Text, dtGrid2.CurrentCell.Value.ToString(), dtGrid2.SelectedCells[2].Value.ToString()); }            
+            catch (SqlException ex) { MessageBox.Show(ex.ToString()); }
+        }
     }
 }
-
-
-
-
-
-/*private void btnBook_Click(object sender, EventArgs e)
-{
-    if (cbWorkout.Items.Count == 0)
-    //PROBLEM! Uppdaterar inte efter att man lägger in en ny workout
-    //eftersom items.count då inte är 0
-    {
-        foreach (DataRow dr in cont.GetWorkout().Rows)
-        {
-            cbWorkout.Items.Add(dr["name"].ToString());
-        }
-    } 
-}*/

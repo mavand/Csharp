@@ -84,6 +84,8 @@
             this.txtEditWorkID = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panelInst = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtEditInstCt = new System.Windows.Forms.TextBox();
             this.txtEditInstID = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtEditInstPh = new System.Windows.Forms.TextBox();
@@ -99,8 +101,7 @@
             this.txtEditInstSS = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.btnSaveEdit = new System.Windows.Forms.Button();
-            this.txtEditInstCt = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.btnBookings = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtGrid1)).BeginInit();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -613,6 +614,22 @@
             this.panelInst.Size = new System.Drawing.Size(226, 166);
             this.panelInst.TabIndex = 78;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(113, 127);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(24, 13);
+            this.label6.TabIndex = 64;
+            this.label6.Text = "City";
+            // 
+            // txtEditInstCt
+            // 
+            this.txtEditInstCt.Location = new System.Drawing.Point(113, 143);
+            this.txtEditInstCt.Name = "txtEditInstCt";
+            this.txtEditInstCt.Size = new System.Drawing.Size(100, 20);
+            this.txtEditInstCt.TabIndex = 63;
+            // 
             // txtEditInstID
             // 
             this.txtEditInstID.Location = new System.Drawing.Point(10, 23);
@@ -736,27 +753,22 @@
             this.btnSaveEdit.UseVisualStyleBackColor = true;
             this.btnSaveEdit.Click += new System.EventHandler(this.btnSaveEdit_Click);
             // 
-            // txtEditInstCt
+            // btnBookings
             // 
-            this.txtEditInstCt.Location = new System.Drawing.Point(113, 143);
-            this.txtEditInstCt.Name = "txtEditInstCt";
-            this.txtEditInstCt.Size = new System.Drawing.Size(100, 20);
-            this.txtEditInstCt.TabIndex = 63;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(113, 127);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(24, 13);
-            this.label6.TabIndex = 64;
-            this.label6.Text = "City";
+            this.btnBookings.Location = new System.Drawing.Point(29, 385);
+            this.btnBookings.Name = "btnBookings";
+            this.btnBookings.Size = new System.Drawing.Size(75, 23);
+            this.btnBookings.TabIndex = 79;
+            this.btnBookings.Text = "Bookings";
+            this.btnBookings.UseVisualStyleBackColor = true;
+            this.btnBookings.Click += new System.EventHandler(this.btnBookings_Click);
             // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(570, 389);
+            this.ClientSize = new System.Drawing.Size(570, 428);
+            this.Controls.Add(this.btnBookings);
             this.Controls.Add(this.panelInst);
             this.Controls.Add(this.panelWork);
             this.Controls.Add(this.btnSaveEdit);
@@ -868,6 +880,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtEditInstCt;
+        private System.Windows.Forms.Button btnBookings;
     }
 }
 
