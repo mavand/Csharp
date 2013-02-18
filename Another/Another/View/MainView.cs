@@ -149,6 +149,11 @@ namespace Another
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            panelInst.Visible = false;
+            panelMem.Visible = false;
+            panelWork.Visible = false;
+            btnEdtMem.Visible = true;
+            btnUpdateMem.Visible = true;
             try
             {
                 dtGrid1.DataSource = cont.SearchAll(cBoxSearch.SelectedItem.ToString(), txtSSS.Text);
