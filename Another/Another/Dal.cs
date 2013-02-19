@@ -147,9 +147,9 @@ namespace Another
             return dt;
         }
 
-        public DataTable DeleteMemberWorkout(string tableName, string pk)
+        public DataTable DeleteMemberWorkout(string ss, string workid)
         {
-            SqlDataAdapter da = new SqlDataAdapter("delete from " + tableName + " where workid='" + pk + "'", con);
+            SqlDataAdapter da = new SqlDataAdapter("delete from memberworkout where socialsecurity='" +ss+ "' and workid='"+workid+"'", con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             con.Close();
