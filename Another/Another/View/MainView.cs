@@ -283,6 +283,8 @@ namespace Another
 
                         panelMem.Visible = false;
                         btnSaveEdit.Visible = false;
+                        try { dtGrid1.DataSource = cont.SelectAll(openMemberM.Text); }
+                        catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
                     }
                     catch (SqlException)
                     {
