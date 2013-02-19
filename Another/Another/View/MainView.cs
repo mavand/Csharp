@@ -205,6 +205,8 @@ namespace Another
                     emailboxedt.Text = item.Cells[5].Value.ToString();
                     phoneboxedt.Text = item.Cells[6].Value.ToString();
 
+                    ssboxedt.ReadOnly = true;
+
                 }
 
             }
@@ -221,6 +223,8 @@ namespace Another
                     txtEditWorkTm.Text = item.Cells[3].Value.ToString();
                     txtEditWorkLt.Text = item.Cells[4].Value.ToString();
                     txtEditWorkLv.Text = item.Cells[5].Value.ToString();
+
+                    txtEditWorkID.ReadOnly = true;
                 
 
                 }
@@ -239,6 +243,9 @@ namespace Another
                     txtEditInstZip.Text = item.Cells[5].Value.ToString();
                     txtEditInstEm.Text = item.Cells[6].Value.ToString();
                     txtEditInstPh.Text = item.Cells[7].Value.ToString();
+
+                    txtEditInstID.ReadOnly = true;
+                    txtEditInstSS.ReadOnly = true;
 
                 }
             }
@@ -283,6 +290,7 @@ namespace Another
 
                         panelMem.Visible = false;
                         btnSaveEdit.Visible = false;
+                        
                         try { dtGrid1.DataSource = cont.SelectAll(openMemberM.Text); }
                         catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
                     }
@@ -314,6 +322,9 @@ namespace Another
                             panelWork.Visible = false;
                             btnSaveEdit.Visible = false;
 
+                            
+                            try { dtGrid1.DataSource = cont.SelectAll(openWorkoutM.Text); }
+                            catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
 
                         }
                         catch (SqlException)
@@ -342,6 +353,9 @@ namespace Another
                         
                         panelInst.Visible = false;
                         btnSaveEdit.Visible = false;
+
+                        try { dtGrid1.DataSource = cont.SelectAll(openInstructorM.Text); }
+                        catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
  
                     }
                     catch (SqlException e2)
