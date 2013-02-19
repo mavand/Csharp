@@ -146,5 +146,14 @@ namespace Another
             con.Close();
             return dt;
         }
+
+        public DataTable DeleteMemberWorkout(string tableName, string pk)
+        {
+            SqlDataAdapter da = new SqlDataAdapter("delete from " + tableName + " where workid='" + pk + "'", con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return dt;
+        }
     }
 }
