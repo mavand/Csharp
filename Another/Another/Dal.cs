@@ -140,7 +140,7 @@ namespace Another
 
         public DataTable MemberWorkout(string ss)
         {            
-            SqlDataAdapter da = new SqlDataAdapter("select Member.name as Member, Workout.name, MemberWorkout.date from Member join memberworkout on member.SocialSecurity=MemberWorkout.SocialSecurity join workout on memberworkout.WorkID=workout.WorkID where member.SocialSecurity='"+ss+"'", con);
+            SqlDataAdapter da = new SqlDataAdapter("select Member.name as Member, Workout.name as Workout, MemberWorkout.date as Date, workout.workid as WorkID, member.socialsecurity as SS from Member join memberworkout on member.SocialSecurity=MemberWorkout.SocialSecurity join workout on memberworkout.WorkID=workout.WorkID where member.SocialSecurity='"+ss+"'", con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             con.Close();

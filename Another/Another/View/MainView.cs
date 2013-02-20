@@ -35,6 +35,18 @@ namespace Another
             btnSaveEdit.Visible = false;
         }
 
+        private void AdjustColumnOrderInstructor()
+        {
+            dtGrid1.Columns["InstID"].DisplayIndex = 0;
+            dtGrid1.Columns["SocialSecurity"].DisplayIndex = 1;
+            dtGrid1.Columns["Name"].DisplayIndex = 2;
+            dtGrid1.Columns["City"].DisplayIndex = 3;
+            dtGrid1.Columns["Street"].DisplayIndex = 4;
+            dtGrid1.Columns["ZipCode"].DisplayIndex = 5;
+            dtGrid1.Columns["Email"].DisplayIndex = 6;
+            dtGrid1.Columns["Phone"].DisplayIndex = 7;
+        }
+
         private void memberOpenMenu_Click(object sender, EventArgs e)
         {
             panelWork.Visible = false;
@@ -81,6 +93,7 @@ namespace Another
             { 
                 dtGrid1.DataSource = cont.SelectAll(openInstructorM.Text);
                 labelGrid.Text = openInstructorM.Text;
+                AdjustColumnOrderInstructor();
             }
             catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
             dtGrid1.Visible = true;
@@ -157,11 +170,22 @@ namespace Another
             btnUpdateMem.Visible = true;
             try
             {
-                dtGrid1.DataSource = cont.SearchAll(cBoxSearch.SelectedItem.ToString(), txtSSS.Text);
-                labelGrid.Text = cBoxSearch.SelectedItem.ToString();
-                dtGrid1.Visible = true;
-                btnDelete.Visible = true;
-                labelGrid.Visible = true;
+                if (cBoxSearch.SelectedItem.ToString().Equals("Instructor"))
+                {
+                    dtGrid1.DataSource = cont.SearchAll(cBoxSearch.SelectedItem.ToString(), txtSSS.Text);
+                    labelGrid.Text = cBoxSearch.SelectedItem.ToString();
+                    dtGrid1.Visible = true;
+                    btnDelete.Visible = true;
+                    labelGrid.Visible = true;
+                    AdjustColumnOrderInstructor();
+                }
+                else {
+                    dtGrid1.DataSource = cont.SearchAll(cBoxSearch.SelectedItem.ToString(), txtSSS.Text);
+                    labelGrid.Text = cBoxSearch.SelectedItem.ToString();
+                    dtGrid1.Visible = true;
+                    btnDelete.Visible = true;
+                    labelGrid.Visible = true;
+                } 
             }
             catch (Exception) { MessageBox.Show("Please choose a table"); }
         }
@@ -375,8 +399,7 @@ namespace Another
             ss = dtGrid1.SelectedCells[0].Value.ToString();            
             try { MemberWorkout memberWorkout = new MemberWorkout(ss); 
                 memberWorkout.ShowDialog(); }
-            catch (SqlException ex) { MessageBox.Show(ex.ToString()); }
-            
+            catch (SqlException ex) { MessageBox.Show(ex.ToString()); }            
         }
     }
 

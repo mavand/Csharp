@@ -18,8 +18,11 @@ namespace Another.View
         public MemberWorkout(string ss)
         {
             InitializeComponent();
-            dtGrid.DataSource = mwcont.MemberWorkout(ss);
+            dtGrid.DataSource = mwcont.MemberWorkout(ss);            
+            dtGrid.Columns[3].Visible = false;
+            dtGrid.Columns[4].Visible = false;  
         }
+        
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -27,7 +30,7 @@ namespace Another.View
             if (dialogResult == DialogResult.Yes)
                 foreach (DataGridViewRow item in this.dtGrid.SelectedRows)
                 {
-                    mwcont.DeleteMemberWorkout(dtGrid.CurrentCell.Value.ToString(), dtGrid.SelectedCells[1].Value.ToString());
+                    mwcont.DeleteMemberWorkout(dtGrid.SelectedCells[4].Value.ToString(), dtGrid.SelectedCells[3].Value.ToString());
                     dtGrid.Rows.RemoveAt(item.Index);
                 }
         }
