@@ -150,7 +150,7 @@ namespace Another
             }
             catch (SqlException) 
             {
-                DialogResult dialogResult = MessageBox.Show(dtGrid1.SelectedCells[1].Value.ToString()+" still has bookings, do you wish to delete these too?", "Delete Member", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show(dtGrid1.SelectedCells[1].Value.ToString()+" still has bookings, are you sure you want to proceed?", "Delete Member", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     cont.DeleteMW(dtGrid1.SelectedCells[0].Value.ToString());
