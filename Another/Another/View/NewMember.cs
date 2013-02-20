@@ -14,6 +14,7 @@ namespace Another.View
 {
     public partial class NewMember : Form
     {
+        MainController cont = new MainController();
         MemberController mcont = new MemberController();
         Dal dal = new Dal();
 
@@ -21,6 +22,7 @@ namespace Another.View
         {
             InitializeComponent();
         }
+
 
         private void ClearFields()
         {

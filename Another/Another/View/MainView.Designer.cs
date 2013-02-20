@@ -112,6 +112,7 @@
             // 
             // dtGrid1
             // 
+            this.dtGrid1.AllowUserToAddRows = false;
             this.dtGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGrid1.Location = new System.Drawing.Point(29, 198);
             this.dtGrid1.Name = "dtGrid1";
@@ -144,7 +145,7 @@
             this.workoutNewMenu,
             this.instructorNewMenu});
             this.fileNewM.Name = "fileNewM";
-            this.fileNewM.Size = new System.Drawing.Size(152, 22);
+            this.fileNewM.Size = new System.Drawing.Size(103, 22);
             this.fileNewM.Text = "New";
             // 
             // memberNewMenu
@@ -175,7 +176,7 @@
             this.openWorkoutM,
             this.openInstructorM});
             this.fileOpenM.Name = "fileOpenM";
-            this.fileOpenM.Size = new System.Drawing.Size(152, 22);
+            this.fileOpenM.Size = new System.Drawing.Size(103, 22);
             this.fileOpenM.Text = "Open";
             // 
             // openMemberM
@@ -812,7 +813,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dtGrid1;
+        public System.Windows.Forms.DataGridView dtGrid1;
         private System.Windows.Forms.MenuStrip mainMenu;
         private System.Windows.Forms.ToolStripMenuItem fileMenu;
         private System.Windows.Forms.ToolStripMenuItem fileNewM;
