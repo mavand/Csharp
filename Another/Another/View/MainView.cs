@@ -49,6 +49,12 @@ namespace Another
             dtGrid1.Columns["Phone"].DisplayIndex = 7;
         }
 
+        //TESTAR @Meisam
+        public void PerformRefresh()
+        {
+            dtGrid1.DataSource = cont.SearchAll("Member", "");
+        }
+
         private void memberOpenMenu_Click(object sender, EventArgs e)
         {
             panelWork.Visible = false;
@@ -165,8 +171,8 @@ namespace Another
             
         }
         private void memberNewMenu_Click(object sender, EventArgs e)
-        {
-            NewMember newMember = new NewMember();
+        {   //Skickar med MainView till newmember-view
+            NewMember newMember = new NewMember(this);
             newMember.ShowDialog();
         }
 

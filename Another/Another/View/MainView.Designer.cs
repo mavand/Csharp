@@ -813,7 +813,13 @@
 
         #endregion
 
-        public System.Windows.Forms.DataGridView dtGrid1;
+        private System.Windows.Forms.DataGridView dtGrid1;
+
+        public System.Windows.Forms.DataGridView DtGrid1
+        {
+            get { return dtGrid1; }
+            set { dtGrid1 = value; }
+        }
         private System.Windows.Forms.MenuStrip mainMenu;
         private System.Windows.Forms.ToolStripMenuItem fileMenu;
         private System.Windows.Forms.ToolStripMenuItem fileNewM;

@@ -17,10 +17,13 @@ namespace Another.View
         MainController cont = new MainController();
         MemberController mcont = new MemberController();
         Dal dal = new Dal();
+        MainView _mw;
 
-        public NewMember()
+        public NewMember(MainView mw)
         {
             InitializeComponent();
+            _mw = mw;
+
         }
 
 
@@ -47,13 +50,17 @@ namespace Another.View
                 { 
                     mcont.NewMember(txtSS.Text, txtName.Text, txtCity.Text, txtStreet.Text, txtZipcode.Text, txtEmail.Text, txtPhone.Text);
                     MessageBox.Show("Added");
-                    ClearFields();                    
+                    //MainView mw = new MainView();
+                    //mw.DtGrid1.DataSource = cont.SearchAll("Member", "");
+                    ClearFields();
+                    _mw.PerformRefresh();
                 }
                 catch (SqlException) 
                 { 
                     MessageBox.Show("The social security number \"" + txtSS.Text + "\"is already registered"); 
                 }               
             }
+            
         }       
     }
 }
