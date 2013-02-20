@@ -116,7 +116,7 @@ namespace Another
                 {
                     if (labelGrid.Text == "Member")
                     {
-                        DialogResult dialogResult = MessageBox.Show("You sure you want to delete this member(s)?", "Delete Member", MessageBoxButtons.YesNo);
+                        DialogResult dialogResult = MessageBox.Show("You sure you want to delete this member?", "Delete Member", MessageBoxButtons.YesNo);
                         if (dialogResult == DialogResult.Yes)
                             foreach (DataGridViewRow item in this.dtGrid1.SelectedRows)
                             {
@@ -126,7 +126,7 @@ namespace Another
                     }
                     else if (labelGrid.Text == "Workout")
                     {
-                        DialogResult dialogResult = MessageBox.Show("You sure you want to delete this Workout(s)?", "Delete Workout", MessageBoxButtons.YesNo);
+                        DialogResult dialogResult = MessageBox.Show("You sure you want to delete this Workout?", "Delete Workout", MessageBoxButtons.YesNo);
                         if (dialogResult == DialogResult.Yes)
                             foreach (DataGridViewRow item in this.dtGrid1.SelectedRows)
                             {
@@ -136,7 +136,7 @@ namespace Another
                     }
                     else if (labelGrid.Text == "Instructor")
                     {
-                        DialogResult dialogResult = MessageBox.Show("You sure you want to delete this Instructor(s)?", "Delete Instructor", MessageBoxButtons.YesNo);
+                        DialogResult dialogResult = MessageBox.Show("You sure you want to delete this Instructor?", "Delete Instructor", MessageBoxButtons.YesNo);
                         if (dialogResult == DialogResult.Yes)
                             foreach (DataGridViewRow item in this.dtGrid1.SelectedRows)
                             {
