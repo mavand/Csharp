@@ -187,8 +187,7 @@ namespace Another
             panelInst.Visible = false;
             panelMem.Visible = false;
             panelWork.Visible = false;
-            btnEdtMem.Visible = true;
-            btnUpdateMem.Visible = true;
+         
             try
             {
                 if (cBoxSearch.SelectedItem.ToString().Equals("Member"))
@@ -199,6 +198,8 @@ namespace Another
                     btnDelete.Visible = true;
                     labelGrid.Visible = true;
                     btnBookings.Visible = true;
+                    btnEdtMem.Visible = true;
+                    btnUpdateMem.Visible = true;
                 }
                 else if (cBoxSearch.SelectedItem.ToString().Equals("Workout")) 
                 {
@@ -208,6 +209,8 @@ namespace Another
                     btnDelete.Visible = true;
                     labelGrid.Visible = true;
                     btnBookings.Visible = false;
+                    btnEdtMem.Visible = true;
+                    btnUpdateMem.Visible = true;
                 }
                 else if (cBoxSearch.SelectedItem.ToString().Equals("Instructor"))
                 {
@@ -217,6 +220,8 @@ namespace Another
                     btnDelete.Visible = true;
                     labelGrid.Visible = true;
                     btnBookings.Visible = false;
+                    btnEdtMem.Visible = true;
+                    btnUpdateMem.Visible = true;
                     AdjustColumnOrderInstructor();
                 }
             }
