@@ -96,7 +96,7 @@ namespace Another
             try 
             {
                 btnBookings.Visible = false;
-                dtGrid1.DataSource = cont.SelectAll(openInstructorM.Text);
+                dtGrid1.DataSource = cont.SelectAll(openInstructorM.Text);                
                 labelGrid.Text = openInstructorM.Text;
                 AdjustColumnOrderInstructor();
             }
@@ -150,7 +150,7 @@ namespace Another
             }
             catch (SqlException) 
             {
-                DialogResult dialogResult = MessageBox.Show(dtGrid1.SelectedCells[1].Value.ToString()+" has some bookings, do you wish to delete these too?", "Delete Instructor", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show(dtGrid1.SelectedCells[1].Value.ToString()+" still has bookings, do you wish to delete these too?", "Delete Member", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     cont.DeleteMW(dtGrid1.SelectedCells[0].Value.ToString());
