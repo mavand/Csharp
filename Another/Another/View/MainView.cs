@@ -33,6 +33,7 @@ namespace Another
             panelWork.Visible = false;
             panelInst.Visible = false;
             btnSaveEdit.Visible = false;
+            btnCancel.Visible = false;
         }
 
         private void AdjustColumnOrderInstructor()
@@ -215,21 +216,22 @@ namespace Another
         private void btnEdtMem_Click(object sender, EventArgs e)
         {
             btnSaveEdit.Visible = true;
+            btnCancel.Visible = true;
             if (labelGrid.Text == openMemberM.Text)
             {
                 panelMem.Visible = true;
 
                 foreach (DataGridViewRow item in this.dtGrid1.SelectedRows)
                 {
-                    ssboxedt.Text = item.Cells[0].Value.ToString();
-                    nameboxedt.Text = item.Cells[1].Value.ToString();
-                    cityoxedt.Text = item.Cells[2].Value.ToString();
-                    streetboxedt.Text = item.Cells[3].Value.ToString();
-                    zipboxedt.Text = item.Cells[4].Value.ToString();
-                    emailboxedt.Text = item.Cells[5].Value.ToString();
-                    phoneboxedt.Text = item.Cells[6].Value.ToString();
+                    txtEditMemSS.Text = item.Cells[0].Value.ToString();
+                    txtEditMemNm.Text = item.Cells[1].Value.ToString();
+                    txtEditMemCt.Text = item.Cells[2].Value.ToString();
+                    txtEditMemSt.Text = item.Cells[3].Value.ToString();
+                    txtEditMemZip.Text = item.Cells[4].Value.ToString();
+                    txtEditMemEm.Text = item.Cells[5].Value.ToString();
+                    txtEditMemPh.Text = item.Cells[6].Value.ToString();
 
-                    ssboxedt.ReadOnly = true;
+                    txtEditMemSS.ReadOnly = true;
 
                 }
 
@@ -299,9 +301,10 @@ namespace Another
 
         private void btnSaveEdit_Click(object sender, EventArgs e)
         {
+            
             if (labelGrid.Text == openMemberM.Text)
             {
-                if (String.IsNullOrEmpty(ssboxedt.Text) || String.IsNullOrEmpty(nameboxedt.Text) || String.IsNullOrEmpty(cityoxedt.Text) || String.IsNullOrEmpty(streetboxedt.Text) || String.IsNullOrEmpty(zipboxedt.Text) || String.IsNullOrEmpty(emailboxedt.Text) || String.IsNullOrEmpty(phoneboxedt.Text))
+                if (String.IsNullOrEmpty(txtEditMemSS.Text) || String.IsNullOrEmpty(txtEditMemNm.Text) || String.IsNullOrEmpty(txtEditMemCt.Text) || String.IsNullOrEmpty(txtEditMemSt.Text) || String.IsNullOrEmpty(txtEditMemZip.Text) || String.IsNullOrEmpty(txtEditMemEm.Text) || String.IsNullOrEmpty(txtEditMemPh.Text))
                 {
                     MessageBox.Show("Please fill out all the fields");
                 }
@@ -309,19 +312,20 @@ namespace Another
                 {
                     try
                     {
-                        mcont.EditMember(ssboxedt.Text, nameboxedt.Text, cityoxedt.Text, streetboxedt.Text, zipboxedt.Text, emailboxedt.Text, phoneboxedt.Text, dtGrid1.CurrentCell.Value.ToString());
+                        mcont.EditMember(txtEditMemSS.Text, txtEditMemNm.Text, txtEditMemCt.Text, txtEditMemSt.Text, txtEditMemZip.Text, txtEditMemEm.Text, txtEditMemPh.Text, dtGrid1.CurrentCell.Value.ToString());
                         MessageBox.Show("Changes saved succesfully");
 
                         panelMem.Visible = false;
                         btnSaveEdit.Visible = false;
+                        btnCancel.Visible = false;
                         
                         try { dtGrid1.DataSource = cont.SelectAll(openMemberM.Text); }
                         catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
                     }
                     catch (SqlException)
                     {
-                        ssboxedt.SelectAll();
-                        MessageBox.Show("The social security number \"" + ssboxedt.Text + "\"is already registered");
+                        txtEditMemSS.SelectAll();
+                        MessageBox.Show("The social security number \"" + txtEditMemSS.Text + "\"is already registered");
 
                     }
                 }
@@ -345,6 +349,7 @@ namespace Another
                             
                             panelWork.Visible = false;
                             btnSaveEdit.Visible = false;
+                            btnCancel.Visible = false;
 
                             
                             try { dtGrid1.DataSource = cont.SelectAll(openWorkoutM.Text); }
@@ -377,6 +382,7 @@ namespace Another
                         
                         panelInst.Visible = false;
                         btnSaveEdit.Visible = false;
+                        btnCancel.Visible = false;
 
                         try { dtGrid1.DataSource = cont.SelectAll(openInstructorM.Text); }
                         catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
@@ -400,6 +406,42 @@ namespace Another
             try { MemberWorkout memberWorkout = new MemberWorkout(ss); 
                 memberWorkout.ShowDialog(); }
             catch (SqlException ex) { MessageBox.Show(ex.ToString()); }            
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            if (labelGrid.Text == openMemberM.Text)
+            {
+                 DialogResult dialogResult = MessageBox.Show("Discard all changes?","Discard changes", MessageBoxButtons.YesNo);
+                 if (dialogResult == DialogResult.Yes)
+                 {
+
+                     panelMem.Visible = false;
+                     btnCancel.Visible = false;
+                     btnSaveEdit.Visible = false;
+                 }
+            }
+            else if (labelGrid.Text == openWorkoutM.Text)
+            {
+
+                DialogResult dialogResult = MessageBox.Show("Discard all changes?","Discard changes", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    panelWork.Visible = false;
+                    btnCancel.Visible = false;
+                    btnSaveEdit.Visible = false;
+                }
+            }
+            else if (labelGrid.Text == openInstructorM.Text)
+            {
+                DialogResult dialogResult = MessageBox.Show("Discard all changes?","Discard changes", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    panelInst.Visible = false;
+                    btnCancel.Visible = false;
+                    btnSaveEdit.Visible = false;
+                }
+            }
         }
     }
 

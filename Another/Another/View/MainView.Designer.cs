@@ -62,13 +62,13 @@
             this.labelemailedt = new System.Windows.Forms.Label();
             this.labelnameedt = new System.Windows.Forms.Label();
             this.labelssedt = new System.Windows.Forms.Label();
-            this.cityoxedt = new System.Windows.Forms.TextBox();
-            this.zipboxedt = new System.Windows.Forms.TextBox();
-            this.streetboxedt = new System.Windows.Forms.TextBox();
-            this.phoneboxedt = new System.Windows.Forms.TextBox();
-            this.emailboxedt = new System.Windows.Forms.TextBox();
-            this.nameboxedt = new System.Windows.Forms.TextBox();
-            this.ssboxedt = new System.Windows.Forms.TextBox();
+            this.txtEditMemCt = new System.Windows.Forms.TextBox();
+            this.txtEditMemZip = new System.Windows.Forms.TextBox();
+            this.txtEditMemSt = new System.Windows.Forms.TextBox();
+            this.txtEditMemPh = new System.Windows.Forms.TextBox();
+            this.txtEditMemEm = new System.Windows.Forms.TextBox();
+            this.txtEditMemNm = new System.Windows.Forms.TextBox();
+            this.txtEditMemSS = new System.Windows.Forms.TextBox();
             this.panelWork = new System.Windows.Forms.Panel();
             this.txtEditWorkDt = new System.Windows.Forms.TextBox();
             this.level = new System.Windows.Forms.Label();
@@ -102,6 +102,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.btnSaveEdit = new System.Windows.Forms.Button();
             this.btnBookings = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtGrid1)).BeginInit();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -115,7 +116,7 @@
             this.dtGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGrid1.Location = new System.Drawing.Point(29, 198);
             this.dtGrid1.Name = "dtGrid1";
-            this.dtGrid1.Size = new System.Drawing.Size(424, 181);
+            this.dtGrid1.Size = new System.Drawing.Size(424, 210);
             this.dtGrid1.TabIndex = 0;
             // 
             // mainMenu
@@ -125,7 +126,7 @@
             this.testToolStripMenuItem});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(570, 24);
+            this.mainMenu.Size = new System.Drawing.Size(577, 24);
             this.mainMenu.TabIndex = 2;
             this.mainMenu.Text = "menuStrip1";
             // 
@@ -208,7 +209,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(459, 356);
+            this.btnDelete.Location = new System.Drawing.Point(460, 327);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 3;
@@ -219,9 +220,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(29, 27);
+            this.pictureBox1.Location = new System.Drawing.Point(214, 27);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(121, 120);
+            this.pictureBox1.Size = new System.Drawing.Size(86, 91);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -231,7 +232,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkRed;
-            this.label1.Location = new System.Drawing.Point(161, 33);
+            this.label1.Location = new System.Drawing.Point(26, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(182, 68);
             this.label1.TabIndex = 5;
@@ -240,7 +241,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(159, 125);
+            this.label2.Location = new System.Drawing.Point(26, 109);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 55;
@@ -253,14 +254,14 @@
             "Member",
             "Workout",
             "Instructor"});
-            this.cBoxSearch.Location = new System.Drawing.Point(162, 145);
+            this.cBoxSearch.Location = new System.Drawing.Point(29, 129);
             this.cBoxSearch.Name = "cBoxSearch";
-            this.cBoxSearch.Size = new System.Drawing.Size(63, 21);
+            this.cBoxSearch.Size = new System.Drawing.Size(75, 21);
             this.cBoxSearch.TabIndex = 54;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(231, 170);
+            this.btnSearch.Location = new System.Drawing.Point(110, 155);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 53;
@@ -270,7 +271,7 @@
             // 
             // txtSSS
             // 
-            this.txtSSS.Location = new System.Drawing.Point(231, 145);
+            this.txtSSS.Location = new System.Drawing.Point(110, 129);
             this.txtSSS.Name = "txtSSS";
             this.txtSSS.Size = new System.Drawing.Size(75, 20);
             this.txtSSS.TabIndex = 52;
@@ -278,7 +279,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(228, 125);
+            this.label9.Location = new System.Drawing.Point(107, 109);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(35, 13);
             this.label9.TabIndex = 51;
@@ -295,7 +296,7 @@
             // 
             // btnBook
             // 
-            this.btnBook.Location = new System.Drawing.Point(459, 269);
+            this.btnBook.Location = new System.Drawing.Point(214, 155);
             this.btnBook.Name = "btnBook";
             this.btnBook.Size = new System.Drawing.Size(75, 23);
             this.btnBook.TabIndex = 57;
@@ -309,14 +310,14 @@
             this.cbTable.Items.AddRange(new object[] {
             "Workout",
             "Instructor"});
-            this.cbTable.Location = new System.Drawing.Point(459, 242);
+            this.cbTable.Location = new System.Drawing.Point(214, 128);
             this.cbTable.Name = "cbTable";
             this.cbTable.Size = new System.Drawing.Size(100, 21);
             this.cbTable.TabIndex = 58;
             // 
             // btnUpdateMem
             // 
-            this.btnUpdateMem.Location = new System.Drawing.Point(459, 298);
+            this.btnUpdateMem.Location = new System.Drawing.Point(459, 356);
             this.btnUpdateMem.Name = "btnUpdateMem";
             this.btnUpdateMem.Size = new System.Drawing.Size(75, 23);
             this.btnUpdateMem.TabIndex = 75;
@@ -326,7 +327,7 @@
             // 
             // btnEdtMem
             // 
-            this.btnEdtMem.Location = new System.Drawing.Point(459, 327);
+            this.btnEdtMem.Location = new System.Drawing.Point(460, 298);
             this.btnEdtMem.Name = "btnEdtMem";
             this.btnEdtMem.Size = new System.Drawing.Size(75, 23);
             this.btnEdtMem.TabIndex = 74;
@@ -343,13 +344,13 @@
             this.panelMem.Controls.Add(this.labelemailedt);
             this.panelMem.Controls.Add(this.labelnameedt);
             this.panelMem.Controls.Add(this.labelssedt);
-            this.panelMem.Controls.Add(this.cityoxedt);
-            this.panelMem.Controls.Add(this.zipboxedt);
-            this.panelMem.Controls.Add(this.streetboxedt);
-            this.panelMem.Controls.Add(this.phoneboxedt);
-            this.panelMem.Controls.Add(this.emailboxedt);
-            this.panelMem.Controls.Add(this.nameboxedt);
-            this.panelMem.Controls.Add(this.ssboxedt);
+            this.panelMem.Controls.Add(this.txtEditMemCt);
+            this.panelMem.Controls.Add(this.txtEditMemZip);
+            this.panelMem.Controls.Add(this.txtEditMemSt);
+            this.panelMem.Controls.Add(this.txtEditMemPh);
+            this.panelMem.Controls.Add(this.txtEditMemEm);
+            this.panelMem.Controls.Add(this.txtEditMemNm);
+            this.panelMem.Controls.Add(this.txtEditMemSS);
             this.panelMem.Location = new System.Drawing.Point(344, 27);
             this.panelMem.Name = "panelMem";
             this.panelMem.Size = new System.Drawing.Size(226, 165);
@@ -418,54 +419,54 @@
             this.labelssedt.TabIndex = 81;
             this.labelssedt.Text = "Social Security";
             // 
-            // cityoxedt
+            // txtEditMemCt
             // 
-            this.cityoxedt.Location = new System.Drawing.Point(114, 103);
-            this.cityoxedt.Name = "cityoxedt";
-            this.cityoxedt.Size = new System.Drawing.Size(100, 20);
-            this.cityoxedt.TabIndex = 80;
+            this.txtEditMemCt.Location = new System.Drawing.Point(114, 103);
+            this.txtEditMemCt.Name = "txtEditMemCt";
+            this.txtEditMemCt.Size = new System.Drawing.Size(100, 20);
+            this.txtEditMemCt.TabIndex = 80;
             // 
-            // zipboxedt
+            // txtEditMemZip
             // 
-            this.zipboxedt.Location = new System.Drawing.Point(114, 64);
-            this.zipboxedt.Name = "zipboxedt";
-            this.zipboxedt.Size = new System.Drawing.Size(100, 20);
-            this.zipboxedt.TabIndex = 79;
+            this.txtEditMemZip.Location = new System.Drawing.Point(114, 64);
+            this.txtEditMemZip.Name = "txtEditMemZip";
+            this.txtEditMemZip.Size = new System.Drawing.Size(100, 20);
+            this.txtEditMemZip.TabIndex = 79;
             // 
-            // streetboxedt
+            // txtEditMemSt
             // 
-            this.streetboxedt.Location = new System.Drawing.Point(114, 25);
-            this.streetboxedt.Name = "streetboxedt";
-            this.streetboxedt.Size = new System.Drawing.Size(100, 20);
-            this.streetboxedt.TabIndex = 78;
+            this.txtEditMemSt.Location = new System.Drawing.Point(114, 25);
+            this.txtEditMemSt.Name = "txtEditMemSt";
+            this.txtEditMemSt.Size = new System.Drawing.Size(100, 20);
+            this.txtEditMemSt.TabIndex = 78;
             // 
-            // phoneboxedt
+            // txtEditMemPh
             // 
-            this.phoneboxedt.Location = new System.Drawing.Point(8, 142);
-            this.phoneboxedt.Name = "phoneboxedt";
-            this.phoneboxedt.Size = new System.Drawing.Size(100, 20);
-            this.phoneboxedt.TabIndex = 77;
+            this.txtEditMemPh.Location = new System.Drawing.Point(8, 142);
+            this.txtEditMemPh.Name = "txtEditMemPh";
+            this.txtEditMemPh.Size = new System.Drawing.Size(100, 20);
+            this.txtEditMemPh.TabIndex = 77;
             // 
-            // emailboxedt
+            // txtEditMemEm
             // 
-            this.emailboxedt.Location = new System.Drawing.Point(8, 103);
-            this.emailboxedt.Name = "emailboxedt";
-            this.emailboxedt.Size = new System.Drawing.Size(100, 20);
-            this.emailboxedt.TabIndex = 76;
+            this.txtEditMemEm.Location = new System.Drawing.Point(8, 103);
+            this.txtEditMemEm.Name = "txtEditMemEm";
+            this.txtEditMemEm.Size = new System.Drawing.Size(100, 20);
+            this.txtEditMemEm.TabIndex = 76;
             // 
-            // nameboxedt
+            // txtEditMemNm
             // 
-            this.nameboxedt.Location = new System.Drawing.Point(8, 64);
-            this.nameboxedt.Name = "nameboxedt";
-            this.nameboxedt.Size = new System.Drawing.Size(100, 20);
-            this.nameboxedt.TabIndex = 75;
+            this.txtEditMemNm.Location = new System.Drawing.Point(8, 64);
+            this.txtEditMemNm.Name = "txtEditMemNm";
+            this.txtEditMemNm.Size = new System.Drawing.Size(100, 20);
+            this.txtEditMemNm.TabIndex = 75;
             // 
-            // ssboxedt
+            // txtEditMemSS
             // 
-            this.ssboxedt.Location = new System.Drawing.Point(8, 25);
-            this.ssboxedt.Name = "ssboxedt";
-            this.ssboxedt.Size = new System.Drawing.Size(100, 20);
-            this.ssboxedt.TabIndex = 74;
+            this.txtEditMemSS.Location = new System.Drawing.Point(8, 25);
+            this.txtEditMemSS.Name = "txtEditMemSS";
+            this.txtEditMemSS.Size = new System.Drawing.Size(100, 20);
+            this.txtEditMemSS.TabIndex = 74;
             // 
             // panelWork
             // 
@@ -609,7 +610,7 @@
             this.panelInst.Controls.Add(this.label11);
             this.panelInst.Controls.Add(this.txtEditInstSS);
             this.panelInst.Controls.Add(this.label12);
-            this.panelInst.Location = new System.Drawing.Point(344, 27);
+            this.panelInst.Location = new System.Drawing.Point(345, 26);
             this.panelInst.Name = "panelInst";
             this.panelInst.Size = new System.Drawing.Size(226, 166);
             this.panelInst.TabIndex = 78;
@@ -625,7 +626,7 @@
             // 
             // txtEditInstCt
             // 
-            this.txtEditInstCt.Location = new System.Drawing.Point(113, 143);
+            this.txtEditInstCt.Location = new System.Drawing.Point(116, 143);
             this.txtEditInstCt.Name = "txtEditInstCt";
             this.txtEditInstCt.Size = new System.Drawing.Size(100, 20);
             this.txtEditInstCt.TabIndex = 63;
@@ -729,7 +730,7 @@
             // 
             // txtEditInstSS
             // 
-            this.txtEditInstSS.Location = new System.Drawing.Point(113, 23);
+            this.txtEditInstSS.Location = new System.Drawing.Point(114, 22);
             this.txtEditInstSS.Name = "txtEditInstSS";
             this.txtEditInstSS.Size = new System.Drawing.Size(100, 20);
             this.txtEditInstSS.TabIndex = 48;
@@ -745,7 +746,7 @@
             // 
             // btnSaveEdit
             // 
-            this.btnSaveEdit.Location = new System.Drawing.Point(458, 213);
+            this.btnSaveEdit.Location = new System.Drawing.Point(460, 199);
             this.btnSaveEdit.Name = "btnSaveEdit";
             this.btnSaveEdit.Size = new System.Drawing.Size(75, 23);
             this.btnSaveEdit.TabIndex = 77;
@@ -755,7 +756,7 @@
             // 
             // btnBookings
             // 
-            this.btnBookings.Location = new System.Drawing.Point(29, 385);
+            this.btnBookings.Location = new System.Drawing.Point(459, 385);
             this.btnBookings.Name = "btnBookings";
             this.btnBookings.Size = new System.Drawing.Size(75, 23);
             this.btnBookings.TabIndex = 79;
@@ -763,11 +764,22 @@
             this.btnBookings.UseVisualStyleBackColor = true;
             this.btnBookings.Click += new System.EventHandler(this.btnBookings_Click);
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(460, 228);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 80;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(570, 428);
+            this.ClientSize = new System.Drawing.Size(577, 428);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnBookings);
             this.Controls.Add(this.panelInst);
             this.Controls.Add(this.panelWork);
@@ -843,13 +855,13 @@
         private System.Windows.Forms.Label labelemailedt;
         private System.Windows.Forms.Label labelnameedt;
         private System.Windows.Forms.Label labelssedt;
-        private System.Windows.Forms.TextBox cityoxedt;
-        private System.Windows.Forms.TextBox zipboxedt;
-        private System.Windows.Forms.TextBox streetboxedt;
-        private System.Windows.Forms.TextBox phoneboxedt;
-        private System.Windows.Forms.TextBox emailboxedt;
-        private System.Windows.Forms.TextBox nameboxedt;
-        private System.Windows.Forms.TextBox ssboxedt;
+        private System.Windows.Forms.TextBox txtEditMemCt;
+        private System.Windows.Forms.TextBox txtEditMemZip;
+        private System.Windows.Forms.TextBox txtEditMemSt;
+        private System.Windows.Forms.TextBox txtEditMemPh;
+        private System.Windows.Forms.TextBox txtEditMemEm;
+        private System.Windows.Forms.TextBox txtEditMemNm;
+        private System.Windows.Forms.TextBox txtEditMemSS;
         private System.Windows.Forms.TextBox txtEditWorkDt;
         private System.Windows.Forms.Label level;
         private System.Windows.Forms.Label length;
@@ -881,6 +893,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtEditInstCt;
         private System.Windows.Forms.Button btnBookings;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
 
