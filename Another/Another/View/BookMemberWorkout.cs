@@ -49,8 +49,8 @@ namespace Another.View
 
         private void btnBook_Click(object sender, EventArgs e)
         {            
-            try { bmcont.BookMemberWorkout(label.Text, dtGrid2.CurrentCell.Value.ToString(), dtGrid2.SelectedCells[2].Value.ToString()); }            
-            catch (SqlException ex) { MessageBox.Show(ex.ToString()); }
+            try { bmcont.BookMemberWorkout(label.Text, dtGrid2.CurrentCell.Value.ToString(), dtGrid2.SelectedCells[2].Value.ToString()); }
+            catch (SqlException) { MessageBox.Show("Already booked"); }
         }
     }
 }

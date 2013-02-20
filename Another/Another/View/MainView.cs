@@ -34,6 +34,7 @@ namespace Another
             panelInst.Visible = false;
             btnSaveEdit.Visible = false;
             btnCancel.Visible = false;
+            btnBookings.Visible = false;
         }        
 
         private void AdjustColumnOrderInstructor()
@@ -56,6 +57,7 @@ namespace Another
             { 
                 dtGrid1.DataSource = cont.SelectAll(openMemberM.Text);
                 labelGrid.Text = openMemberM.Text;
+                btnBookings.Visible = true;
             }
             catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
 
@@ -71,7 +73,8 @@ namespace Another
             panelMem.Visible = false;
             panelInst.Visible = false;
             try 
-            { 
+            {
+                btnBookings.Visible = false;
                 dtGrid1.DataSource = cont.SelectAll(openWorkoutM.Text);
                 labelGrid.Text = openWorkoutM.Text; 
                
@@ -91,7 +94,8 @@ namespace Another
             panelMem.Visible = false;
             panelWork.Visible = false;
             try 
-            { 
+            {
+                btnBookings.Visible = false;
                 dtGrid1.DataSource = cont.SelectAll(openInstructorM.Text);
                 labelGrid.Text = openInstructorM.Text;
                 AdjustColumnOrderInstructor();
@@ -187,22 +191,34 @@ namespace Another
             btnUpdateMem.Visible = true;
             try
             {
-                if (cBoxSearch.SelectedItem.ToString().Equals("Instructor"))
+                if (cBoxSearch.SelectedItem.ToString().Equals("Member"))
                 {
                     dtGrid1.DataSource = cont.SearchAll(cBoxSearch.SelectedItem.ToString(), txtSSS.Text);
                     labelGrid.Text = cBoxSearch.SelectedItem.ToString();
                     dtGrid1.Visible = true;
                     btnDelete.Visible = true;
                     labelGrid.Visible = true;
-                    AdjustColumnOrderInstructor();
+                    btnBookings.Visible = true;
                 }
-                else {
+                else if (cBoxSearch.SelectedItem.ToString().Equals("Workout")) 
+                {
                     dtGrid1.DataSource = cont.SearchAll(cBoxSearch.SelectedItem.ToString(), txtSSS.Text);
                     labelGrid.Text = cBoxSearch.SelectedItem.ToString();
                     dtGrid1.Visible = true;
                     btnDelete.Visible = true;
                     labelGrid.Visible = true;
-                } 
+                    btnBookings.Visible = false;
+                }
+                else if (cBoxSearch.SelectedItem.ToString().Equals("Instructor"))
+                {
+                    dtGrid1.DataSource = cont.SearchAll(cBoxSearch.SelectedItem.ToString(), txtSSS.Text);
+                    labelGrid.Text = cBoxSearch.SelectedItem.ToString();
+                    dtGrid1.Visible = true;
+                    btnDelete.Visible = true;
+                    labelGrid.Visible = true;
+                    btnBookings.Visible = false;
+                    AdjustColumnOrderInstructor();
+                }
             }
             catch (Exception) { MessageBox.Show("Please choose a table"); }
         }

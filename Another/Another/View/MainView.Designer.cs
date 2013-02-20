@@ -40,7 +40,6 @@
             this.openMemberM = new System.Windows.Forms.ToolStripMenuItem();
             this.openWorkoutM = new System.Windows.Forms.ToolStripMenuItem();
             this.openInstructorM = new System.Windows.Forms.ToolStripMenuItem();
-            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDelete = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -122,8 +121,7 @@
             // mainMenu
             // 
             this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileMenu,
-            this.testToolStripMenuItem});
+            this.fileMenu});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
             this.mainMenu.Size = new System.Drawing.Size(577, 24);
@@ -146,7 +144,7 @@
             this.workoutNewMenu,
             this.instructorNewMenu});
             this.fileNewM.Name = "fileNewM";
-            this.fileNewM.Size = new System.Drawing.Size(103, 22);
+            this.fileNewM.Size = new System.Drawing.Size(152, 22);
             this.fileNewM.Text = "New";
             // 
             // memberNewMenu
@@ -177,7 +175,7 @@
             this.openWorkoutM,
             this.openInstructorM});
             this.fileOpenM.Name = "fileOpenM";
-            this.fileOpenM.Size = new System.Drawing.Size(103, 22);
+            this.fileOpenM.Size = new System.Drawing.Size(152, 22);
             this.fileOpenM.Text = "Open";
             // 
             // openMemberM
@@ -200,12 +198,6 @@
             this.openInstructorM.Size = new System.Drawing.Size(125, 22);
             this.openInstructorM.Text = "Instructor";
             this.openInstructorM.Click += new System.EventHandler(this.instructorOpenMenu_Click);
-            // 
-            // testToolStripMenuItem
-            // 
-            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-            this.testToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
-            this.testToolStripMenuItem.Text = "Test";
             // 
             // btnDelete
             // 
@@ -424,42 +416,42 @@
             this.txtEditMemCt.Location = new System.Drawing.Point(114, 103);
             this.txtEditMemCt.Name = "txtEditMemCt";
             this.txtEditMemCt.Size = new System.Drawing.Size(100, 20);
-            this.txtEditMemCt.TabIndex = 6;
+            this.txtEditMemCt.TabIndex = 80;
             // 
             // txtEditMemZip
             // 
             this.txtEditMemZip.Location = new System.Drawing.Point(114, 64);
             this.txtEditMemZip.Name = "txtEditMemZip";
             this.txtEditMemZip.Size = new System.Drawing.Size(100, 20);
-            this.txtEditMemZip.TabIndex = 5;
+            this.txtEditMemZip.TabIndex = 79;
             // 
             // txtEditMemSt
             // 
             this.txtEditMemSt.Location = new System.Drawing.Point(114, 25);
             this.txtEditMemSt.Name = "txtEditMemSt";
             this.txtEditMemSt.Size = new System.Drawing.Size(100, 20);
-            this.txtEditMemSt.TabIndex = 4;
+            this.txtEditMemSt.TabIndex = 78;
             // 
             // txtEditMemPh
             // 
             this.txtEditMemPh.Location = new System.Drawing.Point(8, 142);
             this.txtEditMemPh.Name = "txtEditMemPh";
             this.txtEditMemPh.Size = new System.Drawing.Size(100, 20);
-            this.txtEditMemPh.TabIndex = 3;
+            this.txtEditMemPh.TabIndex = 77;
             // 
             // txtEditMemEm
             // 
             this.txtEditMemEm.Location = new System.Drawing.Point(8, 103);
             this.txtEditMemEm.Name = "txtEditMemEm";
             this.txtEditMemEm.Size = new System.Drawing.Size(100, 20);
-            this.txtEditMemEm.TabIndex = 2;
+            this.txtEditMemEm.TabIndex = 76;
             // 
             // txtEditMemNm
             // 
             this.txtEditMemNm.Location = new System.Drawing.Point(8, 64);
             this.txtEditMemNm.Name = "txtEditMemNm";
             this.txtEditMemNm.Size = new System.Drawing.Size(100, 20);
-            this.txtEditMemNm.TabIndex = 1;
+            this.txtEditMemNm.TabIndex = 75;
             // 
             // txtEditMemSS
             // 
@@ -483,9 +475,9 @@
             this.panelWork.Controls.Add(this.txtEditWorkNm);
             this.panelWork.Controls.Add(this.txtEditWorkID);
             this.panelWork.Controls.Add(this.label10);
-            this.panelWork.Location = new System.Drawing.Point(341, 30);
+            this.panelWork.Location = new System.Drawing.Point(344, 27);
             this.panelWork.Name = "panelWork";
-            this.panelWork.Size = new System.Drawing.Size(226, 161);
+            this.panelWork.Size = new System.Drawing.Size(226, 162);
             this.panelWork.TabIndex = 77;
             // 
             // txtEditWorkDt
@@ -493,7 +485,7 @@
             this.txtEditWorkDt.Location = new System.Drawing.Point(7, 104);
             this.txtEditWorkDt.Name = "txtEditWorkDt";
             this.txtEditWorkDt.Size = new System.Drawing.Size(100, 20);
-            this.txtEditWorkDt.TabIndex = 2;
+            this.txtEditWorkDt.TabIndex = 100;
             // 
             // level
             // 
@@ -554,28 +546,28 @@
             this.txtEditWorkLv.Location = new System.Drawing.Point(113, 103);
             this.txtEditWorkLv.Name = "txtEditWorkLv";
             this.txtEditWorkLv.Size = new System.Drawing.Size(100, 20);
-            this.txtEditWorkLv.TabIndex = 5;
+            this.txtEditWorkLv.TabIndex = 93;
             // 
             // txtEditWorkLt
             // 
             this.txtEditWorkLt.Location = new System.Drawing.Point(113, 65);
             this.txtEditWorkLt.Name = "txtEditWorkLt";
             this.txtEditWorkLt.Size = new System.Drawing.Size(100, 20);
-            this.txtEditWorkLt.TabIndex = 4;
+            this.txtEditWorkLt.TabIndex = 92;
             // 
             // txtEditWorkTm
             // 
             this.txtEditWorkTm.Location = new System.Drawing.Point(114, 25);
             this.txtEditWorkTm.Name = "txtEditWorkTm";
             this.txtEditWorkTm.Size = new System.Drawing.Size(100, 20);
-            this.txtEditWorkTm.TabIndex = 3;
+            this.txtEditWorkTm.TabIndex = 91;
             // 
             // txtEditWorkNm
             // 
             this.txtEditWorkNm.Location = new System.Drawing.Point(8, 65);
             this.txtEditWorkNm.Name = "txtEditWorkNm";
             this.txtEditWorkNm.Size = new System.Drawing.Size(100, 20);
-            this.txtEditWorkNm.TabIndex = 1;
+            this.txtEditWorkNm.TabIndex = 90;
             // 
             // txtEditWorkID
             // 
@@ -610,7 +602,7 @@
             this.panelInst.Controls.Add(this.label11);
             this.panelInst.Controls.Add(this.txtEditInstSS);
             this.panelInst.Controls.Add(this.label12);
-            this.panelInst.Location = new System.Drawing.Point(341, 26);
+            this.panelInst.Location = new System.Drawing.Point(345, 26);
             this.panelInst.Name = "panelInst";
             this.panelInst.Size = new System.Drawing.Size(226, 166);
             this.panelInst.TabIndex = 78;
@@ -629,7 +621,7 @@
             this.txtEditInstCt.Location = new System.Drawing.Point(116, 143);
             this.txtEditInstCt.Name = "txtEditInstCt";
             this.txtEditInstCt.Size = new System.Drawing.Size(100, 20);
-            this.txtEditInstCt.TabIndex = 6;
+            this.txtEditInstCt.TabIndex = 63;
             // 
             // txtEditInstID
             // 
@@ -652,7 +644,7 @@
             this.txtEditInstPh.Location = new System.Drawing.Point(9, 143);
             this.txtEditInstPh.Name = "txtEditInstPh";
             this.txtEditInstPh.Size = new System.Drawing.Size(100, 20);
-            this.txtEditInstPh.TabIndex = 3;
+            this.txtEditInstPh.TabIndex = 60;
             // 
             // label7
             // 
@@ -669,7 +661,7 @@
             this.txtEditInstZip.Location = new System.Drawing.Point(115, 104);
             this.txtEditInstZip.Name = "txtEditInstZip";
             this.txtEditInstZip.Size = new System.Drawing.Size(100, 20);
-            this.txtEditInstZip.TabIndex = 5;
+            this.txtEditInstZip.TabIndex = 56;
             // 
             // label5
             // 
@@ -685,7 +677,7 @@
             this.txtEditInstSt.Location = new System.Drawing.Point(115, 64);
             this.txtEditInstSt.Name = "txtEditInstSt";
             this.txtEditInstSt.Size = new System.Drawing.Size(100, 20);
-            this.txtEditInstSt.TabIndex = 4;
+            this.txtEditInstSt.TabIndex = 54;
             // 
             // label4
             // 
@@ -701,7 +693,7 @@
             this.txtEditInstEm.Location = new System.Drawing.Point(9, 104);
             this.txtEditInstEm.Name = "txtEditInstEm";
             this.txtEditInstEm.Size = new System.Drawing.Size(100, 20);
-            this.txtEditInstEm.TabIndex = 2;
+            this.txtEditInstEm.TabIndex = 52;
             // 
             // label3
             // 
@@ -717,7 +709,7 @@
             this.txtEditInstNm.Location = new System.Drawing.Point(9, 64);
             this.txtEditInstNm.Name = "txtEditInstNm";
             this.txtEditInstNm.Size = new System.Drawing.Size(100, 20);
-            this.txtEditInstNm.TabIndex = 1;
+            this.txtEditInstNm.TabIndex = 50;
             // 
             // label11
             // 
@@ -840,7 +832,6 @@
         private System.Windows.Forms.TextBox txtSSS;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label labelGrid;
-        private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
         private System.Windows.Forms.Button btnBook;
         private System.Windows.Forms.ComboBox cbTable;
         private System.Windows.Forms.Button btnUpdateMem;
