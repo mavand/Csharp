@@ -36,5 +36,11 @@ namespace Another.Controller
             DataTable dt = dal.GetWorkout();
             return dt;
         }
+
+        public DataTable DeleteMW(string ss)
+        {
+            DataTable dt = dal.DeleteMW(ss);
+            return dt;
+        }
     }
 }

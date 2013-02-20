@@ -48,6 +48,14 @@ namespace Another
             con.Close();
             return dt;
         }
+        public DataTable DeleteMW(string ss)
+        {
+            SqlDataAdapter da = new SqlDataAdapter("delete from memberworkout where socialsecurity='" + ss + "'", con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return dt;
+        }
 
         public DataTable NewInstructor(string instID, string ss, string name, string city, string street, string zip, string email, string phone)
         {

@@ -34,7 +34,7 @@ namespace Another
             panelInst.Visible = false;
             btnSaveEdit.Visible = false;
             btnCancel.Visible = false;
-        }
+        }        
 
         private void AdjustColumnOrderInstructor()
         {
@@ -108,39 +108,55 @@ namespace Another
         {
             try
             {
-                
+                if (dtGrid1.SelectedCells[0].Value != null)
+                {
                     if (labelGrid.Text == "Member")
                     {
                         DialogResult dialogResult = MessageBox.Show("You sure you want to delete this member(s)?", "Delete Member", MessageBoxButtons.YesNo);
                         if (dialogResult == DialogResult.Yes)
-                        foreach (DataGridViewRow item in this.dtGrid1.SelectedRows)
-                        {
-                            mcont.DeleteMember(labelGrid.Text, dtGrid1.CurrentCell.Value.ToString());
-                            dtGrid1.Rows.RemoveAt(item.Index);                                                            
-                        }
+                            foreach (DataGridViewRow item in this.dtGrid1.SelectedRows)
+                            {
+                                mcont.DeleteMember(labelGrid.Text, dtGrid1.CurrentCell.Value.ToString());
+                                dtGrid1.Rows.RemoveAt(item.Index);
+                            }
                     }
                     else if (labelGrid.Text == "Workout")
                     {
                         DialogResult dialogResult = MessageBox.Show("You sure you want to delete this Workout(s)?", "Delete Workout", MessageBoxButtons.YesNo);
                         if (dialogResult == DialogResult.Yes)
-                        foreach (DataGridViewRow item in this.dtGrid1.SelectedRows)
-                        {
-                            wcont.DeleteWorkout(labelGrid.Text, dtGrid1.CurrentCell.Value.ToString());
-                            dtGrid1.Rows.RemoveAt(item.Index);                                       
-                        }
+                            foreach (DataGridViewRow item in this.dtGrid1.SelectedRows)
+                            {
+                                wcont.DeleteWorkout(labelGrid.Text, dtGrid1.CurrentCell.Value.ToString());
+                                dtGrid1.Rows.RemoveAt(item.Index);
+                            }
                     }
                     else if (labelGrid.Text == "Instructor")
                     {
                         DialogResult dialogResult = MessageBox.Show("You sure you want to delete this Instructor(s)?", "Delete Instructor", MessageBoxButtons.YesNo);
                         if (dialogResult == DialogResult.Yes)
-                        foreach (DataGridViewRow item in this.dtGrid1.SelectedRows)
-                        {
-                            icont.DeleteInstructor(labelGrid.Text, dtGrid1.CurrentCell.Value.ToString());
-                            dtGrid1.Rows.RemoveAt(item.Index);                                                          
-                        }
+                            foreach (DataGridViewRow item in this.dtGrid1.SelectedRows)
+                            {
+                                icont.DeleteInstructor(labelGrid.Text, dtGrid1.CurrentCell.Value.ToString());
+                                dtGrid1.Rows.RemoveAt(item.Index);
+                            }
                     }
+                }
+                else
+                { MessageBox.Show("Please select a row to delete"); }
             }
-            catch (SqlException e2) {MessageBox.Show("du måste välja en rad med ifyllda värden" +e2.ToString());
+            catch (SqlException) 
+            {
+                DialogResult dialogResult = MessageBox.Show(dtGrid1.SelectedCells[1].Value.ToString()+" has some bookings, do you wish to delete these too?", "Delete Instructor", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    cont.DeleteMW(dtGrid1.SelectedCells[0].Value.ToString());
+                    foreach (DataGridViewRow item in this.dtGrid1.SelectedRows)
+                    {
+                        mcont.DeleteMember(labelGrid.Text, dtGrid1.CurrentCell.Value.ToString());
+                        dtGrid1.Rows.RemoveAt(item.Index);
+                    }
+
+                }
             }               
             
         }

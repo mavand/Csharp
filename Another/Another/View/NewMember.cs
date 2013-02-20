@@ -45,14 +45,13 @@ namespace Another.View
                 { 
                     mcont.NewMember(txtSS.Text, txtName.Text, txtCity.Text, txtStreet.Text, txtZipcode.Text, txtEmail.Text, txtPhone.Text);
                     MessageBox.Show("Added");
-                    ClearFields();
-
+                    ClearFields();                    
                 }
                 catch (SqlException) 
                 { 
                     MessageBox.Show("The social security number \"" + txtSS.Text + "\"is already registered"); 
                 }               
             }
-        }
+        }       
     }
 }
