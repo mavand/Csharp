@@ -29,18 +29,18 @@ namespace Another.View
 
         private void ClearFields()
         {
-            txtSS.Text = string.Empty;
-            txtName.Text = string.Empty;
-            txtCity.Text = string.Empty;
-            txtStreet.Text = string.Empty;
-            txtZipcode.Text = string.Empty;
-            txtEmail.Text = string.Empty;
-            txtPhone.Text = string.Empty;
+            txtNewMemSS.Text = string.Empty;
+            txtNewMemNm.Text = string.Empty;
+            txtNewMemCt.Text = string.Empty;
+            txtNewMemSt.Text = string.Empty;
+            txtNewMemZip.Text = string.Empty;
+            txtNewMemEm.Text = string.Empty;
+            txtNewMemPh.Text = string.Empty;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txtSS.Text)||String.IsNullOrEmpty(txtName.Text)||String.IsNullOrEmpty(txtCity.Text)||String.IsNullOrEmpty(txtStreet.Text)||String.IsNullOrEmpty(txtZipcode.Text)||String.IsNullOrEmpty(txtEmail.Text)||String.IsNullOrEmpty(txtPhone.Text))
+            if (String.IsNullOrEmpty(txtNewMemSS.Text)||String.IsNullOrEmpty(txtNewMemNm.Text)||String.IsNullOrEmpty(txtNewMemCt.Text)||String.IsNullOrEmpty(txtNewMemSt.Text)||String.IsNullOrEmpty(txtNewMemZip.Text)||String.IsNullOrEmpty(txtNewMemEm.Text)||String.IsNullOrEmpty(txtNewMemPh.Text))
             {
                 MessageBox.Show("Please fill out all the fields");
             }
@@ -48,7 +48,7 @@ namespace Another.View
             {
                 try 
                 { 
-                    mcont.NewMember(txtSS.Text, txtName.Text, txtCity.Text, txtStreet.Text, txtZipcode.Text, txtEmail.Text, txtPhone.Text);
+                    mcont.NewMember(txtNewMemSS.Text, txtNewMemNm.Text, txtNewMemCt.Text, txtNewMemSt.Text, txtNewMemZip.Text, txtNewMemEm.Text, txtNewMemPh.Text);
                     MessageBox.Show("Added");
                     //MainView mw = new MainView();
                     //mw.DtGrid1.DataSource = cont.SearchAll("Member", "");
@@ -57,7 +57,7 @@ namespace Another.View
                 }
                 catch (SqlException) 
                 { 
-                    MessageBox.Show("The social security number \"" + txtSS.Text + "\"is already registered"); 
+                    MessageBox.Show("The social security number \"" + txtNewMemSS.Text + "\"is already registered"); 
                 }               
             }
             

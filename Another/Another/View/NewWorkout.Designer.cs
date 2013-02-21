@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.btnAdd = new System.Windows.Forms.Button();
-            this.txtwID = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtTime = new System.Windows.Forms.TextBox();
-            this.txtLength = new System.Windows.Forms.TextBox();
-            this.txtLevel = new System.Windows.Forms.TextBox();
+            this.txtNewWorkId = new System.Windows.Forms.TextBox();
+            this.txtNewWorkNm = new System.Windows.Forms.TextBox();
+            this.txtNewWorkTm = new System.Windows.Forms.TextBox();
+            this.txtNewWorkLt = new System.Windows.Forms.TextBox();
+            this.txtNewWorkLv = new System.Windows.Forms.TextBox();
             this.wID = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.Label();
             this.date = new System.Windows.Forms.Label();
             this.time = new System.Windows.Forms.Label();
             this.length = new System.Windows.Forms.Label();
             this.level = new System.Windows.Forms.Label();
-            this.txtDate = new System.Windows.Forms.TextBox();
+            this.txtNewWorkDt = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -53,40 +53,40 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // txtwID
+            // txtNewWorkId
             // 
-            this.txtwID.Location = new System.Drawing.Point(13, 26);
-            this.txtwID.Name = "txtwID";
-            this.txtwID.Size = new System.Drawing.Size(100, 20);
-            this.txtwID.TabIndex = 1;
+            this.txtNewWorkId.Location = new System.Drawing.Point(13, 26);
+            this.txtNewWorkId.Name = "txtNewWorkId";
+            this.txtNewWorkId.Size = new System.Drawing.Size(100, 20);
+            this.txtNewWorkId.TabIndex = 1;
             // 
-            // txtName
+            // txtNewWorkNm
             // 
-            this.txtName.Location = new System.Drawing.Point(13, 66);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(100, 20);
-            this.txtName.TabIndex = 2;
+            this.txtNewWorkNm.Location = new System.Drawing.Point(13, 66);
+            this.txtNewWorkNm.Name = "txtNewWorkNm";
+            this.txtNewWorkNm.Size = new System.Drawing.Size(100, 20);
+            this.txtNewWorkNm.TabIndex = 2;
             // 
-            // txtTime
+            // txtNewWorkTm
             // 
-            this.txtTime.Location = new System.Drawing.Point(157, 26);
-            this.txtTime.Name = "txtTime";
-            this.txtTime.Size = new System.Drawing.Size(100, 20);
-            this.txtTime.TabIndex = 4;
+            this.txtNewWorkTm.Location = new System.Drawing.Point(157, 26);
+            this.txtNewWorkTm.Name = "txtNewWorkTm";
+            this.txtNewWorkTm.Size = new System.Drawing.Size(100, 20);
+            this.txtNewWorkTm.TabIndex = 4;
             // 
-            // txtLength
+            // txtNewWorkLt
             // 
-            this.txtLength.Location = new System.Drawing.Point(157, 66);
-            this.txtLength.Name = "txtLength";
-            this.txtLength.Size = new System.Drawing.Size(100, 20);
-            this.txtLength.TabIndex = 5;
+            this.txtNewWorkLt.Location = new System.Drawing.Point(157, 66);
+            this.txtNewWorkLt.Name = "txtNewWorkLt";
+            this.txtNewWorkLt.Size = new System.Drawing.Size(100, 20);
+            this.txtNewWorkLt.TabIndex = 5;
             // 
-            // txtLevel
+            // txtNewWorkLv
             // 
-            this.txtLevel.Location = new System.Drawing.Point(157, 104);
-            this.txtLevel.Name = "txtLevel";
-            this.txtLevel.Size = new System.Drawing.Size(100, 20);
-            this.txtLevel.TabIndex = 6;
+            this.txtNewWorkLv.Location = new System.Drawing.Point(157, 104);
+            this.txtNewWorkLv.Name = "txtNewWorkLv";
+            this.txtNewWorkLv.Size = new System.Drawing.Size(100, 20);
+            this.txtNewWorkLv.TabIndex = 6;
             // 
             // wID
             // 
@@ -143,30 +143,30 @@
             this.level.TabIndex = 12;
             this.level.Text = "Level";
             // 
-            // txtDate
+            // txtNewWorkDt
             // 
-            this.txtDate.Location = new System.Drawing.Point(12, 105);
-            this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(100, 20);
-            this.txtDate.TabIndex = 13;
+            this.txtNewWorkDt.Location = new System.Drawing.Point(12, 105);
+            this.txtNewWorkDt.Name = "txtNewWorkDt";
+            this.txtNewWorkDt.Size = new System.Drawing.Size(100, 20);
+            this.txtNewWorkDt.TabIndex = 13;
             // 
             // NewWorkout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Controls.Add(this.txtDate);
+            this.Controls.Add(this.txtNewWorkDt);
             this.Controls.Add(this.level);
             this.Controls.Add(this.length);
             this.Controls.Add(this.time);
             this.Controls.Add(this.date);
             this.Controls.Add(this.name);
             this.Controls.Add(this.wID);
-            this.Controls.Add(this.txtLevel);
-            this.Controls.Add(this.txtLength);
-            this.Controls.Add(this.txtTime);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.txtwID);
+            this.Controls.Add(this.txtNewWorkLv);
+            this.Controls.Add(this.txtNewWorkLt);
+            this.Controls.Add(this.txtNewWorkTm);
+            this.Controls.Add(this.txtNewWorkNm);
+            this.Controls.Add(this.txtNewWorkId);
             this.Controls.Add(this.btnAdd);
             this.Name = "NewWorkout";
             this.Text = "NewWorkout";
@@ -178,18 +178,18 @@
         #endregion
 
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.TextBox txtwID;
+        private System.Windows.Forms.TextBox txtNewWorkId;
         private System.Windows.Forms.Label wID;
-        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtNewWorkNm;
         private System.Windows.Forms.Label name;
         private System.Windows.Forms.Label date;
-        private System.Windows.Forms.TextBox txtTime;
+        private System.Windows.Forms.TextBox txtNewWorkTm;
         private System.Windows.Forms.Label time;
-        private System.Windows.Forms.TextBox txtLength;
+        private System.Windows.Forms.TextBox txtNewWorkLt;
         private System.Windows.Forms.Label length;
-        private System.Windows.Forms.TextBox txtLevel;
+        private System.Windows.Forms.TextBox txtNewWorkLv;
         private System.Windows.Forms.Label level;
-        private System.Windows.Forms.TextBox txtDate;
+        private System.Windows.Forms.TextBox txtNewWorkDt;
       
     }
 }

@@ -51,7 +51,6 @@
     <Compile Include="Controller\MemberWorkoutController.cs" />
     <Compile Include="Controller\WorkoutController.cs" />
     <Compile Include="Dal.cs" />
-    <Compile Include="Model\Instructor.cs" />
     <Compile Include="View\BookMemberWorkout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,8 +75,6 @@
     <Compile Include="View\MainView.Designer.cs">
       <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\Member.cs" />
-    <Compile Include="Model\Workout.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\NewInstructor.cs">

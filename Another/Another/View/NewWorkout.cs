@@ -24,20 +24,20 @@ namespace Another.View
 
          private void ClearFields()
         {
-            txtwID.Text = string.Empty;
-            txtName.Text = string.Empty;
-            txtDate.Text = string.Empty;
-            txtTime.Text = string.Empty;
-            txtLength.Text = string.Empty;
-            txtLevel.Text = string.Empty;
+            txtNewWorkId.Text = string.Empty;
+            txtNewWorkNm.Text = string.Empty;
+            txtNewWorkDt.Text = string.Empty;
+            txtNewWorkTm.Text = string.Empty;
+            txtNewWorkLt.Text = string.Empty;
+            txtNewWorkLv.Text = string.Empty;
             
         }
 
          private void btnAdd_Click(object sender, EventArgs e)
          {
 
-             if (String.IsNullOrEmpty(txtwID.Text) || String.IsNullOrEmpty(txtName.Text) || String.IsNullOrEmpty(txtDate.Text)
-                || String.IsNullOrEmpty(txtTime.Text) || String.IsNullOrEmpty(txtLength.Text) || String.IsNullOrEmpty(txtLevel.Text))
+             if (String.IsNullOrEmpty(txtNewWorkId.Text) || String.IsNullOrEmpty(txtNewWorkNm.Text) || String.IsNullOrEmpty(txtNewWorkDt.Text)
+                || String.IsNullOrEmpty(txtNewWorkTm.Text) || String.IsNullOrEmpty(txtNewWorkLt.Text) || String.IsNullOrEmpty(txtNewWorkLv.Text))
              {
 
                  MessageBox.Show("Please fill out all the fields");
@@ -46,14 +46,14 @@ namespace Another.View
              {
                  try
                  {
-                     wcont.NewWorkout(txtwID.Text, txtName.Text, txtDate.Text, txtTime.Text, txtLength.Text, txtLevel.Text);
+                     wcont.NewWorkout(txtNewWorkId.Text, txtNewWorkNm.Text, txtNewWorkDt.Text, txtNewWorkTm.Text, txtNewWorkLt.Text, txtNewWorkLv.Text);
                      MessageBox.Show("Added");
                      ClearFields();
 
                  }
                  catch (SqlException)
                  {
-                     MessageBox.Show("The WorkID \"" + txtwID.Text + "\"is already registered");
+                     MessageBox.Show("The WorkID \"" + txtNewWorkId.Text + "\"is already registered");
                  }
              }
          }

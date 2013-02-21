@@ -24,19 +24,19 @@ namespace Another.View
 
         private void ClearFields()
         {
-            txtInstID.Text = string.Empty;
-            txtSS.Text = string.Empty;
-            txtName.Text = string.Empty;
-            txtCity.Text = string.Empty;
-            txtStreet.Text = string.Empty;
-            txtZipcode.Text = string.Empty;
-            txtEmail.Text = string.Empty;
-            txtPhone.Text = string.Empty;
+            txtNewInstId.Text = string.Empty;
+            txtNewInstSS.Text = string.Empty;
+            txtNewInstNm.Text = string.Empty;
+            txtNewInstCt.Text = string.Empty;
+            txtNewInstSt.Text = string.Empty;
+            txtNewInstZip.Text = string.Empty;
+            txtNewInstEm.Text = string.Empty;
+            txtNewInstPh.Text = string.Empty;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txtInstID.Text)||String.IsNullOrEmpty(txtSS.Text)||String.IsNullOrEmpty(txtName.Text)||String.IsNullOrEmpty(txtCity.Text)||String.IsNullOrEmpty(txtStreet.Text)||String.IsNullOrEmpty(txtZipcode.Text)||String.IsNullOrEmpty(txtEmail.Text)||String.IsNullOrEmpty(txtPhone.Text))
+            if (String.IsNullOrEmpty(txtNewInstId.Text)||String.IsNullOrEmpty(txtNewInstSS.Text)||String.IsNullOrEmpty(txtNewInstNm.Text)||String.IsNullOrEmpty(txtNewInstCt.Text)||String.IsNullOrEmpty(txtNewInstSt.Text)||String.IsNullOrEmpty(txtNewInstZip.Text)||String.IsNullOrEmpty(txtNewInstEm.Text)||String.IsNullOrEmpty(txtNewInstPh.Text))
             {
                 MessageBox.Show("Please fill out all the fields");
             }
@@ -44,13 +44,13 @@ namespace Another.View
             {
                 try
                 {
-                    icont.NewInstructor(txtInstID.Text, txtSS.Text, txtName.Text, txtCity.Text, txtStreet.Text, txtZipcode.Text, txtEmail.Text, txtPhone.Text);
+                    icont.NewInstructor(txtNewInstId.Text, txtNewInstSS.Text, txtNewInstNm.Text, txtNewInstCt.Text, txtNewInstSt.Text, txtNewInstZip.Text, txtNewInstEm.Text, txtNewInstPh.Text);
                     MessageBox.Show("Added");
                     ClearFields();
                 }
                 catch (SqlException)
                 {
-                    MessageBox.Show("The Instructor ID \"" + txtInstID.Text + "\"is already registered");
+                    MessageBox.Show("The Instructor ID \"" + txtNewInstId.Text + "\"is already registered");
                 }
             }
         }
