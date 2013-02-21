@@ -16,10 +16,12 @@ namespace Another.View
     {
         InstructorController icont = new InstructorController();
         Dal dal = new Dal();
+       
 
         public NewInstructor()
         {
             InitializeComponent();
+           
         }
 
         private void ClearFields()
@@ -47,6 +49,7 @@ namespace Another.View
                     icont.NewInstructor(txtNewInstId.Text, txtNewInstSS.Text, txtNewInstNm.Text, txtNewInstCt.Text, txtNewInstSt.Text, txtNewInstZip.Text, txtNewInstEm.Text, txtNewInstPh.Text);
                     MessageBox.Show("Added");
                     ClearFields();
+                    
                 }
                 catch (SqlException)
                 {

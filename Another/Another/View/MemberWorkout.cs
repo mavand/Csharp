@@ -26,7 +26,7 @@ namespace Another.View
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("You sure you want to delete this member(s)?", "Delete Member", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this member(s)?", "Delete Member", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
                 foreach (DataGridViewRow item in this.dtGrid.SelectedRows)
                 {

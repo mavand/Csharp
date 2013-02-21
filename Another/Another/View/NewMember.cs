@@ -28,7 +28,8 @@ namespace Another.View
 
 
         private void ClearFields()
-        {
+        { //Method to clear the fields to allow user to fill these. 
+           
             txtNewMemSS.Text = string.Empty;
             txtNewMemNm.Text = string.Empty;
             txtNewMemCt.Text = string.Empty;
@@ -50,14 +51,12 @@ namespace Another.View
                 { 
                     mcont.NewMember(txtNewMemSS.Text, txtNewMemNm.Text, txtNewMemCt.Text, txtNewMemSt.Text, txtNewMemZip.Text, txtNewMemEm.Text, txtNewMemPh.Text);
                     MessageBox.Show("Added");
-                    //MainView mw = new MainView();
-                    //mw.DtGrid1.DataSource = cont.SearchAll("Member", "");
                     ClearFields();
                     _mw.PerformRefresh();
                 }
                 catch (SqlException) 
                 { 
-                    MessageBox.Show("The social security number \"" + txtNewMemSS.Text + "\"is already registered"); 
+                    MessageBox.Show("The Socialsecurity number \"" + txtNewMemSS.Text + "\"is already registered"); 
                 }               
             }
             

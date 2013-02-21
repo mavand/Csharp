@@ -18,7 +18,7 @@ namespace Another.View
         MemberController mcont = new MemberController();
         BookMemberController bmcont = new BookMemberController();
         Label label1;
-        //Label label2;
+        
 
         public Label Label2
         {
@@ -49,8 +49,14 @@ namespace Another.View
 
         private void btnBook_Click(object sender, EventArgs e)
         {            
-            try { bmcont.BookMemberWorkout(label.Text, dtGrid2.CurrentCell.Value.ToString(), dtGrid2.SelectedCells[2].Value.ToString()); }
-            catch (SqlException) { MessageBox.Show("Already booked"); }
+            try 
+            { 
+                bmcont.BookMemberWorkout(label.Text, dtGrid2.CurrentCell.Value.ToString(), dtGrid2.SelectedCells[2].Value.ToString()); 
+            }
+            catch (SqlException) 
+            {
+                MessageBox.Show("Already booked"); 
+            }
         }
     }
 }
