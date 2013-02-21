@@ -55,7 +55,7 @@ namespace Another
 
         public DataTable EditMember(string ss, string name, string city, string street, string zip, string email, string phone, string pk)
         {
-            SqlDataAdapter da = new SqlDataAdapter("Update Member set SocialSecurity='" + ss + "'," + "Name='" + name + "'," + "City='" + city + "', " + "Street='" + street + "', " + "ZipCode='" + zip + "', " + "Email='" + email + "', " + "Phone='" + phone + "' where SocialSecurity='" + pk + "'", con);
+            SqlDataAdapter da = new SqlDataAdapter("update Member set SocialSecurity='" + ss + "'," + "Name='" + name + "'," + "City='" + city + "', " + "Street='" + street + "', " + "ZipCode='" + zip + "', " + "Email='" + email + "', " + "Phone='" + phone + "' where SocialSecurity='" + pk + "'", con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             con.Close();
@@ -120,7 +120,7 @@ namespace Another
 
         public DataTable EditWorkout(string wID, string name, string date, string time, string length, string level, string pk)
         {
-            SqlDataAdapter da = new SqlDataAdapter("Update Workout set WorkID='" + wID + "'," + "Name='" + name + "'," + "Date='" + date + "', " + "Time='" + time + "', " + "Length='" + length + "', " + "Level='" + level + "' where WorkID='" + pk + "'", con);
+            SqlDataAdapter da = new SqlDataAdapter("update Workout set WorkID='" + wID + "'," + "Name='" + name + "'," + "Date='" + date + "', " + "Time='" + time + "', " + "Length='" + length + "', " + "Level='" + level + "' where WorkID='" + pk + "'", con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             con.Close();
