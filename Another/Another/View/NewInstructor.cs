@@ -16,12 +16,12 @@ namespace Another.View
     {
         InstructorController icont = new InstructorController();
         Dal dal = new Dal();
-       
+
 
         public NewInstructor()
         {
             InitializeComponent();
-           
+
         }
 
         private void ClearFields()
@@ -38,7 +38,9 @@ namespace Another.View
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txtNewInstId.Text)||String.IsNullOrEmpty(txtNewInstSS.Text)||String.IsNullOrEmpty(txtNewInstNm.Text)||String.IsNullOrEmpty(txtNewInstCt.Text)||String.IsNullOrEmpty(txtNewInstSt.Text)||String.IsNullOrEmpty(txtNewInstZip.Text)||String.IsNullOrEmpty(txtNewInstEm.Text)||String.IsNullOrEmpty(txtNewInstPh.Text))
+
+
+            if (String.IsNullOrEmpty(txtNewInstId.Text) || String.IsNullOrEmpty(txtNewInstSS.Text) || String.IsNullOrEmpty(txtNewInstNm.Text) || String.IsNullOrEmpty(txtNewInstCt.Text) || String.IsNullOrEmpty(txtNewInstSt.Text) || String.IsNullOrEmpty(txtNewInstZip.Text) || String.IsNullOrEmpty(txtNewInstEm.Text) || String.IsNullOrEmpty(txtNewInstPh.Text))
             {
                 MessageBox.Show("Please fill out all the fields");
             }
@@ -46,16 +48,32 @@ namespace Another.View
             {
                 try
                 {
-                    icont.NewInstructor(txtNewInstId.Text, txtNewInstSS.Text, txtNewInstNm.Text, txtNewInstCt.Text, txtNewInstSt.Text, txtNewInstZip.Text, txtNewInstEm.Text, txtNewInstPh.Text);
-                    MessageBox.Show("Added");
-                    ClearFields();
-                    
+                    try
+                    {
+
+                        icont.NewInstructor(txtNewInstId.Text, txtNewInstSS.Text, txtNewInstNm.Text, txtNewInstCt.Text, txtNewInstSt.Text, txtNewInstZip.Text, txtNewInstEm.Text, txtNewInstPh.Text);
+                        MessageBox.Show("Added");
+                        ClearFields();
+
+                    }
+                    catch (SqlException)
+                    {
+                        MessageBox.Show("The Instructor ID \"" + txtNewInstId.Text + "\"is already registered");
+                    }
+
+
+
+
                 }
-                catch (SqlException)
+                catch (SqlException e2)
                 {
-                    MessageBox.Show("The Instructor ID \"" + txtNewInstId.Text + "\"is already registered");
+                    MessageBox.Show("Connection problem!" + e2.ToString());
                 }
+
             }
         }
     }
+
 }
+   
+

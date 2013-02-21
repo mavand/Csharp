@@ -52,7 +52,14 @@ namespace Another
         
         public void PerformRefresh()
         {
-            dtGrid1.DataSource = cont.SearchAll("Member", "");
+            try 
+            { 
+                dtGrid1.DataSource = cont.SearchAll("Member", ""); 
+            }
+            catch (SqlException e) 
+            { 
+                MessageBox.Show("Connection problem!"+e.ToString()); 
+            }
         }
 
         private void memberOpenMenu_Click(object sender, EventArgs e)

@@ -46,15 +46,22 @@ namespace Another.View
              {
                  try
                  {
-                     wcont.NewWorkout(txtNewWorkId.Text, txtNewWorkNm.Text, txtNewWorkDt.Text, txtNewWorkTm.Text, txtNewWorkLt.Text, txtNewWorkLv.Text);
-                     MessageBox.Show("Added");
-                     ClearFields();
+                     try
+                     {
+                         wcont.NewWorkout(txtNewWorkId.Text, txtNewWorkNm.Text, txtNewWorkDt.Text, txtNewWorkTm.Text, txtNewWorkLt.Text, txtNewWorkLv.Text);
+                         MessageBox.Show("Added");
+                         ClearFields();
 
-                 }
-                 catch (SqlException)
-                 {
-                     MessageBox.Show("The WorkID \"" + txtNewWorkId.Text + "\"is already registered");
-                 }
+                     }
+                     catch (SqlException)
+                     {
+                         MessageBox.Show("The WorkID \"" + txtNewWorkId.Text + "\"is already registered");
+                    }
+                    }
+                    catch (SqlException)
+                    {
+                     MessageBox.Show("Connection problem!" + e.ToString());
+                  }
              }
          }
 

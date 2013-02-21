@@ -35,6 +35,7 @@
             // 
             // dtGrid
             // 
+            this.dtGrid.AllowUserToAddRows = false;
             this.dtGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGrid.Location = new System.Drawing.Point(13, 13);
             this.dtGrid.Name = "dtGrid";

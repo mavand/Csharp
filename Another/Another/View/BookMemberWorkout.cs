@@ -44,9 +44,15 @@ namespace Another.View
 
         private void cbWorkout_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dtGrid2.DataSource = bmcont.SelectWorkout(cbWorkout.SelectedItem.ToString());
+            try
+            {
+                dtGrid2.DataSource = bmcont.SelectWorkout(cbWorkout.SelectedItem.ToString());
+            }
+            catch (SqlException e2)
+            {
+                MessageBox.Show("Connection problem!" + e2.ToString());
+            }
         }
-
         private void btnBook_Click(object sender, EventArgs e)
         {            
             try 
