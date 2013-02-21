@@ -34,21 +34,26 @@ namespace Another.View
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            try
-            {
-                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this workout?", "Delete Workout", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-                
-                foreach (DataGridViewRow item in this.dtGrid.SelectedRows)
+            if (!dtGrid.SelectedCells[0].Value.Equals(null))
+                try
                 {
-                   
-                        mwcont.DeleteMemberWorkout(dtGrid.SelectedCells[4].Value.ToString(), dtGrid.SelectedCells[3].Value.ToString());
-                        dtGrid.Rows.RemoveAt(item.Index);
-                    }
+                    DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this workout?", "Delete Workout", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+
+                        foreach (DataGridViewRow item in this.dtGrid.SelectedRows)
+                        {
+
+                            mwcont.DeleteMemberWorkout(dtGrid.SelectedCells[4].Value.ToString(), dtGrid.SelectedCells[3].Value.ToString());
+                            dtGrid.Rows.RemoveAt(item.Index);
+                        }
                 }
-            catch (SqlException e2)
+                catch (SqlException e2)
+                {
+                    MessageBox.Show("Connection problem!" + e2.ToString());
+                }
+            else
             {
-                MessageBox.Show("Connection problem!" + e2.ToString());
+                MessageBox.Show("There are no bookings to delete");
             }
         }
         

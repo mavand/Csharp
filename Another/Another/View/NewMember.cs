@@ -23,7 +23,6 @@ namespace Another.View
         {
             InitializeComponent();
             _mw = mw;
-
         }
 
 

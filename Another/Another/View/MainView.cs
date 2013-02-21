@@ -52,13 +52,24 @@ namespace Another
         
         public void PerformRefresh()
         {
-            try 
-            { 
-                dtGrid1.DataSource = cont.SearchAll("Member", ""); 
+            try
+            {
+                if (labelGrid.Text.Equals("Member"))
+                {
+                    dtGrid1.DataSource = cont.SearchAll("Member", "");
+                }
+                else if (labelGrid.Text.Equals("Instructor"))
+                {
+                    dtGrid1.DataSource = cont.SearchAll("Instructor", "");
+                }
+                else if (labelGrid.Text.Equals("Workout"))
+                {
+                    dtGrid1.DataSource = cont.SearchAll("Workout", "");
+                }
             }
             catch (SqlException e) 
             { 
-                MessageBox.Show("Connection problem!"+e.ToString()); 
+                MessageBox.Show(e.ToString()); 
             }
         }
 
@@ -190,19 +201,40 @@ namespace Another
         }
         private void memberNewMenu_Click(object sender, EventArgs e)
         {   //Sends MainView to NewMember-view
+            labelGrid.Visible = true;
+            dtGrid1.Visible = true;
+            btnEdtMem.Visible = true;
+            btnBookings.Visible = true;
+            btnDelete.Visible = true;
+            labelGrid.Text = "Member";
+            dtGrid1.DataSource = cont.GetAll("Member");          
             NewMember newMember = new NewMember(this);
             newMember.ShowDialog();
         }
 
         private void instructorNewMenu_Click(object sender, EventArgs e)
         {
-            NewInstructor newInstructor = new NewInstructor();
+            labelGrid.Visible = true;
+            dtGrid1.Visible = true;
+            btnEdtMem.Visible = true;
+            btnDelete.Visible = true;
+            btnBookings.Visible = false;
+            labelGrid.Text = "Instructor";
+            dtGrid1.DataSource = cont.GetAll("Instructor"); 
+            NewInstructor newInstructor = new NewInstructor(this);
             newInstructor.ShowDialog();
         }
 
         private void workoutNewMenu_Click(object sender, EventArgs e)
         {
-            NewWorkout newWorkout = new NewWorkout();
+            labelGrid.Visible = true;
+            dtGrid1.Visible = true;
+            btnEdtMem.Visible = true;
+            btnDelete.Visible = true;
+            btnBookings.Visible = false;
+            labelGrid.Text = "Workout";
+            dtGrid1.DataSource = cont.GetAll("Workout"); 
+            NewWorkout newWorkout = new NewWorkout(this);
             newWorkout.ShowDialog();
         }        
 

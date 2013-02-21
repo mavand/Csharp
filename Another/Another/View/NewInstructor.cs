@@ -14,13 +14,16 @@ namespace Another.View
 {
     public partial class NewInstructor : Form
     {
+        MainController cont = new MainController(); 
         InstructorController icont = new InstructorController();
         Dal dal = new Dal();
+        MainView _mw;
 
 
-        public NewInstructor()
+        public NewInstructor(MainView mw)
         {
             InitializeComponent();
+            _mw = mw;
 
         }
 
@@ -53,6 +56,7 @@ namespace Another.View
                         icont.NewInstructor(txtNewInstId.Text, txtNewInstSS.Text, txtNewInstNm.Text, txtNewInstCt.Text, txtNewInstSt.Text, txtNewInstZip.Text, txtNewInstEm.Text, txtNewInstPh.Text);
                         MessageBox.Show("Added");
                         ClearFields();
+                        _mw.PerformRefresh();
                     }
                     catch (SqlException)
                     {

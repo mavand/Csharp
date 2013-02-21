@@ -14,12 +14,15 @@ namespace Another.View
 {
     public partial class NewWorkout : Form
     {
+        MainController cont = new MainController(); 
         WorkoutController wcont = new WorkoutController();
         Dal dal = new Dal();
+        MainView _mw;
 
-        public NewWorkout()
+        public NewWorkout(MainView mw)
         {
             InitializeComponent();
+            _mw = mw;
         }
 
          private void ClearFields()
@@ -51,7 +54,7 @@ namespace Another.View
                          wcont.NewWorkout(txtNewWorkId.Text, txtNewWorkNm.Text, txtNewWorkDt.Text, txtNewWorkTm.Text, txtNewWorkLt.Text, txtNewWorkLv.Text);
                          MessageBox.Show("Added");
                          ClearFields();
-
+                         _mw.PerformRefresh();
                      }
                      catch (SqlException)
                      {
