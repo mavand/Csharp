@@ -50,20 +50,14 @@ namespace Another.View
                 {
                     try
                     {
-
                         icont.NewInstructor(txtNewInstId.Text, txtNewInstSS.Text, txtNewInstNm.Text, txtNewInstCt.Text, txtNewInstSt.Text, txtNewInstZip.Text, txtNewInstEm.Text, txtNewInstPh.Text);
                         MessageBox.Show("Added");
                         ClearFields();
-
                     }
                     catch (SqlException)
                     {
                         MessageBox.Show("The Instructor ID \"" + txtNewInstId.Text + "\"is already registered");
                     }
-
-
-
-
                 }
                 catch (SqlException e2)
                 {
