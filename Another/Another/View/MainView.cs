@@ -49,7 +49,7 @@ namespace Another
             dtGrid1.Columns["Phone"].DisplayIndex = 7;
         }
 
-        //TESTAR @Meisam
+        
         public void PerformRefresh()
         {
             dtGrid1.DataSource = cont.SearchAll("Member", "");
@@ -65,7 +65,10 @@ namespace Another
                 labelGrid.Text = openMemberM.Text;
                 btnBookings.Visible = true;
             }
-            catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
+            catch (SqlException e2) 
+            { 
+                MessageBox.Show(e2.ToString());
+            }
 
             dtGrid1.Visible = true;
             btnDelete.Visible = true;
@@ -85,7 +88,10 @@ namespace Another
                 labelGrid.Text = openWorkoutM.Text; 
                
             }
-            catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
+            catch (SqlException e2) 
+            { 
+                MessageBox.Show(e2.ToString());
+            }
             dtGrid1.Visible = true;
             btnDelete.Visible = true;
             labelGrid.Visible = true;
@@ -106,7 +112,10 @@ namespace Another
                 labelGrid.Text = openInstructorM.Text;
                 AdjustColumnOrderInstructor();
             }
-            catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
+            catch (SqlException e2) 
+            {
+                MessageBox.Show(e2.ToString()); 
+            }
             dtGrid1.Visible = true;
             btnDelete.Visible = true;
             labelGrid.Visible = true;
@@ -122,7 +131,7 @@ namespace Another
                 {
                     if (labelGrid.Text == "Member")
                     {
-                        DialogResult dialogResult = MessageBox.Show("You sure you want to delete this member?", "Delete Member", MessageBoxButtons.YesNo);
+                        DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this member?", "Delete Member", MessageBoxButtons.YesNo);
                         if (dialogResult == DialogResult.Yes)
                             foreach (DataGridViewRow item in this.dtGrid1.SelectedRows)
                             {
@@ -132,7 +141,7 @@ namespace Another
                     }
                     else if (labelGrid.Text == "Workout")
                     {
-                        DialogResult dialogResult = MessageBox.Show("You sure you want to delete this Workout?", "Delete Workout", MessageBoxButtons.YesNo);
+                        DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this Workout?", "Delete Workout", MessageBoxButtons.YesNo);
                         if (dialogResult == DialogResult.Yes)
                             foreach (DataGridViewRow item in this.dtGrid1.SelectedRows)
                             {
@@ -142,7 +151,7 @@ namespace Another
                     }
                     else if (labelGrid.Text == "Instructor")
                     {
-                        DialogResult dialogResult = MessageBox.Show("You sure you want to delete this Instructor?", "Delete Instructor", MessageBoxButtons.YesNo);
+                        DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this Instructor?", "Delete Instructor", MessageBoxButtons.YesNo);
                         if (dialogResult == DialogResult.Yes)
                             foreach (DataGridViewRow item in this.dtGrid1.SelectedRows)
                             {
@@ -152,7 +161,9 @@ namespace Another
                     }
                 }
                 else
-                { MessageBox.Show("Please select a row to delete"); }
+                { 
+                    MessageBox.Show("Please select a row to delete"); 
+                }
             }
             catch (SqlException) 
             {
@@ -171,7 +182,7 @@ namespace Another
             
         }
         private void memberNewMenu_Click(object sender, EventArgs e)
-        {   //Skickar med MainView till newmember-view
+        {   //Sends MainView to NewMember-view
             NewMember newMember = new NewMember(this);
             newMember.ShowDialog();
         }
@@ -231,7 +242,10 @@ namespace Another
                     AdjustColumnOrderInstructor();
                 }
             }
-            catch (Exception) { MessageBox.Show("Please choose a table"); }
+            catch (Exception) 
+            { 
+                MessageBox.Show("Please choose a table");
+            }
         }
 
         private void btnBook_Click(object sender, EventArgs e)
@@ -253,7 +267,7 @@ namespace Another
                     bmw.Label1.Text = name;
                     bmw.ShowDialog();
                 }
-            }//else if för de andra tabellerna
+            }//else if for the other tables when we eventually choose to implement
         }
 
         private void btnEdtMem_Click(object sender, EventArgs e)
@@ -324,18 +338,36 @@ namespace Another
         {
             if (labelGrid.Text == openMemberM.Text)
             {
-                try { dtGrid1.DataSource = cont.GetAll(openMemberM.Text); }
-                catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
+                try 
+                { 
+                    dtGrid1.DataSource = cont.GetAll(openMemberM.Text);
+                }
+                catch (SqlException e2) 
+                { 
+                    MessageBox.Show(e2.ToString());
+                }
             }
             else if (labelGrid.Text == openWorkoutM.Text)
             {
-                try { dtGrid1.DataSource = cont.GetAll(openWorkoutM.Text); }
-                catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
+                try 
+                { 
+                    dtGrid1.DataSource = cont.GetAll(openWorkoutM.Text); 
+                }
+                catch (SqlException e2) 
+                { 
+                    MessageBox.Show(e2.ToString()); 
+                }
             }
             else if (labelGrid.Text == openInstructorM.Text)
             {
-                try { dtGrid1.DataSource = cont.GetAll(openInstructorM.Text); }
-                catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
+                try 
+                { 
+                    dtGrid1.DataSource = cont.GetAll(openInstructorM.Text);
+                }
+                catch (SqlException e2) 
+                { 
+                    MessageBox.Show(e2.ToString());
+                }
 
 
 
@@ -362,8 +394,14 @@ namespace Another
                         btnSaveEdit.Visible = false;
                         btnCancel.Visible = false;
                         
-                        try { dtGrid1.DataSource = cont.GetAll(openMemberM.Text); }
-                        catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
+                        try 
+                        { 
+                            dtGrid1.DataSource = cont.GetAll(openMemberM.Text);
+                        }
+                        catch (SqlException e2) 
+                        { 
+                            MessageBox.Show(e2.ToString());
+                        }
                     }
                     catch (SqlException)
                     {
@@ -395,8 +433,14 @@ namespace Another
                             btnCancel.Visible = false;
 
                             
-                            try { dtGrid1.DataSource = cont.GetAll(openWorkoutM.Text); }
-                            catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
+                            try 
+                            { 
+                                dtGrid1.DataSource = cont.GetAll(openWorkoutM.Text);
+                            }
+                            catch (SqlException e2) 
+                            { 
+                                MessageBox.Show(e2.ToString());
+                            }
 
                         }
                         catch (SqlException)
@@ -408,7 +452,8 @@ namespace Another
 
                 }
 
-            }else if (labelGrid.Text == openInstructorM.Text)
+            }
+            else if (labelGrid.Text == openInstructorM.Text)
             {
                 if (String.IsNullOrEmpty(txtEditInstID.Text) || String.IsNullOrEmpty(txtEditInstSS.Text) || String.IsNullOrEmpty(txtEditInstNm.Text) || String.IsNullOrEmpty(txtEditInstCt.Text) || String.IsNullOrEmpty(txtEditInstSt.Text) || String.IsNullOrEmpty(txtEditInstZip.Text) || String.IsNullOrEmpty(txtEditInstEm.Text) || String.IsNullOrEmpty(txtEditInstPh.Text))
                 {
@@ -427,8 +472,14 @@ namespace Another
                         btnSaveEdit.Visible = false;
                         btnCancel.Visible = false;
 
-                        try { dtGrid1.DataSource = cont.GetAll(openInstructorM.Text); }
-                        catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
+                        try 
+                        { 
+                            dtGrid1.DataSource = cont.GetAll(openInstructorM.Text);
+                        }
+                        catch (SqlException e2) 
+                        { 
+                            MessageBox.Show(e2.ToString());
+                        }
  
                     }
                     catch (SqlException e2)
@@ -443,12 +494,18 @@ namespace Another
         private void btnBookings_Click(object sender, EventArgs e)
         {
 
-            string ss;
-            //ss = dtGrid1.CurrentCell.Value.ToString();
-            ss = dtGrid1.SelectedCells[0].Value.ToString();            
-            try { MemberWorkout memberWorkout = new MemberWorkout(ss); 
-                memberWorkout.ShowDialog(); }
-            catch (SqlException ex) { MessageBox.Show(ex.ToString()); }            
+            string ss;          
+            ss = dtGrid1.SelectedCells[0].Value.ToString();   
+         
+            try 
+            { 
+                MemberWorkout memberWorkout = new MemberWorkout(ss); 
+                memberWorkout.ShowDialog();
+            }
+            catch (SqlException ex) 
+            { 
+                MessageBox.Show(ex.ToString());
+            }            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -487,13 +544,5 @@ namespace Another
             }
         }
     }
-
-
-        //######### TA EJ BORT NEDASTÅEDE RAD!! /MEISAM ###########
-        /*private void dtGrid1_CellClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            MessageBox.Show((dtGrid1.CurrentCell.Value.ToString()));
-        }*/
-
-    }
+}
 
