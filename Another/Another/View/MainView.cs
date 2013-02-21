@@ -61,7 +61,7 @@ namespace Another
             panelInst.Visible = false;
             try 
             { 
-                dtGrid1.DataSource = cont.SelectAll(openMemberM.Text);
+                dtGrid1.DataSource = cont.GetAll(openMemberM.Text);
                 labelGrid.Text = openMemberM.Text;
                 btnBookings.Visible = true;
             }
@@ -81,7 +81,7 @@ namespace Another
             try 
             {
                 btnBookings.Visible = false;
-                dtGrid1.DataSource = cont.SelectAll(openWorkoutM.Text);
+                dtGrid1.DataSource = cont.GetAll(openWorkoutM.Text);
                 labelGrid.Text = openWorkoutM.Text; 
                
             }
@@ -102,7 +102,7 @@ namespace Another
             try 
             {
                 btnBookings.Visible = false;
-                dtGrid1.DataSource = cont.SelectAll(openInstructorM.Text);                
+                dtGrid1.DataSource = cont.GetAll(openInstructorM.Text);                
                 labelGrid.Text = openInstructorM.Text;
                 AdjustColumnOrderInstructor();
             }
@@ -324,17 +324,17 @@ namespace Another
         {
             if (labelGrid.Text == openMemberM.Text)
             {
-                try { dtGrid1.DataSource = cont.SelectAll(openMemberM.Text); }
+                try { dtGrid1.DataSource = cont.GetAll(openMemberM.Text); }
                 catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
             }
             else if (labelGrid.Text == openWorkoutM.Text)
             {
-                try { dtGrid1.DataSource = cont.SelectAll(openWorkoutM.Text); }
+                try { dtGrid1.DataSource = cont.GetAll(openWorkoutM.Text); }
                 catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
             }
             else if (labelGrid.Text == openInstructorM.Text)
             {
-                try { dtGrid1.DataSource = cont.SelectAll(openInstructorM.Text); }
+                try { dtGrid1.DataSource = cont.GetAll(openInstructorM.Text); }
                 catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
 
 
@@ -362,7 +362,7 @@ namespace Another
                         btnSaveEdit.Visible = false;
                         btnCancel.Visible = false;
                         
-                        try { dtGrid1.DataSource = cont.SelectAll(openMemberM.Text); }
+                        try { dtGrid1.DataSource = cont.GetAll(openMemberM.Text); }
                         catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
                     }
                     catch (SqlException)
@@ -395,7 +395,7 @@ namespace Another
                             btnCancel.Visible = false;
 
                             
-                            try { dtGrid1.DataSource = cont.SelectAll(openWorkoutM.Text); }
+                            try { dtGrid1.DataSource = cont.GetAll(openWorkoutM.Text); }
                             catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
 
                         }
@@ -427,7 +427,7 @@ namespace Another
                         btnSaveEdit.Visible = false;
                         btnCancel.Visible = false;
 
-                        try { dtGrid1.DataSource = cont.SelectAll(openInstructorM.Text); }
+                        try { dtGrid1.DataSource = cont.GetAll(openInstructorM.Text); }
                         catch (SqlException e2) { MessageBox.Show(e2.ToString()); }
  
                     }

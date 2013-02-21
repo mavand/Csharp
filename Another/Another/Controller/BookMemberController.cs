@@ -14,7 +14,7 @@ namespace Another.Controller
 
         public DataTable SelectWorkout(string workout)
         {
-            DataTable dt = dal.SelectWorkout(workout);
+            DataTable dt = dal.GetWorkout(workout);
             return dt;
         }
 

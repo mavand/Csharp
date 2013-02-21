@@ -13,7 +13,7 @@ namespace Another.Controller
 
         public DataTable MemberWorkout(string ss)
         {
-            DataTable dt = dal.MemberWorkout(ss);
+            DataTable dt = dal.GetMemberWorkout(ss);
             return dt;
         }
 

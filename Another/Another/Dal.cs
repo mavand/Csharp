@@ -14,15 +14,18 @@ namespace Another
                                                "Integrated Security=true;" +
                                                "database=gym;");
 
-        public DataTable SelectAll(string str)
+        // Select for all tables
+        public DataTable GetAll(string table)
         {
-            SqlDataAdapter da = new SqlDataAdapter("select * from " + str, con);
+            SqlDataAdapter da = new SqlDataAdapter("select * from " + table, con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             con.Close();
             return dt;
         }
-            public DataTable SelectWorkout(string workout)
+
+        // Select a specific workout
+        public DataTable GetWorkout(string workout)
         {
             SqlDataAdapter da = new SqlDataAdapter("select workID, name, date from workout where name like '%" + workout + "%'", con);
             DataTable dt = new DataTable();
@@ -31,7 +34,16 @@ namespace Another
             return dt;
         }
 
-
+        // Search function for names for all tables
+        public DataTable SearchAll(string table, string name)
+        {
+            SqlDataAdapter da = new SqlDataAdapter("select * from " + table + " where name like '%" + name + "%'", con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return dt;
+        }
+        
         public DataTable NewMember(string ss, string name, string city, string street, string zip, string email, string phone)
         {            
             SqlDataAdapter da = new SqlDataAdapter("insert into member values ('" +ss+"','"+name+"','"+city+"','"+street+"','"+zip+"','"+email+"','"+phone+"')" , con);
@@ -40,6 +52,16 @@ namespace Another
             con.Close();
             return (dt);           
         }
+
+        public DataTable EditMember(string ss, string name, string city, string street, string zip, string email, string phone, string pk)
+        {
+            SqlDataAdapter da = new SqlDataAdapter("Update Member set SocialSecurity='" + ss + "'," + "Name='" + name + "'," + "City='" + city + "', " + "Street='" + street + "', " + "ZipCode='" + zip + "', " + "Email='" + email + "', " + "Phone='" + phone + "' where SocialSecurity='" + pk + "'", con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return dt;
+        }
+        
         public DataTable DeleteMember(string tableName, string pk)
         {
             SqlDataAdapter da = new SqlDataAdapter("delete from "+tableName+" where SocialSecurity='" +pk+ "'", con);
@@ -48,6 +70,9 @@ namespace Another
             con.Close();
             return dt;
         }
+
+        // Delete a members workout bookings
+        // used for "auto" delete member
         public DataTable DeleteMW(string ss)
         {
             SqlDataAdapter da = new SqlDataAdapter("delete from memberworkout where socialsecurity='" + ss + "'", con);
@@ -64,6 +89,15 @@ namespace Another
             da.Fill(dt);
             con.Close();
             return (dt);
+        }
+
+        public DataTable EditInstructor(string instID, string ss, string name, string city, string street, string zip, string email, string phone, string pk)
+        {
+            SqlDataAdapter da = new SqlDataAdapter("update instructor set InstID='" + instID + "'," + "SocialSecurity='" + ss + "'," + "Name='" + name + "'," + "City='" + city + "', " + "Street='" + street + "', " + "ZipCode='" + zip + "', " + "Email='" + email + "', " + "Phone='" + phone + "' where InstID='" + pk + "'", con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return dt;
         }
 
         public DataTable DeleteInstructor(string tableName, string pk)
@@ -84,41 +118,6 @@ namespace Another
             return (dt);            
         }
 
-        public DataTable DeleteWorkout(string tableName, string pk)
-        {
-            SqlDataAdapter da = new SqlDataAdapter("delete from " + tableName + " where workid='" + pk + "'", con);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            con.Close();
-            return dt;
-        }
-
-        public DataTable SearchAll(string str, string str2)
-        {
-            SqlDataAdapter da = new SqlDataAdapter("select * from " + str + " where name like '%" + str2 + "%'", con);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            con.Close();
-            return dt;
-        }
-
-        public DataTable GetWorkout()
-        {
-            SqlDataAdapter da = new SqlDataAdapter("select name from workout", con);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            con.Close();
-            return dt;
-        }
-        public DataTable EditMember(string ss, string name, string city, string street, string zip, string email, string phone, string pk)
-        {
-            SqlDataAdapter da = new SqlDataAdapter("Update Member set SocialSecurity='" + ss + "'," + "Name='" + name + "'," + "City='" + city + "', " + "Street='" + street + "', " + "ZipCode='" + zip + "', " + "Email='" + email + "', " + "Phone='" + phone + "' where SocialSecurity='" + pk + "'", con);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            con.Close();
-            return dt;
-
-        }
         public DataTable EditWorkout(string wID, string name, string date, string time, string length, string level, string pk)
         {
             SqlDataAdapter da = new SqlDataAdapter("Update Workout set WorkID='" + wID + "'," + "Name='" + name + "'," + "Date='" + date + "', " + "Time='" + time + "', " + "Length='" + length + "', " + "Level='" + level + "' where WorkID='" + pk + "'", con);
@@ -126,16 +125,25 @@ namespace Another
             da.Fill(dt);
             con.Close();
             return dt;
-
         }
-        public DataTable EditInstructor(string instID, string ss, string name, string city, string street, string zip, string email, string phone, string pk)
+
+        public DataTable DeleteWorkout(string tableName, string pk)
         {
-            SqlDataAdapter da = new SqlDataAdapter("update instructor set InstID='" + instID + "'," + "SocialSecurity='" + ss + "'," + "Name='" + name + "'," + "City='" + city + "', " + "Street='" + street + "', " + "ZipCode='" + zip + "', " + "Email='" + email + "', " + "Phone='" + phone + "' where InstID='" + pk + "'", con);
+            SqlDataAdapter da = new SqlDataAdapter("delete from " + tableName + " where workid='" + pk + "'", con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             con.Close();
             return dt;
-        }
+        }        
+
+        /*public DataTable GetWorkout()
+        {
+            SqlDataAdapter da = new SqlDataAdapter("select name from workout", con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return dt;
+        }*/       
 
         public DataTable BookMemberWorkout(string ss, string workid, string date)
         {
@@ -146,7 +154,8 @@ namespace Another
             return dt;
         }
 
-        public DataTable MemberWorkout(string ss)
+        // Gets a specific members bookings
+        public DataTable GetMemberWorkout(string ss)
         {            
             SqlDataAdapter da = new SqlDataAdapter("select Member.name as Member, Workout.name as Workout, MemberWorkout.date as Date, workout.workid as WorkID, member.socialsecurity as SS from Member join memberworkout on member.SocialSecurity=MemberWorkout.SocialSecurity join workout on memberworkout.WorkID=workout.WorkID where member.SocialSecurity='"+ss+"'", con);
             DataTable dt = new DataTable();
@@ -155,6 +164,7 @@ namespace Another
             return dt;
         }
 
+        // Delete a booking
         public DataTable DeleteMemberWorkout(string ss, string workid)
         {
             SqlDataAdapter da = new SqlDataAdapter("delete from memberworkout where socialsecurity='" +ss+ "' and workid='"+workid+"'", con);

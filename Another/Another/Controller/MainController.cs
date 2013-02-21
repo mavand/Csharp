@@ -13,29 +13,23 @@ namespace Another.Controller
     {
         Dal dal = new Dal();
 
-        public DataTable SelectAll(string str)
+        public DataTable GetAll(string table)
         {
-            DataTable dt = dal.SelectAll(str);
-            return dt;
-        }        
-
-        public DataTable newInstructor(string instID, string ss, string name, string city, string street, string zip, string email, string phone)
-        {
-            DataTable dt = dal.NewInstructor(instID, ss, name, city, street, zip, email, phone);
-            return dt;
-        }          
-
-        public DataTable SearchAll(string str, string str2)
-        {
-            DataTable dt = dal.SearchAll(str, str2);
+            DataTable dt = dal.GetAll(table);
             return dt;
         }
 
-        public DataTable GetWorkout()
+        public DataTable SearchAll(string table, string name)
+        {
+            DataTable dt = dal.SearchAll(table, name);
+            return dt;
+        }               
+
+        /*public DataTable GetWorkout()
         {
             DataTable dt = dal.GetWorkout();
             return dt;
-        }
+        }*/
 
         public DataTable DeleteMW(string ss)
         {
